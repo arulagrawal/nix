@@ -1,0 +1,26 @@
+yabai -m rule --add title='Preferences' manage=off layer=above
+yabai -m rule --add title='^(Opening)' manage=off layer=above
+yabai -m rule --add title='Library' manage=off layer=above
+yabai -m rule --add app='System Preferences' manage=off layer=above
+yabai -m rule --add app='App Store' manage=off layer=above
+yabai -m rule --add app='IINA' manage=off layer=above
+yabai -m rule --add app='Numi' manage=off layer=above
+yabai -m rule --add app='Finder' manage=off layer=above
+yabai -m rule --add app='Keka' manage=off layer=above
+yabai -m rule --add app='Contexts' manage=off layer=above
+yabai -m rule --add app='Deepl*' manage=off layer=above
+yabai -m rule --add app='ProtonVPN' manage=off layer=above
+yabai -m rule --add app='ExpressVPN' manage=off layer=above
+yabai -m rule --add app='nordVPN' manage=off layer=above
+
+
+#yabai -m rule --add app='Firefox' space=1
+#yabai -m rule --add app='Safari' space=1
+yabai -m rule --add app='Dofus'   space=2
+yabai -m rule --add app='Discord' space=5
+yabai -m rule --add app='Spotify' space=6
+
+
+# yabai signals
+yabai -m signal --add event=window_destroyed action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
+yabai -m signal --add event=application_terminated action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
