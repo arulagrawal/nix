@@ -80,6 +80,7 @@
         }];
         # dont look!
         initExtraBeforeCompInit = lib.concatStringsSep "\n" [
+          "fignore=(DS_Store)" # to remove .DS_Store from completions
           "zstyle ':completion:*' special-dirs false"
           "zstyle ':completion:*:functions' ignored-patterns '_*'"
           "zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|=* r:|=*'"
