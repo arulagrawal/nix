@@ -120,7 +120,17 @@
       skhdConfig = (builtins.readFile ./skhdrc);
     };
   };
-  nix.package = pkgs.nix;
+  nix = {
+    package = pkgs.nix;
+    gc = {
+      automatic = true;
+      interval = {
+        Hour = 3;
+        Minute = 15;
+      };
+      options = "--delete-older-than 30d";
+    };
+  };
   environment.shells = with pkgs; [ zsh ];
   nixpkgs = {
     config = {
