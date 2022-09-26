@@ -6,15 +6,11 @@ yabai -m rule --add app='App Store' manage=off layer=above
 yabai -m rule --add app='IINA' manage=off layer=above
 yabai -m rule --add app='Numi' manage=off layer=above
 yabai -m rule --add app='Finder' manage=off layer=above
-yabai -m rule --add app='Keka' manage=off layer=above
 yabai -m rule --add app='Contexts' manage=off layer=above
 yabai -m rule --add app='Deepl*' manage=off layer=above
-yabai -m rule --add app='ProtonVPN' manage=off layer=above
-yabai -m rule --add app='ExpressVPN' manage=off layer=above
-yabai -m rule --add app='nordVPN' manage=off layer=above
 
 
-#yabai -m rule --add app='Firefox' space=1
+yabai -m rule --add app='Orion' space=1
 #yabai -m rule --add app='Safari' space=1
 yabai -m rule --add app='Dofus'   space=2
 yabai -m rule --add app='Discord' space=5
