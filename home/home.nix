@@ -73,11 +73,22 @@
           path = "$ZDOTDIR/.zsh_history";
           share = true;
         };
-        plugins = [{
-          name = "functions";
-          src = ./plugins;
-          # file = "functions.zsh";
-        }];
+        plugins = [
+          {
+            name = "functions";
+            src = ./plugins;
+            # file = "functions.zsh";
+          }
+          {
+            name = "colored-man-pages";
+            src = pkgs.fetchFromGitHub {
+              owner = "ael-code";
+              repo = "zsh-colored-man-pages";
+              rev = "57bdda68e52a09075352b18fa3ca21abd31df4cb";
+              sha256 = "sha256-087bNmB5gDUKoSriHIjXOVZiUG5+Dy9qv3D69E8GBhs=";
+            };
+          }
+        ];
         # dont look!
         initExtraBeforeCompInit = lib.concatStringsSep "\n" [
           "fignore=(DS_Store)" # to remove .DS_Store from completions
@@ -113,9 +124,7 @@
           signByDefault = true;
         };
         extraConfig = {
-          init = {
-            defaultBranch = "main";
-          };
+          init = { defaultBranch = "main"; };
           credential.helper = "osxkeychain";
         };
       };
@@ -159,7 +168,8 @@
 
           # yes these zero width spaces are on purpose
           git_status = {
-            format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)";
+            format =
+              "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)";
             style = "cyan";
             conflicted = "​";
             untracked = "​";
@@ -171,7 +181,7 @@
           };
 
           git_state = {
-            format = "\([$state( $progress_current/$progress_total)]($style)\) ";
+            format = "([$state( $progress_current/$progress_total)]($style)) ";
             style = "bright-black";
           };
 
