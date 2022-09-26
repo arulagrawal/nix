@@ -115,6 +115,7 @@
           init = {
             defaultBranch = "main";
           };
+          credential.helper = "osxkeychain";
         };
       };
       exa = {
