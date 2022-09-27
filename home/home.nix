@@ -179,8 +179,8 @@
             renamed = "​";
             deleted = "​";
             stashed = "≡";
-            ahead = "↑";
-            behind = "↓";
+            ahead = "↑ ";
+            behind = "↓ ";
           };
 
           git_state = {
