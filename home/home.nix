@@ -150,9 +150,9 @@
             "$character"
           ];
           directory = {
-            style = "blue";
+            style = "bold blue";
             truncation_length = 10;
-            truncation_symbol = ".../";
+            truncation_symbol = "";
             truncate_to_repo = false;
           };
 
