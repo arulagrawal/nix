@@ -28,6 +28,7 @@
       "altserver"
       "veracrypt"
       "macfuse"
+      "postman"
     ];
     masApps = {
       "Hidden Bar" = 1452453066;
@@ -148,12 +149,12 @@
               "--replace '-arch arm64e' '' --replace '-arch arm64' ''";
           }.${super.pkgs.stdenv.system};
         in super.yabai.overrideAttrs (o: rec {
-          version = "4.0.4";
+          version = "5.0.1";
           src = super.fetchFromGitHub {
             owner = "koekeishiya";
             repo = "yabai";
             rev = "v${version}";
-            sha256 = "13kg646jrcvp8bk357xld3abb7ljc65b7lvvs5x39nhm83qzxr2d";
+            sha256 = "0id29cda7mrbzgwsrjrlfmpimzqjxr3yfcdvhnnflm4nz0nmcsz5";
           };
           postPatch = "	substituteInPlace makefile ${replace};\n";
           buildPhase = "	PATH=/usr/bin:/bin /usr/bin/make install\n";
