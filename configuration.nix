@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
 
 {
-  imports = [ ./home/home.nix ./homebrew.nix];
+  imports = [ ./home/home.nix ./homebrew.nix ];
 
   users.users.arul = {
     name = "arul";
