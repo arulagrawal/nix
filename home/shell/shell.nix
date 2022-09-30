@@ -4,7 +4,8 @@ let
   inherit (lib) concatStringsSep concatStrings;
   inherit (pkgs) fetchFromGitHub;
 in {
-  zsh = {
+  zsh = let lscolors = import ./lscolors.nix;
+  in {
     enable = true;
     enableAutosuggestions = true;
     historySubstringSearch.enable = true;
@@ -56,7 +57,8 @@ in {
       "zstyle ':completion:*:functions' ignored-patterns '_*'"
       "zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|=* r:|=*'"
       "zstyle ':completion:*' menu select=2 interactive"
-      (builtins.readFile ./LS_COLORS)
+      # (builtins.readFile ./LS_COLORS)
+      (builtins.readFile lscolors)
     ];
     initExtra =
       "setopt autocd extendedglob nomatch globdots extended_glob COMPLETE_IN_WORD";
