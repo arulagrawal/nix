@@ -1,39 +1,12 @@
 { config, pkgs, lib, ... }:
 
 {
-  imports = [ ./home/home.nix ];
+  imports = [ ./home/home.nix ./homebrew.nix];
 
   users.users.arul = {
     name = "arul";
     home = "/Users/arul";
     shell = pkgs.zsh;
-  };
-
-  homebrew = {
-    enable = true;
-    onActivation = {
-      autoUpdate = true;
-      cleanup = "zap";
-      upgrade = true;
-    };
-    taps = [ "homebrew/cask" ];
-    casks = [
-      "orion"
-      "google-chrome"
-      "visual-studio-code"
-      "discord"
-      "spotify"
-      "plex"
-      "iterm2"
-      "altserver"
-      "veracrypt"
-      "macfuse"
-      "postman"
-    ];
-    masApps = {
-      "Hidden Bar" = 1452453066;
-      "Infuse" = 1136220934;
-    };
   };
 
   system = {
@@ -79,10 +52,13 @@
 
   # Use a custom configuration.nix location.
   # $ darwin-rebuild switch -I darwin-config=$HOME/.config/nixpkgs/darwin/configuration.nix
-  environment.darwinConfig = "$HOME/nix/configuration.nix";
+  environment = {
+    darwinConfig = "$HOME/nix/configuration.nix";
+    shells = with pkgs; [ zsh ];
+  };
 
-  # Auto upgrade nix package and the daemon service.
   services = {
+    # Auto upgrade nix package and the daemon service.
     nix-daemon.enable = true;
     tailscale = {
       enable = true;
@@ -132,7 +108,6 @@
       options = "--delete-older-than 30d";
     };
   };
-  environment.shells = with pkgs; [ zsh ];
   nixpkgs = {
     config = {
       allowUnfree = true;
