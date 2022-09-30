@@ -23,6 +23,7 @@
         restic
         fzf
         jq
+        nodejs
         yarn
         ripgrep
         neofetch
@@ -32,6 +33,8 @@
         mosh
         nixfmt
         shellcheck
+        imagemagick
+        gosec
       ];
       sessionPath = [ "/opt/homebrew/bin" ];
       sessionVariables = {
@@ -127,7 +130,9 @@
         extraConfig = {
           init = { defaultBranch = "main"; };
           credential.helper = "osxkeychain";
+          push.autoSetupRemote = true;
         };
+        aliases = { co = "checkout"; };
       };
       exa = {
         enable = true;
@@ -164,7 +169,7 @@
 
           git_branch = {
             format = "[$branch]($style)";
-            style = "bright-black";
+            style = "green";
           };
 
           # yes these zero width spaces are on purpose
