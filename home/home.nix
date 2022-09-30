@@ -111,6 +111,11 @@
       };
       ssh = {
         enable = true;
+        matchBlocks = {
+          "airfryer" = {
+            user = "ubuntu";
+          };
+        };
         extraConfig = lib.concatStringsSep "\n" [
           "IgnoreUnknown UseKeychain"
           "UseKeychain yes"

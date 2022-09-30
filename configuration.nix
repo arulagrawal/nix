@@ -51,7 +51,7 @@
   #  ];
 
   # Use a custom configuration.nix location.
-  # $ darwin-rebuild switch -I darwin-config=$HOME/.config/nixpkgs/darwin/configuration.nix
+  # $ darwin-rebuild switch -I darwin-config=$HOME/nix/configuration.nix
   environment = {
     darwinConfig = "$HOME/nix/configuration.nix";
     shells = with pkgs; [ zsh ];
