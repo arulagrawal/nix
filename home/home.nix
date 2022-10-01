@@ -33,6 +33,7 @@
         shellcheck
         imagemagick
         gosec
+        gopls
       ];
       sessionPath = [ "/opt/homebrew/bin" ];
       sessionVariables = {
