@@ -1,7 +1,7 @@
 let
   pkgs = import <nixpkgs> { };
-  inherit (pkgs) stdenv fetchFromGitHub;
-in stdenv.mkDerivation {
+  inherit (pkgs) stdenvNoCC fetchFromGitHub;
+in stdenvNoCC.mkDerivation {
   name = "nord-ls-colors";
   src = fetchFromGitHub {
     owner = "arcticicestudio";
@@ -9,6 +9,9 @@ in stdenv.mkDerivation {
     rev = "v0.2.0";
     sha256 = "1c9fa6dip266z6hfqd5nan5v6qjp6dg074lvk4rxisirm26djlzz";
   };
+
+  dontConfigure = true;
+  dontBuild = true;
 
   buildInputs = [ pkgs.coreutils ];
 

@@ -77,8 +77,8 @@
 # ############################################################### #
 
 # open iterm
-cmd - return : bash /Users/arul/scripts/iterm2.sh
-alt - return : osascript -e 'tell application "iTerm2" to create window with default profile command ""' || open -na iTerm
+cmd - return : /Users/arul/scripts/iterm2
+# alt - return : osascript -e 'tell application "iTerm2" to create window with default profile command ""' || open -na iTerm
 
 #alt - return : open -na kitty --args -1
 #cmd - return : open -na kitty --args -1
@@ -87,9 +87,9 @@ alt - return : osascript -e 'tell application "iTerm2" to create window with def
 cmd + shift - return : code
 
 # take a screenshot
-cmd + shift - 3 : /Users/arul/scripts/screenshot.sh whole
-cmd + shift - 4 : /Users/arul/scripts/screenshot.sh area
-cmd + shift - 5 : /Users/arul/scripts/screenshot.sh window
+cmd + shift - 3 : /Users/arul/scripts/screenshot whole
+cmd + shift - 4 : /Users/arul/scripts/screenshot area
+cmd + shift - 5 : /Users/arul/scripts/screenshot window
 
 # focus window
 alt - h : yabai -m window --focus west
@@ -139,8 +139,8 @@ alt - 7 : yabai -m space --focus 7
 alt - 8 : yabai -m space --focus 8
 
 # focus on next/prev occupied window
-alt - q : bash /Users/arul/scripts/nextprev.sh prev
-alt - e : bash /Users/arul/scripts/nextprev.sh next
+alt - q : bash /Users/arul/scripts/nextprev prev
+alt - e : bash /Users/arul/scripts/nextprev next
 
 # focus on next/prev window
 alt + ctrl - q : yabai -m space --focus prev

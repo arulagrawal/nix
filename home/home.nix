@@ -10,31 +10,10 @@
         allowUnsupportedSystem = false;
       };
     };
-    home = {
+    home = let packages = import ./packages.nix;
+    in {
+      inherit (packages) packages;
       stateVersion = "22.11";
-      packages = with pkgs; [
-        neovim
-        htop
-        docker
-        docker-compose
-        colima
-        restic
-        fzf
-        jq
-        nodejs
-        yarn
-        ripgrep
-        neofetch
-        wget
-        ansible
-        terraform
-        mosh
-        nixfmt
-        shellcheck
-        imagemagick
-        gosec
-        gopls
-      ];
       sessionPath = [ "/opt/homebrew/bin" ];
       sessionVariables = {
         EDITOR = "nvim";

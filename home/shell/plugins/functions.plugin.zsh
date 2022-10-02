@@ -30,7 +30,7 @@ fzfp()
 #quick lookup for my config files
 dots()
 {
-    find ~/dotfiles -type f | awk '!/git|after|lua|.DS_Store/'| fzfp | xargs $EDITOR;
+    find ~/nix -type f | awk '!/git|after|lua|.DS_Store/'| fzfp | xargs $EDITOR;
 }
 
 #show me what my key config looks like - pressing enter goes to that command in the config
