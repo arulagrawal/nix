@@ -19,6 +19,7 @@
       "veracrypt"
       "macfuse"
       "postman"
+      "alacritty"
     ];
     masApps = {
       "Hidden Bar" = 1452453066;
