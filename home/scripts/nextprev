@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+
+occupied="$(yabai -m query --windows | jq -r '.[] | select(."is-minimized" == false).space' | sort -nu)"
+focused="$(yabai -m query --spaces --space | jq .index)"
+
+focus() {
+    yabai -m space --focus "$1" && exit
+}
+
+switchdesktop() {
+    declare -a desktophash
+    desktophash[0]=29
+    desktophash[1]=18
+    desktophash[2]=19
+    desktophash[3]=20
+    desktophash[4]=21
+    desktophash[5]=23
+    desktophash[6]=22
+    desktophash[7]=26
+    desktophash[8]=28
+    desktophash[9]=25
+    desktopkey=${desktophash[$1]}
+    osascript -e "tell application \"System Events\" to key code $desktopkey using control down"
+    exit 0
+}
+
+case $1 in
+    next)
+        # next line to make adjacency wrap
+        [ "$focused" -eq 6 ] && focused=0
+
+        for space in $occupied; do
+            [ "$space" -gt "$focused" ] && switchdesktop "$space"
+        done;;
+    prev)
+        # next line to make adjacency wrap
+        [ "$focused" -eq 1 ] && focused=7
+
+        prev=1
+        for space in $occupied; do
+            # store the largest space smaller than focused
+            [ "$space" -lt "$focused" ] && [ "$space" -gt "$prev" ] && prev="$space"
+        done
+
+        # then focus the space we selected in the loop
+        switchdesktop "$prev";;
+    *)
+        echo "please choose either next or prev";;
+esac
