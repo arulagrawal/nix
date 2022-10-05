@@ -107,14 +107,12 @@
       };
       options = "--delete-older-than 30d";
     };
-    settings = {
-      auto-optimise-store = true;
-    };
+    settings = { auto-optimise-store = true; };
   };
   nixpkgs = {
     config = {
       allowUnfree = true;
-      allowBroken = false;
+      allowBroken = true;
       allowInsecure = false;
       allowUnsupportedSystem = false;
     };
