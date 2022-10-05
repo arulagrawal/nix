@@ -1,6 +1,7 @@
 let pkgs = import <nixpkgs> { };
 in {
   packages = with pkgs; [
+    tree
     neovim
     htop
     docker
@@ -27,5 +28,6 @@ in {
     glow
     fly
     ncdu
+    nodePackages.pyright
   ];
 }
