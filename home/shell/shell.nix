@@ -57,7 +57,6 @@ in {
       "zstyle ':completion:*:functions' ignored-patterns '_*'"
       "zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|=* r:|=*'"
       "zstyle ':completion:*' menu select=2 interactive"
-      # (builtins.readFile ./LS_COLORS)
       (builtins.readFile lscolors)
     ];
     initExtra =

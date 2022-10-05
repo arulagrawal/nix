@@ -12,6 +12,7 @@ in {
     jq
     nodejs
     yarn
+    zig
     ripgrep
     neofetch
     tmpmail
