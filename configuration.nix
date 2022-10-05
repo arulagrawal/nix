@@ -102,6 +102,7 @@
     gc = {
       automatic = true;
       interval = {
+        Day = 7;
         Hour = 3;
         Minute = 15;
       };
