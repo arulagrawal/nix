@@ -41,6 +41,15 @@ in {
         # file = "functions.zsh";
       }
       {
+        name = "fast-syntax-highlighting";
+        src = fetchFromGitHub {
+          owner = "zdharma-continuum";
+          repo = "fast-syntax-highlighting";
+          rev = "770bcd986620d6172097dc161178210855808ee0";
+          sha256 = "sha256-T4k0pbT7aqLrIRIi2EM15LXCnpRFHzFilAYfRG6kbeY=";
+        };
+      }
+      {
         name = "colored-man-pages";
         src = fetchFromGitHub {
           owner = "ael-code";
@@ -57,7 +66,7 @@ in {
       "zstyle ':completion:*:functions' ignored-patterns '_*'"
       "zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|=* r:|=*'"
       "zstyle ':completion:*' menu select=2 interactive"
-      (builtins.readFile lscolors)
+      "source ${lscolors}"
     ];
     initExtra =
       "setopt autocd extendedglob nomatch globdots extended_glob COMPLETE_IN_WORD";
