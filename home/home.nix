@@ -17,10 +17,10 @@
           # FIGNORE = ".git:DS_Store";
         };
         file = {
-            scripts = {
-                recursive = false;
-                source = ./scripts;
-            };
+          scripts = {
+            recursive = false;
+            source = ./scripts;
+          };
         };
       };
       programs = let shell = import ./shell/shell.nix;
