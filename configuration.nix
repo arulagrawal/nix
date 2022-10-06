@@ -2,7 +2,6 @@
 
 {
   imports = [ ./home/home.nix ./homebrew.nix ];
-
   users.users.arul = {
     name = "arul";
     home = "/Users/arul";
@@ -143,10 +142,12 @@
   # Create /etc/zshrc that loads the nix-darwin environment.
   programs.zsh = {
     enable = true;
-    enableCompletion = true;
-    enableFzfCompletion = true;
-    enableFzfHistory = true;
-    enableSyntaxHighlighting = true;
+    enableCompletion = false;
+    enableBashCompletion = false;
+    promptInit = "";
+    # enableFzfCompletion = true;
+    # enableFzfHistory = true;
+    # enableSyntaxHighlighting = true;
   };
   # programs.fish.enable = true;
 
