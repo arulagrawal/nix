@@ -16,7 +16,6 @@ in stdenvNoCC.mkDerivation {
   buildInputs = [ pkgs.coreutils ];
 
   installPhase = ''
-    dircolors -b src/dir_colors | head -n1 | cut -d \' -f2 > colors
-    echo "zstyle ':completion:*' list-colors '$(cat colors)'" > $out
+    echo "zstyle ':completion:*' list-colors '$(dircolors -b src/dir_colors | head -n1 | cut -d \' -f2)'" > $out
   '';
 }
