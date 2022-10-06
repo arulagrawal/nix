@@ -38,7 +38,10 @@ in {
       {
         name = "functions";
         src = ./plugins;
-        # file = "functions.zsh";
+      }
+      {
+        name = "features";
+        src = ./plugins;
       }
       {
         name = "fast-syntax-highlighting";
