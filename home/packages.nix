@@ -12,7 +12,11 @@ in {
     jq
     nodejs
     yarn
-    zig
+    rustc
+    cargo
+    rust-analyzer
+    rustfmt
+    rnix-lsp
     ripgrep
     neofetch
     tmpmail
