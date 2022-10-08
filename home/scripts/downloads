@@ -3,7 +3,7 @@ from pathlib import Path
 
 types = {
     "images": ["png", "jpg", "jpeg", "bmp", "gif", "webp"],
-    "docs": ["docx", "xlsx", "pdf", "mom"],
+    "docs": ["docx", "xlsx", "pptx", "pdf", "mom"],
     "archives": ["gz", "tar", "zip", "7z", "rar", "bz2", "xz"],
     "software": ["exe", "dmg", "app"],
     "videos": ["mkv", "mp4"],
@@ -40,13 +40,12 @@ def get_files(folder):
         for f in folder.iterdir()
         if f.is_file() and f.name != ".DS_Store" and f.suffix != ".part"
     ]
-    apps = [d for d in folder.iterdir() if d.name.endswith(".app")]
     folders = [
         f
         for f in folder.iterdir()
         if f.name not in types.keys() and f.name != "misc" and f.is_dir()
     ]
-    return files + apps + folders
+    return files + folders
 
 
 if __name__ == "__main__":
