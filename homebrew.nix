@@ -24,6 +24,7 @@
     masApps = {
       "Hidden Bar" = 1452453066;
       "Infuse" = 1136220934;
+      "Intermission" = 1439431081;
     };
   };
 }
