@@ -20,6 +20,7 @@
       "macfuse"
       "postman"
       "wezterm"
+      "steam"
     ];
     masApps = {
       "Hidden Bar" = 1452453066;
