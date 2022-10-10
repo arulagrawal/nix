@@ -21,6 +21,7 @@
       "postman"
       "wezterm"
       "steam"
+      "utm"
     ];
     masApps = {
       "Hidden Bar" = 1452453066;
