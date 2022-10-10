@@ -34,5 +34,6 @@ in {
     fly
     ncdu
     nodePackages.pyright
+    (import ./packages/dl_sieve.nix)
   ];
 }
