@@ -1,8 +1,7 @@
 let
   pkgs = import <nixpkgs> { };
   inherit (pkgs) rustPlatform fetchFromGitea;
-in
-rustPlatform.buildRustPackage rec {
+in rustPlatform.buildRustPackage rec {
   pname = "dl_sieve";
   version = "0.1.0";
 
