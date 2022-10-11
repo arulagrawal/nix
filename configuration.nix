@@ -54,6 +54,13 @@
   environment = {
     darwinConfig = "$HOME/nix/configuration.nix";
     shells = with pkgs; [ zsh ];
+    # userLaunchAgents = {
+    # dl_sieve = {
+    # enable = true;
+    # source = ./dl_sieve.plist;
+    # target = "dl_sieve.plist";
+    # };
+    # };
   };
 
   services = {
