@@ -10,6 +10,7 @@
     casks = [
       "orion"
       "google-chrome"
+      "firefox"
       "visual-studio-code"
       "discord"
       "spotify"
