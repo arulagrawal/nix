@@ -1,6 +1,7 @@
 let pkgs = import <nixpkgs> { };
 in {
   packages = with pkgs; [
+    cachix
     tree
     neovim
     htop
