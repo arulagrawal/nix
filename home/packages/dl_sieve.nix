@@ -3,15 +3,15 @@ let
   inherit (pkgs) rustPlatform fetchFromGitea;
 in rustPlatform.buildRustPackage rec {
   pname = "dl_sieve";
-  version = "0.1.3";
+  version = "0.1.5";
 
   src = fetchFromGitea {
     domain = "git.arul.io";
     owner = "arul";
     repo = pname;
     rev = version;
-    sha256 = "sha256-yIF4YOAm15Rvbv5aj+fmz8ZNz4YwoEvZpo5DGFcMt10=";
+    sha256 = "sha256-xRyXgx9cU4k8FxWKx2FaN1x6B8cwWnrNcJRtYYR5rm8=";
   };
 
-  cargoSha256 = "sha256-1fmsrCPf3mNaA5EGZRPwHBWqixAKZNCkTlMDboW9l5s=";
+  cargoSha256 = "sha256-1K8WRx/vXhFC32ycysxSS0kLyUkNBZo/z007xkfl3S8=";
 }
