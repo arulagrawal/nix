@@ -11,6 +11,7 @@
       "orion"
       "google-chrome"
       "firefox"
+      "duckduckgo"
       "visual-studio-code"
       "discord"
       "spotify"
@@ -23,6 +24,7 @@
       "wezterm"
       "steam"
       "utm"
+      "numi"
     ];
     masApps = {
       "Hidden Bar" = 1452453066;
