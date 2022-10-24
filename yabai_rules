@@ -8,6 +8,7 @@ yabai -m rule --add app='Numi' manage=off layer=above
 yabai -m rule --add app='Finder' manage=off layer=above
 yabai -m rule --add app='Contexts' manage=off layer=above
 yabai -m rule --add app='Steam' manage=off layer=above
+yabai -m rule --add app='System Information' manage=off layer=above
 
 yabai -m rule --add app='Orion' title='History' manage=off layer=above
 
