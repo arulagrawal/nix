@@ -24,6 +24,7 @@ in {
       gs = "git status";
       gp = "git push";
       gd = "git diff";
+      try = "nix-shell -p";
       q = "exit 0";
     };
     dotDir = ".config/zsh";
@@ -62,6 +63,13 @@ in {
         };
       }
     ];
+    completionInit = ''
+        autoload -Uz compinit
+        for dump in ~/.zcompdump(N.mh+24); do
+            compinit
+        done
+        compinit -C
+    '';
     # dont look!
     initExtraBeforeCompInit = concatStringsSep "\n" [
       "fignore=(DS_Store)" # to remove .DS_Store from completions
