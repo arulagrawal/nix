@@ -114,7 +114,14 @@
       };
       options = "--delete-older-than 30d";
     };
-    settings = { auto-optimise-store = true; };
+    settings = {
+      auto-optimise-store = true;
+      trusted-users = [ "root" "arul" ];
+    };
+    extraOptions = ''
+      keep-outputs = true
+      keep-derivations = true
+    '';
   };
   nixpkgs = {
     config = {
