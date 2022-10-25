@@ -61,6 +61,12 @@
             push.autoSetupRemote = true;
           };
           aliases = { co = "checkout"; };
+          delta = {
+            enable = true;
+            options = {
+                line-numbers = true;
+            };
+          };
         };
       };
       xdg = {
