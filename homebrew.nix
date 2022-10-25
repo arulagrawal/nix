@@ -25,6 +25,7 @@
       "steam"
       "utm"
       "numi"
+      "raycast"
     ];
     masApps = {
       "Hidden Bar" = 1452453066;
