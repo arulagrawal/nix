@@ -34,6 +34,7 @@ in {
     glow
     fly
     ncdu
+    bitwarden-cli
     nodePackages.pyright
     (import ./packages/dl_sieve.nix)
   ];
