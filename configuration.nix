@@ -104,7 +104,7 @@
     };
   };
   nix = {
-    package = pkgs.nix;
+    package = pkgs.nixUnstable;
     gc = {
       automatic = true;
       interval = {
@@ -121,6 +121,7 @@
     extraOptions = ''
       keep-outputs = true
       keep-derivations = true
+      experimental-features = nix-command flakes
     '';
   };
   nixpkgs = {
@@ -132,22 +133,13 @@
     };
     overlays = [
       (self: super: {
-        yabai = let
-          replace = {
-            "aarch64-darwin" = "--replace '-arch x86_64' ''";
-            "x86_64-darwin" =
-              "--replace '-arch arm64e' '' --replace '-arch arm64' ''";
-          }.${super.pkgs.stdenv.system};
-        in super.yabai.overrideAttrs (o: rec {
+        yabai = super.yabai.overrideAttrs (o: rec {
           version = "5.0.1";
-          src = super.fetchFromGitHub {
-            owner = "koekeishiya";
-            repo = "yabai";
-            rev = "v${version}";
-            sha256 = "0id29cda7mrbzgwsrjrlfmpimzqjxr3yfcdvhnnflm4nz0nmcsz5";
+          src = super.fetchzip {
+            url =
+              "https://github.com/koekeishiya/yabai/releases/download/v5.0.1/yabai-v5.0.1.tar.gz";
+            sha256 = "sha256-iCx/e3IwJ6YzgEy7wGkNQU/d7gaZd4b/RLwRvRpwVwQ=";
           };
-          postPatch = "	substituteInPlace makefile ${replace};\n";
-          buildPhase = "	PATH=/usr/bin:/bin /usr/bin/make install\n";
         });
       })
     ];

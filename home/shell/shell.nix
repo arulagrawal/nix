@@ -64,11 +64,11 @@ in {
       }
     ];
     completionInit = ''
-        autoload -Uz compinit
-        for dump in ~/.zcompdump(N.mh+24); do
-            compinit
-        done
-        compinit -C
+      autoload -Uz compinit
+      for dump in ~/.zcompdump(N.mh+24); do
+          compinit
+      done
+      compinit -C
     '';
     # dont look!
     initExtraBeforeCompInit = concatStringsSep "\n" [

@@ -63,9 +63,7 @@
           aliases = { co = "checkout"; };
           delta = {
             enable = true;
-            options = {
-                line-numbers = true;
-            };
+            options = { line-numbers = true; };
           };
         };
       };
