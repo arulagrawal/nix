@@ -18,6 +18,7 @@ in {
       get =
         "curl --continue-at - --location --progress-bar --remote-name --remote-time";
       ga = "git add";
+      gap = "git add -p";
       gaa = "git add -A";
       gc = "git commit";
       gcm = "git commit -m";
