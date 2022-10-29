@@ -7,20 +7,17 @@
 #  ░██  ░░██████ ███  ░██░░█████   ░░██ ░██░░██████  ███  ░██ ██████
 #  ░░    ░░░░░░ ░░░   ░░  ░░░░░     ░░  ░░  ░░░░░░  ░░░   ░░ ░░░░░░
 
-pa()
-{
+pa() {
     [ ! -f "$1" ] && echo "give a file name" && return 1
     curl --netrc-file ~/.config/.netrc -sF "file=@$1" "https://arul.io" | tee >(pbcopy)
 }
 
-pad()
-{
+pad() {
     curl --netrc-file ~/.config/.netrc -X DELETE "https://arul.io/$1"
 }
 
 #fzf with preview options
-fzfp()
-{
+fzfp() {
     fzf --reverse --inline-info --preview='[[ $(file --mime {}) =~ binary ]] &&
                   echo {} is a binary file ||
                   highlight --style base16/nord -O ansi -l {} ||
@@ -28,39 +25,27 @@ fzfp()
 }
 
 #quick lookup for my config files
-dots()
-{
+dots() {
     find ~/nix -type f | awk '!/git|after|lua|.DS_Store/'| fzfp | xargs $EDITOR;
 }
 
-#show me what my key config looks like - pressing enter goes to that command in the config
-keys()
-{
-    awk '/^[a-zA-Z]/ && last {print $0,"\t",last} {last=""} /^#/{last=$0}' ~/.config/sxhkd/sxhkdrc | column -t -s $'\t' | fzf --reverse | awk -F\# '{print $1}' | sed -e "s/ *$//" | xargs -I cmd nvim +/cmd ~/.config/sxhkd/sxhkdrc;
-}
-
-dec2bin ()
-{
+dec2bin () {
     echo "obase=2; $1" | bc
 }
 
-bin2dec ()
-{
+bin2dec () {
     echo "ibase=2; $1" | bc
 }
 
-hex2dec()
-{
+hex2dec() {
     echo $((16#$1));
 }
 
-dec2hex()
-{
+dec2hex() {
     echo "obase=16; $1" | bc;
 }
 
-c()
-{
+c() {
     if [ $# -eq 0 ]; then
         clear
     elif [ -d "$1" ]; then
@@ -70,13 +55,11 @@ c()
     fi
 }
 
-shorten()
-{
+shorten() {
     curl -F"shorten=$*" https://0x0.st
 }
 
-archive()
-{
+archive() {
     local format="$1"
     local output="$2"
     local input=( "${@:3}" )
@@ -88,22 +71,19 @@ archive()
     esac
 }
 
-swap()
-{
+swap() {
     local TMPFILE=tmp.$$
     mv "$1" $TMPFILE && mv "$2" "$1" && mv $TMPFILE "$2"
 }
 
-comp()
-{
+comp() {
     [ -f "a.out" ] && rm a.out
     g++ -std=c++2a $1
     ./a.out
     rm a.out
 }
 
-mkcd()
-{
+mkcd() {
     if [ ! -n "$1" ]; then
         echo "Enter a directory name"
     elif [ -d $1 ]; then
@@ -113,12 +93,17 @@ mkcd()
     fi
 }
 
-cl()
-{
+cl() {
     cd "$@" && exa
 }
 
-'$'()
-{
+'$'() {
     "${@}"
+}
+
+update() {
+    echo "Updating nix-darwin and home-manager..."
+    nix-channel --update
+    echo "Updating nixpkgs..."
+    sudo -i nix-channel --update
 }
