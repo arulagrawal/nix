@@ -27,8 +27,8 @@
         AppleShowAllExtensions = true;
         "com.apple.trackpad.scaling" = 2.0;
         NSAutomaticSpellingCorrectionEnabled = false;
-        InitialKeyRepeat = 25;
-        KeyRepeat = 2;
+        InitialKeyRepeat = 15;
+        KeyRepeat = 1;
       };
       alf = { globalstate = 1; };
     };
