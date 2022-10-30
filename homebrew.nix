@@ -6,7 +6,7 @@
       cleanup = "zap";
       upgrade = true;
     };
-    taps = [ "homebrew/cask" ];
+    taps = [ "homebrew/cask" "homebrew/cask-versions" ];
     casks = [
       "orion"
       "google-chrome"
@@ -16,7 +16,7 @@
       "discord"
       "spotify"
       "plex"
-      "iterm2"
+      "homebrew/cask-versions/iterm2-beta"
       "altserver"
       "veracrypt"
       "macfuse"
