@@ -16,6 +16,10 @@ pad() {
     curl --netrc-file ~/.config/.netrc -X DELETE "https://arul.io/$1"
 }
 
+send() {
+    curl --netrc-file ~/.config/.netrc -d "msg=$1" "https://notif-server.arul.io/msg"
+}
+
 #fzf with preview options
 fzfp() {
     fzf --reverse --inline-info --preview='[[ $(file --mime {}) =~ binary ]] &&
