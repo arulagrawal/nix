@@ -36,6 +36,7 @@ in {
     ncdu
     bitwarden-cli
     nodePackages.pyright
+    nodePackages.bash-language-server
     (import ./packages/dl_sieve.nix)
   ];
 }
