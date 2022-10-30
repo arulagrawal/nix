@@ -1,3 +1,9 @@
+# some keybinds
+bindkey '^H' backward-kill-word       # [Ctrl-Backspace] - Delete previous work
+bindkey '^[[Z' reverse-menu-complete  # [Shift-Tab] - move through the completion menu backwards
+bindkey "^[^[[C" forward-word         # [Alt-LeftArrow] - move forward a word
+bindkey "^[^[[D" backward-word        # [Alt-RightArrow] - move backward a word
+
 rationalise-dot() {
   if [[ $LBUFFER = *.. ]]; then
     LBUFFER+=/..
