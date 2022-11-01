@@ -111,7 +111,7 @@
     };
   };
   nix = {
-    package = pkgs.nixUnstable;
+    package = pkgs.nix;
     gc = {
       automatic = true;
       interval = {
