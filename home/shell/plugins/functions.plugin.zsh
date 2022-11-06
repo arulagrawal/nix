@@ -111,3 +111,8 @@ update() {
     echo "Updating nixpkgs..."
     sudo -i nix-channel --update
 }
+
+clean() {
+    nix-collect-garbage -d
+    sudo -i nix-collect-garbage -d
+}
