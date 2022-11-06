@@ -61,6 +61,7 @@
   environment = {
     darwinConfig = "$HOME/nix/configuration.nix";
     shells = with pkgs; [ zsh ];
+    pathsToLink = [ "/share/zsh" ];
     # userLaunchAgents = {
     # dl_sieve = {
     # enable = true;
