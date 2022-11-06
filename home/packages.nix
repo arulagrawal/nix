@@ -33,7 +33,9 @@ in {
     glow
     fly
     ncdu
+    tealdeer
     bitwarden-cli
+    git-crypt
     nodePackages.pyright
     nodePackages.bash-language-server
     (import ./packages/dl_sieve.nix)
