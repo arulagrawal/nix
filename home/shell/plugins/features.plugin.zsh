@@ -43,3 +43,13 @@ fzf-history-widget() {
 
 zle     -N   fzf-history-widget
 bindkey '^R' fzf-history-widget
+
+
+# fly completion
+_fly_compl() {
+	args=("${COMP_WORDS[@]:1:$COMP_CWORD}")
+	local IFS=$'\n'
+	COMPREPLY=($(GO_FLAGS_COMPLETION=1 ${COMP_WORDS[0]} "${args[@]}"))
+	return 0
+}
+complete -F _fly_compl fly

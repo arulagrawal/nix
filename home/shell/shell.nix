@@ -70,6 +70,7 @@ in {
           compinit
       done
       compinit -C
+      autoload -Uz bashcompinit && bashcompinit
     '';
     # dont look!
     initExtraBeforeCompInit = concatStringsSep "\n" [
