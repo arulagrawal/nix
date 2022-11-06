@@ -26,6 +26,7 @@
       "utm"
       "numi"
       "raycast"
+      "transmission"
     ];
     masApps = {
       "Hidden Bar" = 1452453066;
@@ -35,6 +36,9 @@
       "Bitwarden" = 1352778147;
       "Tampermonkey" = 1482490089;
       "Noir" = 1592917505;
+      "Sponsorblock" = 1573461917;
+      "Tweaks for Reddit" = 1524828965;
+      "Vimari" = 1480933944;
     };
   };
 }
