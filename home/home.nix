@@ -4,7 +4,7 @@
   home-manager = {
     useUserPackages = false;
     useGlobalPkgs = true;
-    users.arul = { pkgs, lib, ... }: {
+    users.arul = { pkgs, ... }: {
       home = let packages = import ./packages.nix;
       in {
         inherit (packages) packages;
@@ -39,10 +39,10 @@
               hostname = "status.arul.io";
             };
           };
-          extraConfig = lib.concatStringsSep "\n" [
-            "IgnoreUnknown UseKeychain"
-            "UseKeychain yes"
-          ];
+          extraConfig = ''
+            IgnoreUnknown UseKeychain
+            UseKeychain yes
+          '';
         };
         gpg = { enable = true; };
         git = {
@@ -59,8 +59,9 @@
             init = { defaultBranch = "main"; };
             credential.helper = "osxkeychain";
             push.autoSetupRemote = true;
-            /* https://github.com/dandavison/delta/issues/447#issuecomment-1239398586 */
-            core.pager = "delta --features \"$(defaults read -globalDomain AppleInterfaceStyle &> /dev/null && echo dark-mode || echo light-mode)\"";
+            # https://github.com/dandavison/delta/issues/447#issuecomment-1239398586
+            core.pager = ''
+              delta --features "$(defaults read -globalDomain AppleInterfaceStyle &> /dev/null && echo dark-mode || echo light-mode)"'';
             "delta \"light-mode\"".light = true;
             "delta \"dark-mode\"".light = false;
             delta.line-numbers = true;
