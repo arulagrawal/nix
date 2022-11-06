@@ -59,12 +59,13 @@
             init = { defaultBranch = "main"; };
             credential.helper = "osxkeychain";
             push.autoSetupRemote = true;
+            /* https://github.com/dandavison/delta/issues/447#issuecomment-1239398586 */
+            core.pager = "delta --features \"$(defaults read -globalDomain AppleInterfaceStyle &> /dev/null && echo dark-mode || echo light-mode)\"";
+            "delta \"light-mode\"".light = true;
+            "delta \"dark-mode\"".light = false;
+            delta.line-numbers = true;
           };
           aliases = { co = "checkout"; };
-          delta = {
-            enable = true;
-            options = { line-numbers = true; };
-          };
         };
       };
       xdg = {

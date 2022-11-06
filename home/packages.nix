@@ -10,6 +10,7 @@ in {
     restic
     fzf
     jq
+    delta
     nodejs
     yarn
     rustc
