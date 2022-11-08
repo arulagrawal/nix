@@ -32,7 +32,8 @@ in {
     highlight
     glow
     fly
-    ncdu
+    /* ncdu */
+    gdu
     tealdeer
     bitwarden-cli
     git-crypt
