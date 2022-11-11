@@ -1,6 +1,20 @@
-let pkgs = import <nixpkgs> { };
-in {
-  packages = with pkgs; [
+let
+  pkgs = import <nixpkgs> { };
+
+  python-packages = python-packages: with python-packages; [
+    pyyaml
+    requests
+  ];
+
+  python-with-packages = pkgs.python3.withPackages python-packages;
+
+  node = with pkgs.nodePackages; [
+    pyright
+    bash-language-server
+  ];
+
+  generic = with pkgs; [
+    python-with-packages
     tree
     neovim
     htop
@@ -32,13 +46,15 @@ in {
     highlight
     glow
     fly
-    /* ncdu */
     gdu
     tealdeer
     bitwarden-cli
     git-crypt
-    nodePackages.pyright
-    nodePackages.bash-language-server
+  ];
+
+  custom = with pkgs; [
     (import ./packages/dl_sieve.nix)
   ];
+in {
+  packages = generic ++ node ++ custom;
 }
