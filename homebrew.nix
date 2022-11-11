@@ -27,6 +27,7 @@
       "numi"
       "raycast"
       "transmission"
+      "iina"
     ];
     masApps = {
       "Hidden Bar" = 1452453066;
