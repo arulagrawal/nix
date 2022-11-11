@@ -96,6 +96,7 @@ in {
     enable = true;
     enableZshIntegration = true;
     settings = {
+      command_timeout = 1000;
       format = concatStrings [
         "$username"
         "$hostname"
