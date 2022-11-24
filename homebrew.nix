@@ -28,6 +28,8 @@
       "raycast"
       "transmission"
       "iina"
+      "mkvtoolnix"
+      "mpv"
     ];
     masApps = {
       "Hidden Bar" = 1452453066;
