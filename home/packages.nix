@@ -11,6 +11,7 @@ let
   node = with pkgs.nodePackages; [
     pyright
     bash-language-server
+    typescript-language-server
   ];
 
   generic = with pkgs; [
@@ -55,6 +56,9 @@ let
   custom = with pkgs; [
     (import ./packages/dl_sieve.nix)
   ];
+
+  mac = with pkgs; [
+  ];
 in {
-  packages = generic ++ node ++ custom;
+  packages = generic ++ node ++ mac ++ custom;
 }
