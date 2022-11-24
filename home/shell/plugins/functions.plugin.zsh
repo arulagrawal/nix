@@ -49,6 +49,14 @@ dec2hex() {
     echo "obase=16; $1" | bc;
 }
 
+hex2bin() {
+    echo "obase=2; ibase=16; $1" | bc;
+}
+
+bin2hex() {
+    echo "obase=16; ibase=2; $1" | bc;
+}
+
 c() {
     if [ $# -eq 0 ]; then
         clear
