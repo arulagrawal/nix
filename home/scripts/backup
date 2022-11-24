@@ -1,7 +1,6 @@
 #!/bin/sh
 
-echo "running backup script at"
-date
+echo "running backup script at $(date)"
 
 NC="/usr/bin/nc"
 ARUL="/Users/arul"
@@ -13,10 +12,10 @@ while ! "$NC" -zw1 google.com 443; do
 done
 
 backup () {
-    "$RESTIC" backup $ARUL/code $ARUL/cloud  $ARUL/nix $ARUL/Documents --exclude={node_modules,target,plugged,autoload}
+    "$RESTIC" backup $ARUL/code $ARUL/cloud  $ARUL/nix $ARUL/Documents --exclude={node_modules,target,plugged,autoload,go}
 
     "$RESTIC" forget --prune --keep-daily 7 --keep-weekly 4 --keep-monthly 2 --keep-yearly 1
 }
 
 
-. $ARUL/scripts/.do.env && backup
+. $ARUL/scripts/.b2.env && backup
