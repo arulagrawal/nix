@@ -1,10 +1,7 @@
 let
   pkgs = import <nixpkgs> { };
 
-  python-packages = python-packages: with python-packages; [
-    pyyaml
-    requests
-  ];
+  python-packages = python-packages: with python-packages; [ pyyaml requests ];
 
   python-with-packages = pkgs.python3.withPackages python-packages;
 
@@ -14,17 +11,23 @@ let
     typescript-language-server
   ];
 
+  utilites = with pkgs; [
+    tree
+    fzf
+    jq
+    tmpmail
+    gdu
+    tealdeer
+  ];
+
   generic = with pkgs; [
     python-with-packages
-    tree
     neovim
     htop
-    docker
+    docker-client
     docker-compose
     colima
     restic
-    fzf
-    jq
     nodejs
     yarn
     rustc
@@ -34,7 +37,6 @@ let
     rnix-lsp
     ripgrep
     neofetch
-    tmpmail
     wget
     ansible
     terraform
@@ -47,18 +49,13 @@ let
     highlight
     glow
     fly
-    gdu
-    tealdeer
     bitwarden-cli
     git-crypt
+    black
+    ffmpeg
   ];
 
-  custom = with pkgs; [
-    (import ./packages/dl_sieve.nix)
-  ];
+  custom = with pkgs; [ (import ./packages/dl_sieve.nix) ];
 
-  mac = with pkgs; [
-  ];
-in {
-  packages = generic ++ node ++ mac ++ custom;
-}
+  mac = with pkgs; [ ];
+in { packages = generic ++ utilites ++ node ++ mac ++ custom; }

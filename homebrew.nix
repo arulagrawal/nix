@@ -30,6 +30,7 @@
       "iina"
       "mkvtoolnix"
       "mpv"
+      "mullvadvpn-beta"
     ];
     masApps = {
       "Hidden Bar" = 1452453066;
