@@ -77,7 +77,7 @@ archive() {
     local input=( "${@:3}" )
     case "$format" in
         tar )
-            tar -czvf "${output}.tar.gz" "${input[@]}";;
+            tar -cJvf "${output}.tar.xz" "${input[@]}";;
         7z )
             7za a "${output}.7z" "${input[@]}";;
     esac
