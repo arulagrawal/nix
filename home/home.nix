@@ -33,11 +33,8 @@
         ssh = {
           enable = true;
           matchBlocks = {
+            "kettle" = { user = "arul"; };
             "airfryer" = { user = "ubuntu"; };
-            "status" = {
-              user = "cyberian";
-              hostname = "status.arul.io";
-            };
           };
           extraConfig = ''
             IgnoreUnknown UseKeychain
