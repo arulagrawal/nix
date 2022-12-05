@@ -52,7 +52,7 @@ let
     bitwarden-cli
     git-crypt
     black
-    ffmpeg
+    ffmpeg_5
   ];
 
   custom = with pkgs; [ (import ./packages/dl_sieve.nix) ];
