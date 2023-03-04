@@ -62,13 +62,26 @@
     darwinConfig = "$HOME/nix/configuration.nix";
     shells = with pkgs; [ zsh ];
     pathsToLink = [ "/share/zsh" ];
-    # userLaunchAgents = {
-    # dl_sieve = {
-    # enable = true;
-    # source = ./dl_sieve.plist;
-    # target = "dl_sieve.plist";
-    # };
-    # };
+  };
+
+  launchd.agents = {
+    backup = {
+      command = "/Users/arul/scripts/backup";
+      environment = {
+        HOME = "/Users/arul";
+      };
+      serviceConfig = {
+        UserName = "arul";
+        Label = "backup";
+        RunAtLoad = true;
+        StandardOutPath = "/Users/arul/Library/Logs/restic.log";
+        StandardErrorPath = "/Users/arul/Library/Logs/restic.err.log";
+        StartCalendarInterval = [
+          { Hour = 6; Minute = 30; }
+          { Hour = 22; Minute = 0; }
+        ];
+      };
+    };
   };
 
   services = {
