@@ -1,3 +1,4 @@
+# vim: syntax=sh
 yabai -m rule --add title='Preferences' manage=off layer=above
 yabai -m rule --add title='^(Opening)' manage=off layer=above
 yabai -m rule --add title='Library' manage=off layer=above
@@ -12,9 +13,12 @@ yabai -m rule --add app='System Information' manage=off layer=above
 yabai -m rule --add app='Raycast' manage=off layer=above
 yabai -m rule --add app='Orion' title='History' manage=off layer=above
 
+yabai -m rule --add app='Arc' manage=off
+yabai -m rule --add app='Transmission' manage=off
+
 
 #yabai -m rule --add app='Orion' space=1
-yabai -m rule --add app='Safari' space=1
+#yabai -m rule --add app='Safari' space=1
 yabai -m rule --add app='Dofus'   space=2
 yabai -m rule --add app='Discord' space=5
 yabai -m rule --add app='Spotify' space=6
