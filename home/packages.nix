@@ -9,6 +9,8 @@ let
     pyright
     bash-language-server
     typescript-language-server
+    yaml-language-server
+    vscode-css-languageserver-bin
   ];
 
   utilites = with pkgs; [
@@ -38,7 +40,7 @@ let
     ripgrep
     neofetch
     wget
-    ansible
+    /* ansible */
     terraform
     mosh
     nixfmt
@@ -53,6 +55,9 @@ let
     git-crypt
     black
     ffmpeg_5
+    ctags
+    spin
+    jdk17
   ];
 
   custom = with pkgs; [ (import ./packages/dl_sieve.nix) ];

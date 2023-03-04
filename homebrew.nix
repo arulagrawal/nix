@@ -10,9 +10,12 @@
     casks = [
       "orion"
       "google-chrome"
+      "arc"
       "firefox"
       "duckduckgo"
+      "tor-browser"
       "visual-studio-code"
+      "vimr"
       "discord"
       "spotify"
       "plex"
@@ -31,9 +34,16 @@
       "mkvtoolnix"
       "mpv"
       "mullvadvpn-beta"
+      "batteries"
+      "tg-pro"
+      "disk-diet"
+      "hiddenbar"
+      "contexts"
+      "lunar"
+      "runelite"
     ];
     masApps = {
-      "Hidden Bar" = 1452453066;
+      /* "Hidden Bar" = 1452453066; */
       "Infuse" = 1136220934;
       "Intermission" = 1439431081;
       "Adguard for Safari" = 1440147259;
