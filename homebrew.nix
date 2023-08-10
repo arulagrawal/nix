@@ -41,6 +41,14 @@
       "contexts"
       "lunar"
       "runelite"
+      "parsec"
+      "sigmaos"
+      # "rustdesk"
+      "ankama"
+      "orbstack"
+      "proxifier"
+      "multimc"
+      "cloudflare-warp"
     ];
     masApps = {
       /* "Hidden Bar" = 1452453066; */
@@ -52,7 +60,9 @@
       "Noir" = 1592917505;
       "Sponsorblock" = 1573461917;
       "Tweaks for Reddit" = 1524828965;
-      "Vimari" = 1480933944;
+      /* "Vimari" = 1480933944; */
+      "WireGuard" = 1451685025;
+      "Tailscale" = 1475387142;
     };
   };
 }

@@ -8,7 +8,7 @@
       home = let packages = import ./packages.nix;
       in {
         inherit (packages) packages;
-        stateVersion = "22.11";
+        stateVersion = "23.05";
         sessionPath = [ "/opt/homebrew/bin" ];
         sessionVariables = {
           EDITOR = "nvim";
@@ -25,7 +25,7 @@
       };
       programs = let shell = import ./shell/shell.nix;
       in {
-        inherit (shell) zsh exa zoxide starship;
+        inherit (shell) zsh exa zoxide starship fzf;
         go = {
           enable = true;
           goPath = "code/go";

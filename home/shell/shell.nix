@@ -92,6 +92,10 @@ in {
     enable = true;
     enableZshIntegration = true;
   };
+  fzf = {
+    enable = true;
+    enableZshIntegration = true;
+  };
   starship = {
     enable = true;
     enableZshIntegration = true;

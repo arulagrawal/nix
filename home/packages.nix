@@ -15,11 +15,16 @@ let
 
   utilites = with pkgs; [
     tree
-    fzf
     jq
     tmpmail
     gdu
     tealdeer
+    glow
+    shellcheck
+  ];
+
+  research = with pkgs; [
+    obsidian
   ];
 
   generic = with pkgs; [
@@ -44,12 +49,10 @@ let
     terraform
     mosh
     nixfmt
-    shellcheck
     imagemagick
     gosec
     gopls
     highlight
-    glow
     fly
     bitwarden-cli
     git-crypt
@@ -58,9 +61,10 @@ let
     ctags
     spin
     jdk17
+    jetbrains.idea-community
   ];
 
   custom = with pkgs; [ (import ./packages/dl_sieve.nix) ];
 
   mac = with pkgs; [ ];
-in { packages = generic ++ utilites ++ node ++ mac ++ custom; }
+in { packages = generic ++ utilites ++ node ++ mac ++ custom ++ research; }

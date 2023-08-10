@@ -64,7 +64,7 @@
     pathsToLink = [ "/share/zsh" ];
   };
 
-  launchd.agents = {
+  launchd.user.agents = {
     backup = {
       command = "/Users/arul/scripts/backup";
       environment = {
@@ -73,7 +73,6 @@
       serviceConfig = {
         UserName = "arul";
         Label = "backup";
-        RunAtLoad = true;
         StandardOutPath = "/Users/arul/Library/Logs/restic.log";
         StandardErrorPath = "/Users/arul/Library/Logs/restic.err.log";
         StartCalendarInterval = [
@@ -87,10 +86,6 @@
   services = {
     # Auto upgrade nix package and the daemon service.
     nix-daemon.enable = true;
-    tailscale = {
-      enable = true;
-      magicDNS.enable = true;
-    };
     yabai = {
       enable = true;
       config = {
