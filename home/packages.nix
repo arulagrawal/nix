@@ -21,6 +21,8 @@ let
     tealdeer
     glow
     shellcheck
+    mtr
+    yt-dlp
   ];
 
   research = with pkgs; [
@@ -33,7 +35,7 @@ let
     htop
     docker-client
     docker-compose
-    colima
+    # colima
     restic
     nodejs
     yarn
