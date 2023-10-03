@@ -61,6 +61,7 @@ let
     black
     ffmpeg_5
     ctags
+    tesseract
     spin
     jdk17
     jetbrains.idea-community
