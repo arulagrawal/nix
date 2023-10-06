@@ -39,10 +39,7 @@ let
     restic
     nodejs
     yarn
-    rustc
-    cargo
-    rust-analyzer
-    rustfmt
+    rustup
     rnix-lsp
     ripgrep
     neofetch
@@ -65,6 +62,7 @@ let
     spin
     jdk17
     jetbrains.idea-community
+    # jetbrains.rust-rover
   ];
 
   custom = with pkgs; [ (import ./packages/dl_sieve.nix) ];

@@ -6,7 +6,7 @@
       cleanup = "zap";
       upgrade = true;
     };
-    taps = [ "homebrew/cask" "homebrew/cask-versions" ];
+    taps = [ "homebrew/cask-versions" ];
     casks = [
       "orion"
       "google-chrome"
@@ -20,7 +20,6 @@
       "spotify"
       "plex"
       "homebrew/cask-versions/iterm2-beta"
-      "altserver"
       "veracrypt"
       "macfuse"
       "postman"
@@ -40,13 +39,11 @@
       "hiddenbar"
       "contexts"
       "lunar"
-      "runelite"
       "parsec"
       "sigmaos"
       # "rustdesk"
       "ankama"
       "orbstack"
-      "proxifier"
       "multimc"
       "cloudflare-warp"
     ];

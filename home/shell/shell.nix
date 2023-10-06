@@ -84,7 +84,7 @@ in {
     initExtra =
       "setopt autocd extendedglob nomatch globdots extended_glob COMPLETE_IN_WORD";
   };
-  exa = {
+  eza = {
     enable = true;
     enableAliases = true;
   };
