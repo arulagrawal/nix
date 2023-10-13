@@ -1,9 +1,7 @@
-let
-  pkgs = import <nixpkgs> { };
-  inherit (pkgs) stdenvNoCC fetchFromGitHub;
-in stdenvNoCC.mkDerivation {
+{pkgs, ...}:
+pkgs.stdenvNoCC.mkDerivation {
   name = "nord-ls-colors";
-  src = fetchFromGitHub {
+  src = pkgs.fetchFromGitHub {
     owner = "arcticicestudio";
     repo = "nord-dircolors";
     rev = "v0.2.0";
@@ -13,7 +11,7 @@ in stdenvNoCC.mkDerivation {
   dontConfigure = true;
   dontBuild = true;
 
-  buildInputs = [ pkgs.coreutils ];
+  buildInputs = [pkgs.coreutils];
 
   installPhase = ''
     echo "zstyle ':completion:*' list-colors '$(dircolors -b src/dir_colors | head -n1 | cut -d \' -f2)'" > $out

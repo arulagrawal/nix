@@ -4,7 +4,7 @@ echo "running backup script at $(date)"
 
 NC="/usr/bin/nc"
 ARUL="/Users/arul"
-RESTIC="$ARUL/.nix-profile/bin/restic"
+RESTIC="/etc/profiles/per-user/arul/bin/restic"
 
 while ! "$NC" -zw1 google.com 443; do
     echo "waiting for connection"

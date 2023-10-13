@@ -1,7 +1,15 @@
-{ config, pkgs, lib, ... }:
-
 {
-  imports = [ ./home/home.nix ./homebrew.nix ];
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+# for configurable nixos modules see (note that many of them might be linux-only):
+# https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/module-list.nix
+#
+# for configurable nix-darwin modules see
+# https://github.com/LnL7/nix-darwin/blob/master/modules/module-list.nix
+{
   users.users.arul = {
     name = "arul";
     home = "/Users/arul";
@@ -14,6 +22,10 @@
     info.enable = true;
     man.enable = true;
   };
+
+  imports = [
+    ./homebrew.nix
+  ];
 
   system = {
     defaults = {
@@ -29,15 +41,23 @@
         AppleShowAllExtensions = true;
         AppleShowAllFiles = false;
         ShowPathbar = true;
+        FXEnableExtensionChangeWarning = false;
+      };
+      loginwindow = {
+        GuestEnabled = false;
       };
       NSGlobalDomain = {
+        AppleInterfaceStyleSwitchesAutomatically = true;
         AppleShowAllExtensions = true;
         "com.apple.trackpad.scaling" = 2.0;
         NSAutomaticSpellingCorrectionEnabled = false;
         InitialKeyRepeat = 15;
         KeyRepeat = 1;
       };
-      alf = { globalstate = 1; };
+      alf = {
+        globalstate = 1;
+        stealthenabled = 1;
+      };
     };
     keyboard = {
       enableKeyMapping = true;
@@ -48,7 +68,7 @@
     stateVersion = 4;
   };
 
-  security = { pam.enableSudoTouchIdAuth = true; };
+  security = {pam.enableSudoTouchIdAuth = true;};
 
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
@@ -60,8 +80,8 @@
   # $ darwin-rebuild switch -I darwin-config=$HOME/nix/configuration.nix
   environment = {
     darwinConfig = "$HOME/nix/configuration.nix";
-    shells = with pkgs; [ zsh ];
-    pathsToLink = [ "/share/zsh" ];
+    shells = with pkgs; [zsh];
+    pathsToLink = ["/share/zsh"];
   };
 
   launchd.user.agents = {
@@ -76,8 +96,14 @@
         StandardOutPath = "/Users/arul/Library/Logs/restic.log";
         StandardErrorPath = "/Users/arul/Library/Logs/restic.err.log";
         StartCalendarInterval = [
-          { Hour = 6; Minute = 30; }
-          { Hour = 22; Minute = 0; }
+          {
+            Hour = 6;
+            Minute = 30;
+          }
+          {
+            Hour = 22;
+            Minute = 0;
+          }
         ];
       };
     };
@@ -92,7 +118,6 @@
         mouse_follows_focus = "off";
         focus_follows_mouse = "off";
         window_placement = "second_child";
-        window_topmost = "on";
         window_opacity = "off";
         window_opacity_duration = 0.0;
         window_shadow = "on";
@@ -112,11 +137,11 @@
         right_padding = 20;
         window_gap = 10;
       };
-      extraConfig = (builtins.readFile ./yabai_rules);
+      extraConfig = builtins.readFile ./yabai_rules;
     };
     skhd = {
       enable = true;
-      skhdConfig = (builtins.readFile ./skhdrc);
+      skhdConfig = builtins.readFile ./skhdrc;
     };
   };
   nix = {
@@ -132,7 +157,7 @@
     };
     settings = {
       auto-optimise-store = false;
-      trusted-users = [ "root" "arul" ];
+      trusted-users = ["root" "arul"];
     };
     extraOptions = ''
       keep-outputs = true
@@ -147,18 +172,17 @@
       allowInsecure = false;
       allowUnsupportedSystem = false;
     };
-    /* overlays = [ */
-    /*   (self: super: { */
-    /*     yabai = super.yabai.overrideAttrs (o: rec { */
-    /*       version = "5.0.2"; */
-    /*       src = super.fetchzip { */
-    /*         url = */
-    /*           "https://github.com/koekeishiya/yabai/releases/download/v5.0.2/yabai-v5.0.1.tar.gz"; */
-    /*         sha256 = "sha256-iCx/e3IwJ6YzgEy7wGkNQU/d7gaZd4b/RLwRvRpwVwQ="; */
-    /*       }; */
-    /*     }); */
-    /*   }) */
-    /* ]; */
+    overlays = [
+      (self: super: {
+        yabai = super.yabai.overrideAttrs (o: rec {
+          version = "6.0.0";
+          src = super.fetchzip {
+            url = "https://github.com/koekeishiya/yabai/releases/download/v6.0.0/yabai-v6.0.0.tar.gz";
+            sha256 = "sha256-KeZ5srx9dfQN9u6Fgg9BtIhLhFWp975iz72m78bWINo=";
+          };
+        });
+      })
+    ];
   };
 
   # Create /etc/zshrc that loads the nix-darwin environment.
@@ -174,7 +198,8 @@
   # programs.fish.enable = true;
 
   networking = {
-    dns = [ "1.1.1.1" "1.0.0.1" ];
-    knownNetworkServices = [ "Wi-Fi" ];
+    dns = ["1.1.1.1" "1.0.0.1"];
+    knownNetworkServices = ["Wi-Fi"];
   };
+  environment.systemPackages = with pkgs; [nixVersions.unstable];
 }

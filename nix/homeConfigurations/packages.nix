@@ -1,7 +1,5 @@
-let
-  pkgs = import <nixpkgs> { };
-
-  python-packages = python-packages: with python-packages; [ pyyaml requests ];
+{pkgs, ...}: let
+  python-packages = python-packages: with python-packages; [pyyaml requests];
 
   python-with-packages = pkgs.python3.withPackages python-packages;
 
@@ -35,7 +33,6 @@ let
     htop
     docker-client
     docker-compose
-    # colima
     restic
     nodejs
     yarn
@@ -44,7 +41,6 @@ let
     ripgrep
     neofetch
     wget
-    /* ansible */
     terraform
     mosh
     nixfmt
@@ -56,7 +52,7 @@ let
     bitwarden-cli
     git-crypt
     black
-    ffmpeg_5
+    ffmpeg
     ctags
     tesseract
     spin
@@ -65,7 +61,8 @@ let
     # jetbrains.rust-rover
   ];
 
-  custom = with pkgs; [ (import ./packages/dl_sieve.nix) ];
-
-  mac = with pkgs; [ ];
-in { packages = generic ++ utilites ++ node ++ mac ++ custom ++ research; }
+  custom = with pkgs; [];
+  mac = with pkgs; [];
+in {
+  home.packages = generic ++ utilites ++ node ++ mac ++ custom ++ research;
+}

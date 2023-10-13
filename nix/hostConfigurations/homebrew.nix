@@ -6,7 +6,7 @@
       cleanup = "zap";
       upgrade = true;
     };
-    taps = [ "homebrew/cask-versions" ];
+    taps = ["homebrew/cask-versions"];
     casks = [
       "orion"
       "google-chrome"
@@ -48,7 +48,9 @@
       "cloudflare-warp"
     ];
     masApps = {
-      /* "Hidden Bar" = 1452453066; */
+      /*
+      "Hidden Bar" = 1452453066;
+      */
       "Infuse" = 1136220934;
       "Intermission" = 1439431081;
       "Adguard for Safari" = 1440147259;
@@ -57,7 +59,9 @@
       "Noir" = 1592917505;
       "Sponsorblock" = 1573461917;
       "Tweaks for Reddit" = 1524828965;
-      /* "Vimari" = 1480933944; */
+      /*
+      "Vimari" = 1480933944;
+      */
       "WireGuard" = 1451685025;
       "Tailscale" = 1475387142;
     };
