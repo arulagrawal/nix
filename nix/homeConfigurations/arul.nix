@@ -24,7 +24,7 @@
     file = {
       scripts = {
         recursive = false;
-        source = ./scripts;
+        source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix/nix/homeConfigurations/scripts";
       };
     };
   };
