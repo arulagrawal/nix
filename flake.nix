@@ -3,7 +3,7 @@
     # change tag or commit of nixpkgs for your system
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
-    # change main to a tag o git revision
+    # change main to a tag or git revision (TODO: why?)
     mk-darwin-system.url = "github:arulagrawal/mk-darwin-system/main";
     mk-darwin-system.inputs.nixpkgs.follows = "nixpkgs";
   };
