@@ -48,7 +48,7 @@
     gosec
     gopls
     highlight
-    fly
+    flyctl
     bitwarden-cli
     git-crypt
     black
