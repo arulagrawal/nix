@@ -6,6 +6,11 @@
     # change main to a tag or git revision (TODO: why?)
     mk-darwin-system.url = "github:arulagrawal/mk-darwin-system/main";
     mk-darwin-system.inputs.nixpkgs.follows = "nixpkgs";
+
+    dl_sieve = {
+      url = "git+https://git.arul.io/arul/dl_sieve";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {mk-darwin-system, ...} @ inputs: let

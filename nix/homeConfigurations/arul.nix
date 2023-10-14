@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  inputs,
   ...
 }:
 # for configurable home-manager modules see:
@@ -27,6 +28,11 @@
         source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix/nix/homeConfigurations/scripts";
       };
     };
+
+    # custom packages
+    packages = [
+      inputs.dl_sieve.defaultPackage.${inputs.flake-utils.lib.system.aarch64-darwin}
+    ];
   };
 
   programs = {
