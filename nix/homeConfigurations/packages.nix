@@ -43,7 +43,7 @@
     wget
     terraform
     mosh
-    nixfmt
+    alejandra
     imagemagick
     gosec
     gopls
