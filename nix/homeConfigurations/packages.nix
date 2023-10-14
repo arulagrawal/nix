@@ -63,7 +63,9 @@
   ];
 
   custom = with pkgs; [];
-  mac = with pkgs; [];
+  mac = with pkgs; [
+    nivApps.Halloy
+  ];
 in {
   home.packages = generic ++ utilites ++ node ++ mac ++ custom ++ research;
 }
