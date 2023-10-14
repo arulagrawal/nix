@@ -117,3 +117,13 @@ clean() {
     nix-collect-garbage -d
     sudo -i nix-collect-garbage -d
 }
+
+try() {
+    local -a packages
+    for i in "$@"; do
+        packages+=("nixpkgs#$i")
+    done
+    nix shell "${packages[@]}"
+}
+
+
