@@ -113,13 +113,6 @@ cl() {
     "${@}"
 }
 
-update() {
-    echo "Updating nix-darwin and home-manager..."
-    nix-channel --update
-    echo "Updating nixpkgs..."
-    sudo -i nix-channel --update
-}
-
 clean() {
     nix-collect-garbage -d
     sudo -i nix-collect-garbage -d

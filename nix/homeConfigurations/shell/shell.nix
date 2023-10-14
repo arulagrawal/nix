@@ -14,7 +14,6 @@
       historySubstringSearch.enable = true;
       autocd = true;
       shellAliases = {
-        rebuild = "darwin-rebuild switch";
         mkdir = "mkdir -pv";
         cx = "chmod +x";
         vim = "nvim";
@@ -27,7 +26,6 @@
         gs = "git status";
         gp = "git push";
         gd = "git diff";
-        try = "nix-shell -p";
         q = "exit 0";
       };
       dotDir = ".config/zsh";
