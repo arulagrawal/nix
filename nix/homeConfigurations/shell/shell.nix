@@ -95,6 +95,11 @@
       enable = true;
       enableZshIntegration = true;
     };
+    direnv = {
+      enable = true;
+      enableZshIntegration = true;
+      nix-direnv.enable = true;
+    };
     starship = {
       enable = true;
       enableZshIntegration = true;
@@ -158,6 +163,8 @@
         python = {
           format = "[$virtualenv]($style) ";
           style = "bright-black";
+          detect_extensions = [];
+          detect_files = [];
         };
       };
     };
