@@ -72,6 +72,9 @@
         "delta \"light-mode\"".light = true;
         "delta \"dark-mode\"".light = false;
         delta.line-numbers = true;
+        interactive.diffFilter = ''
+          ${pkgs.delta}/bin/delta --color-only --features "$(defaults read -globalDomain AppleInterfaceStyle &> /dev/null && echo dark-mode || echo light-mode)"
+        '';
       };
       aliases = {co = "checkout";};
     };
