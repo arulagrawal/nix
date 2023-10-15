@@ -15,6 +15,7 @@
       "duckduckgo"
       "tor-browser"
       "visual-studio-code"
+      "zed"
       "vimr"
       "discord"
       "spotify"
