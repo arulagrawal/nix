@@ -7,9 +7,16 @@
     mk-darwin-system.url = "github:arulagrawal/mk-darwin-system/main";
     mk-darwin-system.inputs.nixpkgs.follows = "nixpkgs";
 
+    naersk = {
+      url = "github:nmattia/naersk/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     dl_sieve = {
       url = "git+https://git.arul.io/arul/dl_sieve";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.utils.follows = "mk-darwin-system/flake-utils";
+      inputs.naersk.follows = "naersk";
     };
   };
 
