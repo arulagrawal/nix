@@ -4,8 +4,12 @@
 if ! pgrep -f "iTerm" > /dev/null 2>&1; then
     open -a "/Applications/iTerm.app"
 else
-    # Create a new window
-    script='tell application "iTerm2" to create window with default profile'
+    # Create a new window and activate iTerm2
+    script='tell application "iTerm2"
+        create window with default profile
+        activate
+    end tell'
+
     ! osascript -e "${script}" > /dev/null 2>&1 && {
         # Get pids for any app with "iTerm" and kill
         while IFS="" read -r pid; do
@@ -14,3 +18,4 @@ else
         open -a "/Applications/iTerm.app"
     }
 fi
+

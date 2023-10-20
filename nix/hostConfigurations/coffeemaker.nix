@@ -130,7 +130,7 @@
 
         layout = "bsp";
         #external_bar           = " all:20:0";
-        top_padding = 10;
+        top_padding = 5;
         bottom_padding = 20;
         left_padding = 20;
         right_padding = 20;
