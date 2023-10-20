@@ -14,11 +14,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1697245133,
-        "narHash": "sha256-uqaD7RWk7z5MYHT98JUtsUud5tjgRFBsiviallI5wko=",
+        "lastModified": 1697627276,
+        "narHash": "sha256-m7Dy3eH2p5zsuBQHqc71s+hAkHfvJ1UnJXLVqOVAo7I=",
         "ref": "refs/heads/main",
-        "rev": "8f0cd99b6832d4e540247cb1b5620ff5ed6d42e6",
-        "revCount": 15,
+        "rev": "b44be7828c70f2e391584728f7d30692571f628a",
+        "revCount": 16,
         "type": "git",
         "url": "https://git.arul.io/arul/dl_sieve"
       },

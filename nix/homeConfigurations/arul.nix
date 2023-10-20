@@ -31,7 +31,7 @@
 
     # custom packages
     packages = [
-      inputs.dl_sieve.defaultPackage.${inputs.flake-utils.lib.system.aarch64-darwin}
+      inputs.dl_sieve.defaultPackage.${pkgs.system}
     ];
   };
 
