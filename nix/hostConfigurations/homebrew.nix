@@ -6,6 +6,7 @@
       cleanup = "zap";
       upgrade = true;
     };
+    brews = ["aircrack-ng"];
     taps = ["homebrew/cask-versions"];
     casks = [
       "orion"
