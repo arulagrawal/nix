@@ -1,8 +1,4 @@
 {pkgs, ...}: let
-  python-packages = python-packages: with python-packages; [pyyaml requests];
-
-  python-with-packages = pkgs.python3.withPackages python-packages;
-
   node = with pkgs.nodePackages; [
     pyright
     bash-language-server
@@ -28,7 +24,7 @@
   ];
 
   generic = with pkgs; [
-    python-with-packages
+    python312
     htop
     docker-client
     docker-compose
