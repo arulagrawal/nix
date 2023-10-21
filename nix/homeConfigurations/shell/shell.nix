@@ -5,55 +5,7 @@
   ...
 }: {
   programs = {
-    fish = {
-      enable = true;
-      interactiveShellInit = ''
-        set fish_greeting
-        set fish_pager_color_description magenta --italics
-      '';
-      shellInit = ''
-        for p in /nix/var/nix/profiles/default/bin /run/current-system/sw/bin /etc/profiles/per-user/(users)/bin /Users/(users)/.nix-profile/bin
-          if not contains $p $fish_user_paths
-            set -g fish_user_paths $p $fish_user_paths
-          end
-        end
-      '';
-      shellAliases = {
-        mkdir = "mkdir -pv";
-        get = "curl --continue-at - --location --progress-bar --remote-name --remote-time";
-      };
-      shellAbbrs = {
-        cx = "chmod +x";
-        ga = "git add";
-        gap = "git add -p";
-        gaa = "git add -A";
-        gc = "git commit";
-        gcm = "git commit -m";
-        gs = "git status";
-        gp = "git push";
-        gd = "git diff";
-        gl = "git log";
-        q = "exit 0";
-      };
-      functions = {
-        fzfp = ''
-          fzf --reverse --inline-info --preview="if test (file --mime {} | string match -r 'binary');
-                  echo '{} is a binary file';
-              else
-                  highlight --style base16/nord -O ansi -l {} ||
-                  cat {} ^/dev/null | head -500;
-              end" --bind '?:toggle-preview' --tabstop=1 --ansi --delimiter / --with-nth -1
-        '';
-        dots = "find ~/nix -type f | awk '!/git|after|lua|.DS_Store/'| fzfp | xargs $EDITOR";
-        try = ''
-          set -l packages
-          for i in $argv
-                  set packages $packages "nixpkgs#$i"
-              end
-          nix shell $packages
-        '';
-      };
-    };
+    fish = import ./fish;
     eza = {
       enable = true;
       enableAliases = true;
