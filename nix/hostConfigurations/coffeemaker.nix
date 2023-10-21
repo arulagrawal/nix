@@ -136,8 +136,7 @@
     };
   };
   nix = {
-    package = pkgs.nixUnstable;
-    # package = pkgs.nixVersions.nix_2_18;
+    package = pkgs.nix;
     gc = {
       automatic = true;
       interval = {
@@ -172,7 +171,6 @@
     # ];
   };
 
-  # Create /etc/zshrc that loads the nix-darwin environment.
   programs.fish = {
     enable = true;
   };
@@ -181,5 +179,5 @@
     dns = ["1.1.1.1" "1.0.0.1"];
     knownNetworkServices = ["Wi-Fi"];
   };
-  environment.systemPackages = with pkgs; [nixVersions.unstable];
+  environment.systemPackages = with pkgs; [nixVersions.stable];
 }
