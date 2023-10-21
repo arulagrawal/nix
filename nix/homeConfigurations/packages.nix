@@ -36,7 +36,7 @@
     nodejs
     yarn
     rustup
-    rnix-lsp
+    nil
     ripgrep
     neofetch
     wget
