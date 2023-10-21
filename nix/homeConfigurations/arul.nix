@@ -51,6 +51,11 @@
         UseKeychain yes
       '';
     };
+    neovim = {
+      enable = true;
+      viAlias = true;
+      vimAlias = true;
+    };
     gpg = {enable = true;};
     git = {
       enable = true;
