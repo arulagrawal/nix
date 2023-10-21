@@ -53,6 +53,7 @@
         NSAutomaticSpellingCorrectionEnabled = false;
         InitialKeyRepeat = 15;
         KeyRepeat = 1;
+        NSWindowResizeTime = 0.1;
       };
       alf = {
         globalstate = 1;
