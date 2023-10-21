@@ -20,6 +20,7 @@
     glow
     shellcheck
     mtr
+    grc
     yt-dlp
   ];
 
@@ -29,7 +30,6 @@
 
   generic = with pkgs; [
     python-with-packages
-    neovim
     htop
     docker-client
     docker-compose

@@ -13,7 +13,7 @@
   users.users.arul = {
     name = "arul";
     home = "/Users/arul";
-    shell = pkgs.zsh;
+    shell = pkgs.fish;
   };
 
   documentation = {
@@ -79,8 +79,8 @@
   # Use a custom configuration.nix location.
   # $ darwin-rebuild switch -I darwin-config=$HOME/nix/configuration.nix
   environment = {
-    shells = with pkgs; [zsh];
-    pathsToLink = ["/share/zsh"];
+    shells = with pkgs; [fish];
+    pathsToLink = ["/share/fish"];
   };
 
   launchd.user.agents = {
@@ -180,16 +180,9 @@
   };
 
   # Create /etc/zshrc that loads the nix-darwin environment.
-  programs.zsh = {
+  programs.fish = {
     enable = true;
-    enableCompletion = false;
-    enableBashCompletion = false;
-    promptInit = "";
-    # enableFzfCompletion = true;
-    # enableFzfHistory = true;
-    # enableSyntaxHighlighting = true;
   };
-  # programs.fish.enable = true;
 
   networking = {
     dns = ["1.1.1.1" "1.0.0.1"];
