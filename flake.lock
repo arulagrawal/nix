@@ -76,11 +76,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1697861966,
-        "narHash": "sha256-KYGVKoAWideElY3UUfugaR0vfxcS5uhnP3PpIW0LgJA=",
+        "lastModified": 1697890510,
+        "narHash": "sha256-4LXE5vgxAfr1n4vIQRw8elO9OE0SFYsDbBPT97FgFrE=",
         "owner": "arulagrawal",
         "repo": "mk-darwin-system",
-        "rev": "22b4e8596e790808b114cfb028644ded3084af72",
+        "rev": "b9353e5e5fe5bb4ccf2c499ae1cb67218a920929",
         "type": "github"
       },
       "original": {
@@ -119,26 +119,26 @@
         ]
       },
       "locked": {
-        "lastModified": 1697723594,
-        "narHash": "sha256-W7lTC+kHGS1YCOutGpxUHF0cK66iY/GYr3INaTyVa/I=",
-        "owner": "lnl7",
+        "lastModified": 1697890399,
+        "narHash": "sha256-8BZ034sIvpry6OuGLL9wMwjSTm1UoOtJxdc9+zkO1YU=",
+        "owner": "arulagrawal",
         "repo": "nix-darwin",
-        "rev": "19f75c2b45fbfc307ecfeb9dadc41a4c1e4fb980",
+        "rev": "7486174399b1cf05e98e4e28a7e80fdca8ee0097",
         "type": "github"
       },
       "original": {
-        "owner": "lnl7",
+        "owner": "arulagrawal",
         "repo": "nix-darwin",
         "type": "github"
       }
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1697756275,
-        "narHash": "sha256-KAZ2F9He5oH2NPxhWDLmtGAsiBjPi7yps1OGZu6peMM=",
+        "lastModified": 1697793076,
+        "narHash": "sha256-02e7sCuqLtkyRgrZmdOyvAcQTQdcXj+vpyp9bca6cY4=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "d042a296139c6a111be3e3d5dc9ef6783b5e7c16",
+        "rev": "038b2922be3fc096e1d456f93f7d0f4090628729",
         "type": "github"
       },
       "original": {
