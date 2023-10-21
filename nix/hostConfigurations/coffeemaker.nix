@@ -104,10 +104,7 @@
     # Auto upgrade nix package and the daemon service.
     nix-daemon.enable = true;
     yabai = import ./yabai;
-    skhd = {
-      enable = true;
-      extraConfig = builtins.readFile ./skhdrc;
-    };
+    skhd = import ./skhd;
   };
   nix = {
     package = pkgs.nix;
