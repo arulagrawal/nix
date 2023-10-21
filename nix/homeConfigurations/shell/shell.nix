@@ -21,7 +21,7 @@
         gap = "git add -p";
         gaa = "git add -A";
         gc = "git commit";
-        gcm = "git commit -m";
+        gcm = "--set-cursor git commit -m \"%\"";
         gs = "git status";
         gp = "git push";
         gd = "git diff";

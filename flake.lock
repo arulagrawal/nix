@@ -76,11 +76,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1697185785,
-        "narHash": "sha256-4Fq7BMxUlXlguon0N2dX5Hj7+jDlcyW/2sH/A/5vAK8=",
+        "lastModified": 1697856077,
+        "narHash": "sha256-3yW3DZnaAOVKxwR/zAjgMS8IQaSpQFvfpn+I74H1n0Y=",
         "owner": "arulagrawal",
         "repo": "mk-darwin-system",
-        "rev": "f47522a8dbf8e5c061f5a208069556eda95834cb",
+        "rev": "7055f5707da6eb6d3dd16d55c69b9dab51e35b34",
         "type": "github"
       },
       "original": {
