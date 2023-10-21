@@ -5,104 +5,26 @@
   ...
 }: {
   programs = {
-    zsh = let
-      lscolors = import ./lscolors.nix;
-      lscolorsInstance = lscolors {inherit pkgs;};
-    in {
-      enable = true;
-      enableAutosuggestions = true;
-      historySubstringSearch.enable = true;
-      autocd = true;
-      shellAliases = {
-        mkdir = "mkdir -pv";
-        cx = "chmod +x";
-        vim = "nvim";
-        get = "curl --continue-at - --location --progress-bar --remote-name --remote-time";
-        ga = "git add";
-        gap = "git add -p";
-        gaa = "git add -A";
-        gc = "git commit";
-        gcm = "git commit -m";
-        gs = "git status";
-        gp = "git push";
-        gd = "git diff";
-        q = "exit 0";
-      };
-      dotDir = ".config/zsh";
-      history = {
-        expireDuplicatesFirst = true;
-        save = 100000000;
-        size = 1000000000;
-        path = "$ZDOTDIR/.zsh_history";
-        share = true;
-      };
-      plugins = [
-        {
-          name = "functions";
-          src = ./plugins;
-        }
-        {
-          name = "features";
-          src = ./plugins;
-        }
-        {
-          name = "fast-syntax-highlighting";
-          src = pkgs.fetchFromGitHub {
-            owner = "zdharma-continuum";
-            repo = "fast-syntax-highlighting";
-            rev = "770bcd986620d6172097dc161178210855808ee0";
-            sha256 = "sha256-T4k0pbT7aqLrIRIi2EM15LXCnpRFHzFilAYfRG6kbeY=";
-          };
-        }
-        {
-          name = "colored-man-pages";
-          src = pkgs.fetchFromGitHub {
-            owner = "ael-code";
-            repo = "zsh-colored-man-pages";
-            rev = "57bdda68e52a09075352b18fa3ca21abd31df4cb";
-            sha256 = "sha256-087bNmB5gDUKoSriHIjXOVZiUG5+Dy9qv3D69E8GBhs=";
-          };
-        }
-      ];
-      completionInit = ''
-        autoload -Uz compinit
-        for dump in ~/.zcompdump(N.mh+24); do
-            compinit
-        done
-        compinit -C
-        autoload -Uz bashcompinit && bashcompinit
-      '';
-      # dont look!
-      initExtraBeforeCompInit = lib.concatStringsSep "\n" [
-        "fignore=(DS_Store)" # to remove .DS_Store from completions
-        "zstyle ':completion:*' special-dirs false"
-        "zstyle ':completion:*:functions' ignored-patterns '_*'"
-        "zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|=* r:|=*'"
-        "zstyle ':completion:*' menu select=2 interactive"
-        "source ${lscolorsInstance}"
-      ];
-      initExtra = "setopt autocd extendedglob nomatch globdots extended_glob COMPLETE_IN_WORD";
-    };
+    fish = import ./fish;
     eza = {
       enable = true;
       enableAliases = true;
     };
     zoxide = {
       enable = true;
-      enableZshIntegration = true;
+      enableFishIntegration = true;
     };
     fzf = {
       enable = true;
-      enableZshIntegration = true;
+      enableFishIntegration = true;
     };
     direnv = {
       enable = true;
-      enableZshIntegration = true;
       nix-direnv.enable = true;
     };
     starship = {
       enable = true;
-      enableZshIntegration = true;
+      enableFishIntegration = true;
       settings = {
         command_timeout = 1000;
         format = lib.concatStrings [
