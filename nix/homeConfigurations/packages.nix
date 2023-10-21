@@ -20,7 +20,6 @@
     glow
     shellcheck
     mtr
-    grc
     yt-dlp
   ];
 

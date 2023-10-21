@@ -13,7 +13,7 @@
   users.users.arul = {
     name = "arul";
     home = "/Users/arul";
-    shell = pkgs.fish;
+    shell = "/etc/profiles/per-user/arul/bin/fish";
   };
 
   documentation = {
@@ -171,9 +171,9 @@
     # ];
   };
 
-  programs.fish = {
-    enable = true;
-  };
+  # programs.fish = {
+  #   enable = true;
+  # };
 
   networking = {
     dns = ["1.1.1.1" "1.0.0.1"];
