@@ -158,17 +158,17 @@
       allowInsecure = false;
       allowUnsupportedSystem = false;
     };
-    # overlays = [
-    #   (self: super: {
-    #     yabai = super.yabai.overrideAttrs (o: rec {
-    #       version = "6.0.0";
-    #       src = super.fetchzip {
-    #         url = "https://github.com/koekeishiya/yabai/releases/download/v6.0.0/yabai-v6.0.0.tar.gz";
-    #         sha256 = "sha256-KeZ5srx9dfQN9u6Fgg9BtIhLhFWp975iz72m78bWINo=";
-    #       };
-    #     });
-    #   })
-    # ];
+    overlays = [
+      (self: super: {
+        yabai = super.yabai.overrideAttrs (o: rec {
+          version = "6.0.0";
+          src = super.fetchzip {
+            url = "https://github.com/koekeishiya/yabai/releases/download/v6.0.0/yabai-v6.0.0.tar.gz";
+            sha256 = "sha256-KeZ5srx9dfQN9u6Fgg9BtIhLhFWp975iz72m78bWINo=";
+          };
+        });
+      })
+    ];
   };
 
   # Create /etc/zshrc that loads the nix-darwin environment.
