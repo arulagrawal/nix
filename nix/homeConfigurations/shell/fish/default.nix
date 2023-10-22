@@ -11,6 +11,9 @@
       end
     end
   '';
+  shellBinds = {
+    "." = "rationalise-dot";
+  };
   shellAliases = {
     mkdir = "mkdir -pv";
     get = "curl --continue-at - --location --progress-bar --remote-name --remote-time";
@@ -21,7 +24,12 @@
     gap = "git add -p";
     gaa = "git add -A";
     gc = "git commit";
-    gcm = "git commit -m";
+    # gcm = "git commit -m";
+    gcm = {
+      position = "command";
+      setCursor = true;
+      expansion = "git commit -m '%'";
+    };
     gs = "git status";
     gp = "git push";
     gd = "git diff";

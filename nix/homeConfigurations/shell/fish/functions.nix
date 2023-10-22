@@ -1,4 +1,14 @@
 {
+  rationalise-dot = ''
+    set -l buffer (commandline -b)
+    if string match -qr ".*\.\." $buffer
+        commandline -b -a "/.."
+      else
+        commandline -b -a "."
+      end
+    set -l new_length (string length (commandline -b))
+    commandline -C $new_length
+  '';
   pa = ''
     if not test -f $argv[1]
         echo "give a file name"

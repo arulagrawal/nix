@@ -3,9 +3,17 @@
     # change tag or commit of nixpkgs for your system
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
+    home-manager = {
+      url = "github:arulagrawal/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # change main to a tag or git revision (TODO: why?)
-    mk-darwin-system.url = "github:arulagrawal/mk-darwin-system/main";
-    mk-darwin-system.inputs.nixpkgs.follows = "nixpkgs";
+    mk-darwin-system = {
+      url = "github:arulagrawal/mk-darwin-system/main";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
 
     naersk = {
       url = "github:nmattia/naersk/master";
