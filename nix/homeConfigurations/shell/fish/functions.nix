@@ -27,7 +27,8 @@
             cat {} ^/dev/null | head -500;
         end" --bind '?:toggle-preview' --tabstop=1 --ansi --delimiter / --with-nth -1
   '';
-  dots = "find ~/nix -type f | awk '!/git|after|lua|.DS_Store/'| fzfp | xargs $EDITOR";
+  fe = "~/code/fe/target/release/fe $argv[1]";
+  dots = "fe ~/nix";
   mkcd = ''
     # Check for arguments
     if test (count $argv) -eq 0

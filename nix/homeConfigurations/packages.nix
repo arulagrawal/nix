@@ -17,6 +17,7 @@
     shellcheck
     mtr
     yt-dlp
+    bat
   ];
 
   research = with pkgs; [
