@@ -20,6 +20,7 @@
       EDITOR = "nvim";
       LANG = "en_US.UTF-8";
       LC_ALL = "en_US.UTF-8";
+      NIX_SSL_CERT_FILE = "/etc/ssl/certs/ca-certificates.crt";
       # FIGNORE = ".git:DS_Store";
     };
     file = {
@@ -59,6 +60,7 @@
     gpg = {enable = true;};
     git = {
       enable = true;
+      package = pkgs.git;
       ignores = [".DS_Store"];
       userEmail = "me@arul.io";
       userName = "Arul Agrawal";
