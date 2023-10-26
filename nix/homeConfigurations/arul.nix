@@ -33,6 +33,7 @@
     # custom packages
     packages = [
       inputs.dl_sieve.defaultPackage.${pkgs.system}
+      inputs.fe.defaultPackage.${pkgs.system}
     ];
   };
 

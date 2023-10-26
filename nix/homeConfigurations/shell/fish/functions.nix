@@ -27,7 +27,6 @@
             cat {} ^/dev/null | head -500;
         end" --bind '?:toggle-preview' --tabstop=1 --ansi --delimiter / --with-nth -1
   '';
-  fe = "~/code/fe/target/release/fe $argv[1]";
   dots = "fe ~/nix";
   mkcd = ''
     # Check for arguments

@@ -8,11 +8,17 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nix-darwin = {
+      url = "github:arulagrawal/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # change main to a tag or git revision (TODO: why?)
     mk-darwin-system = {
       url = "github:arulagrawal/mk-darwin-system/main";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
+      inputs.nix-darwin.follows = "nix-darwin";
     };
 
     naersk = {
@@ -22,6 +28,13 @@
 
     dl_sieve = {
       url = "git+https://git.arul.io/arul/dl_sieve";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.utils.follows = "mk-darwin-system/flake-utils";
+      inputs.naersk.follows = "naersk";
+    };
+
+    fe = {
+      url = "git+https://git.arul.io/arul/fe";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.utils.follows = "mk-darwin-system/flake-utils";
       inputs.naersk.follows = "naersk";

@@ -27,6 +27,33 @@
         "url": "https://git.arul.io/arul/dl_sieve"
       }
     },
+    "fe": {
+      "inputs": {
+        "naersk": [
+          "naersk"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "utils": [
+          "mk-darwin-system",
+          "flake-utils"
+        ]
+      },
+      "locked": {
+        "lastModified": 1698282046,
+        "narHash": "sha256-2339dYOb3dHkmSR/x7ERUVNs9MJWFj+koHWIQ4VwNpc=",
+        "ref": "refs/heads/main",
+        "rev": "45e1078e4fc13dbac83f6cf11f845b6819d4ade7",
+        "revCount": 9,
+        "type": "git",
+        "url": "https://git.arul.io/arul/fe"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://git.arul.io/arul/fe"
+      }
+    },
     "flake-utils": {
       "inputs": {
         "systems": "systems"
@@ -71,7 +98,9 @@
         "home-manager": [
           "home-manager"
         ],
-        "nix-darwin": "nix-darwin",
+        "nix-darwin": [
+          "nix-darwin"
+        ],
         "nixpkgs": [
           "nixpkgs"
         ]
@@ -98,11 +127,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1697664192,
-        "narHash": "sha256-nRTG3rYEGFV2+putRiC96+kNXDyKaPJgT6K/1FWN7yo=",
+        "lastModified": 1698153314,
+        "narHash": "sha256-TunvZMCxXHvU6fz5kq3XTLfojIvTDlbFGfPUFtwCU5o=",
         "owner": "nmattia",
         "repo": "naersk",
-        "rev": "636a9b5dd7f2ad7d7c3af929ecf95e4d4fab9e97",
+        "rev": "06a99941d72e2202ed62b8aa08b9869817fea56f",
         "type": "github"
       },
       "original": {
@@ -115,7 +144,6 @@
     "nix-darwin": {
       "inputs": {
         "nixpkgs": [
-          "mk-darwin-system",
           "nixpkgs"
         ]
       },
@@ -152,9 +180,11 @@
     "root": {
       "inputs": {
         "dl_sieve": "dl_sieve",
+        "fe": "fe",
         "home-manager": "home-manager",
         "mk-darwin-system": "mk-darwin-system",
         "naersk": "naersk",
+        "nix-darwin": "nix-darwin",
         "nixpkgs": "nixpkgs"
       }
     },
