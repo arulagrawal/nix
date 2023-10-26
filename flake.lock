@@ -41,11 +41,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1698282046,
-        "narHash": "sha256-2339dYOb3dHkmSR/x7ERUVNs9MJWFj+koHWIQ4VwNpc=",
+        "lastModified": 1698308438,
+        "narHash": "sha256-/CYK2udk33/yk/u2t2NYnTTXMto6uvD6A4gkEqCBDOg=",
         "ref": "refs/heads/main",
-        "rev": "45e1078e4fc13dbac83f6cf11f845b6819d4ade7",
-        "revCount": 9,
+        "rev": "a7309f1f0b515b258af0c7446007237901715b93",
+        "revCount": 11,
         "type": "git",
         "url": "https://git.arul.io/arul/fe"
       },
