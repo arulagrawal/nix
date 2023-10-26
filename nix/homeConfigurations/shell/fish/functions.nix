@@ -1,13 +1,13 @@
 {
   rationalise-dot = ''
     set -l buffer (commandline -b)
-    if string match -qr ".*\.\." $buffer
-        commandline -b -a "/.."
+    if string match -qr ".*\.\.\$" $buffer
+        commandline -b -i "/.."
+        #set -l new_length (string length (commandline -b))
+        #commandline -C $new_length
       else
-        commandline -b -a "."
+        commandline -b -i "."
       end
-    set -l new_length (string length (commandline -b))
-    commandline -C $new_length
   '';
   pa = ''
     if not test -f $argv[1]
