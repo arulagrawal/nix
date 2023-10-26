@@ -1,4 +1,8 @@
 {pkgs, ...}: let
+  python-packages = python-packages: with python-packages; [pyyaml requests tkinter];
+
+  python-with-packages = pkgs.python311.withPackages python-packages;
+
   node = with pkgs.nodePackages; [
     pyright
     bash-language-server
@@ -25,7 +29,7 @@
   ];
 
   generic = with pkgs; [
-    python312
+    python-with-packages
     htop
     docker-client
     docker-compose
@@ -55,7 +59,7 @@
     jdk17
     jetbrains.idea-community
     halloy
-    # jetbrains.rust-rover
+    jetbrains.rust-rover
   ];
 
   custom = with pkgs; [];
