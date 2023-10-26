@@ -52,11 +52,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1698004462,
-        "narHash": "sha256-pxuTvZxo1oL58PLICw2ahnkLhJgAW7ZDvAzR58jt2zk=",
+        "lastModified": 1698281230,
+        "narHash": "sha256-+24FUPKkcGk/7FUu6NfuAX/Nltbd4zfs3XxNpnYALH8=",
         "owner": "arulagrawal",
         "repo": "home-manager",
-        "rev": "6bf8255b9486c9b99844ed43775f9b12a72614d0",
+        "rev": "954f59805a9013c13d54e543f4941622d301f6e0",
         "type": "github"
       },
       "original": {
