@@ -35,6 +35,7 @@
     gd = "git diff";
     gl = "git log";
     q = "exit 0";
+    flake = "nix flake";
   };
   functions = import ./functions.nix;
 }
