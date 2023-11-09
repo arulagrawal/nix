@@ -51,6 +51,7 @@
     flyctl
     bitwarden-cli
     git-crypt
+    awscli2
     black
     ffmpeg
     ctags

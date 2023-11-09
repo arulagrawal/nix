@@ -148,11 +148,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1698788115,
-        "narHash": "sha256-y7jAXa/90tJZuxH18lbZclA662nbifwqb3aMWpsEdeU=",
+        "lastModified": 1698834248,
+        "narHash": "sha256-2a3M8Ftq5FqDcflKcseFvPABfFCfW+Sv3JJM3ru6/7Q=",
         "owner": "arulagrawal",
         "repo": "nix-darwin",
-        "rev": "9deebbddca27647f3eb648969f9c5931d3fbda0c",
+        "rev": "c3700dcecf9ec76bc630b4a94e91c12b6996f84f",
         "type": "github"
       },
       "original": {

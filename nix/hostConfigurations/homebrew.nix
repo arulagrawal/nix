@@ -48,6 +48,7 @@
       "orbstack"
       "multimc"
       "cloudflare-warp"
+      "whisky"
     ];
     masApps = {
       /*
