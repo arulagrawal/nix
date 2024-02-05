@@ -48,8 +48,7 @@
         "kettle" = {
           user = "arul";
           hostname = "kettle.arul.io";
-        }
-        ;
+        };
         "airfryer" = {
           user = "ubuntu";
           hostname = "airfryer.arul.io";
