@@ -1,9 +1,9 @@
 {
     "Halloy": {
-        "sha256": "15la4pbd6q1h65fdvap9av6ig2faw066k4v5jvw658rpr65098iz",
+        "sha256": "0ydypa2fnfjjqjfc5fd7qrf6y3nas7m28admbycphxqdjk6wxkaz",
         "type": "file",
-        "url": "https://github.com/squidowl/halloy/releases/download/2023.4/halloy.dmg",
+        "url": "https://github.com/squidowl/halloy/releases/download/2023.5/halloy.dmg",
         "url_template": "https://github.com/squidowl/halloy/releases/download/<version>/halloy.dmg",
-        "version": "2023.4"
+        "version": "2023.5"
     }
 }
