@@ -6,6 +6,7 @@ yabai -m rule --add title='Library' manage=off layer=above
 yabai -m rule --add app='System Settings' manage=off layer=above
 yabai -m rule --add app='App Store' manage=off layer=above
 yabai -m rule --add app='IINA' manage=off layer=above
+yabai -m rule --add app='mpv' manage=off layer=above
 yabai -m rule --add app='Numi' manage=off layer=above
 yabai -m rule --add app='Finder' manage=off layer=above
 yabai -m rule --add app='Contexts' manage=off layer=above

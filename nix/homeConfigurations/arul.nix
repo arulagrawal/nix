@@ -14,7 +14,7 @@
   ];
 
   home = {
-    stateVersion = "23.11";
+    stateVersion = lib.mkForce "24.05";
     sessionPath = ["/opt/homebrew/bin"];
     sessionVariables = {
       EDITOR = "nvim";
@@ -45,8 +45,15 @@
     ssh = {
       enable = true;
       matchBlocks = {
-        "kettle" = {user = "arul";};
-        "airfryer" = {user = "ubuntu";};
+        "kettle" = {
+          user = "arul";
+          hostname = "kettle.arul.io";
+        }
+        ;
+        "airfryer" = {
+          user = "ubuntu";
+          hostname = "airfryer.arul.io";
+        };
       };
       extraConfig = ''
         IgnoreUnknown UseKeychain

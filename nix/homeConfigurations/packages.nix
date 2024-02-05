@@ -37,6 +37,7 @@
     nodejs
     yarn
     rustup
+    gh
     nil
     ripgrep
     neofetch
@@ -59,7 +60,6 @@
     spin
     jdk17
     jetbrains.idea-community
-    halloy
     jetbrains.rust-rover
   ];
 
