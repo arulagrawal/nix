@@ -53,6 +53,10 @@
           user = "ubuntu";
           hostname = "airfryer.arul.io";
         };
+        "oven" = {
+          user = "arul";
+          hostname = "100.85.105.81";
+        };
       };
       extraConfig = ''
         IgnoreUnknown UseKeychain
