@@ -21,6 +21,7 @@
       LANG = "en_US.UTF-8";
       LC_ALL = "en_US.UTF-8";
       NIX_SSL_CERT_FILE = "/etc/ssl/certs/ca-certificates.crt";
+      DIRENV_LOG_FORMAT="";
       # FIGNORE = ".git:DS_Store";
     };
     file = {
