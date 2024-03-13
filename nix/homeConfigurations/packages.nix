@@ -50,7 +50,7 @@
     gopls
     highlight
     flyctl
-    # bitwarden-cli
+    bitwarden-cli
     git-crypt
     awscli2
     black
