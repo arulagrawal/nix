@@ -6,7 +6,7 @@
       cleanup = "zap";
       upgrade = true;
     };
-    brews = ["aircrack-ng"];
+    brews = ["aircrack-ng" "bitwarden-cli"];
     taps = ["homebrew/cask-versions"];
     casks = [
       "orion"
@@ -43,7 +43,6 @@
       "lunar"
       "parsec"
       "sigmaos"
-      # "rustdesk"
       "ankama"
       "orbstack"
       "multimc"
