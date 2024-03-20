@@ -8,7 +8,6 @@
     fish = import ./fish;
     eza = {
       enable = true;
-      enableAliases = true;
     };
     zoxide = {
       enable = true;
