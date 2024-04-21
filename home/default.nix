@@ -17,6 +17,7 @@
           ./gpg.nix
           ./direnv.nix
           ./fe.nix
+          ./xdg.nix
         ];
       };
       common-linux = {
