@@ -1,0 +1,17 @@
+#!/bin/sh
+name="$HOME/Pictures/Screenshots/$(date +'%F:%R:%S').png"
+case $1 in
+    whole)
+        screencapture "$name" ;;
+    area)
+        screencapture -i "$name" ;;
+    window)
+        screencapture -w "$name" ;;
+esac
+
+if [ -f "$name" ]; then
+    curl --netrc-file ~/.config/.netrc -F "file=@$name" "https://arul.io" | tee | pbcopy
+    URL="$(pbpaste)"
+    msg="display notification \"$URL\" with title \"Screenshot uploaded!\""
+    osascript -e "$msg"
+fi

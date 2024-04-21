@@ -1,0 +1,21 @@
+#!/bin/sh
+
+echo "running backup script at $(date)"
+
+NC="/usr/bin/nc"
+ARUL="/Users/arul"
+RESTIC="/etc/profiles/per-user/arul/bin/restic"
+
+while ! "$NC" -zw1 google.com 443; do
+    echo "waiting for connection"
+    sleep 5
+done
+
+backup () {
+    "$RESTIC" backup $ARUL/code $ARUL/cloud  $ARUL/nix $ARUL/Documents --exclude={node_modules,target,plugged,autoload,go,data} --host coffeemaker
+
+    "$RESTIC" forget --prune --keep-daily 7 --keep-weekly 4 --keep-monthly 2 --keep-yearly 1
+}
+
+
+. $ARUL/scripts/.b2.env && backup

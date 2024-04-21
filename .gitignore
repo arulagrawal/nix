@@ -1,0 +1,6 @@
+.DS_Store
+*.log
+tmp/
+.b2.env
+
+result*
