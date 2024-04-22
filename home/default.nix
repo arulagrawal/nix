@@ -16,7 +16,6 @@
           ./git.nix
           ./gpg.nix
           ./direnv.nix
-          ./fe.nix
           ./xdg.nix
         ];
       };

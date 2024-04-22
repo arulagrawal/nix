@@ -26,8 +26,10 @@
     gh
 
 
-    # my shells scripts
+    # my scripts/programs
     pa
+    fe
+    dl_sieve
   ];
 
   programs = {
