@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   programs.nixvim = {
     enable = true;
@@ -9,11 +10,26 @@
       enable = true;
       settings = {
         flavour = "auto";
+        background = {
+          light = "latte";
+          dark = "mocha";
+        };
         transparent_background = true;
         integrations = {
           nvimtree = true;
           treesitter = true;
         };
+      };
+      package = pkgs.vimUtils.buildVimPlugin {
+        pname = "catppuccin-nvim";
+        version = "1.7.0";
+        src = pkgs.fetchFromGitHub {
+          owner = "catppuccin";
+          repo = "nvim";
+          rev = "refs/tags/v1.7.0";
+          sha256 = "sha256-yTVou/WArEWygBBs2NFPI9Dm9iSGfwVftKFbOAGl8tk=";
+        };
+        meta.homepage = "https://github.com/catppuccin/nvim/";
       };
     };
 
