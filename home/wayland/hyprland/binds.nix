@@ -14,7 +14,7 @@ let
       in
       [
         "$mod, ${ws}, workspace, ${toString (x + 1)}"
-        "$mod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
+        "$mod SHIFT, ${ws}, movetoworkspacesilent, ${toString (x + 1)}"
       ]
     )
     10);
@@ -55,20 +55,22 @@ in
         # logout menu
         "$mod, Escape, exec, wlogout -p layer-shell"
         # lock screen
-        "$mod, L, exec, loginctl lock-session"
+        "$mod CTRL, L, exec, hyprlock"
         # select area to perform OCR on
         "$mod, O, exec, run-as-service wl-ocr"
 
         # move focus
-        "$mod, left, movefocus, l"
-        "$mod, right, movefocus, r"
-        "$mod, up, movefocus, u"
-        "$mod, down, movefocus, d"
-
         "$mod, H, movefocus, l"
         "$mod, L, movefocus, r"
         "$mod, K, movefocus, u"
         "$mod, J, movefocus, d"
+
+        # move window in workspace
+        "$mod SHIFT, H, movewindow, l"
+        "$mod SHIFT, L, movewindow, r"
+        "$mod SHIFT, K, movewindow, u"
+        "$mod SHIFT, J, movewindow, d"
+
 
         # screenshot
         # stop animations while screenshotting; makes black border go away
