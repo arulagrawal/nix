@@ -10,6 +10,7 @@
 
     flake-parts.url = "github:hercules-ci/flake-parts";
     nixos-flake.url = "github:srid/nixos-flake";
+    flake-utils.url = "github:numtide/flake-utils";
 
     nix-gaming = {
       url = "github:fufexan/nix-gaming";
@@ -24,7 +25,11 @@
       inputs.flake-parts.follows = "flake-parts";
     };
 
-    spicetify-nix.url = "github:the-argus/spicetify-nix";
+    spicetify-nix = {
+      url = "github:the-argus/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
+    };
 
     treefmt-nix = {
       url = "github:numtide/treefmt-nix";
@@ -53,13 +58,14 @@
       url = "git+https://git.arul.io/arul/dl_sieve";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.naersk.follows = "naersk";
+      inputs.utils.follows = "flake-utils";
     };
 
     fe = {
       url = "git+https://git.arul.io/arul/fe";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.naersk.follows = "naersk";
-      inputs.utils.follows = "dl_sieve/utils";
+      inputs.utils.follows = "flake-utils";
     };
   };
 
