@@ -3,7 +3,6 @@
   environment.systemPackages = with pkgs; [
     firefox
     wezterm
-    spotify
     pavucontrol
     mpv
   ];
