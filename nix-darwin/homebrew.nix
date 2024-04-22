@@ -33,7 +33,6 @@
       "transmission"
       "iina"
       "mkvtoolnix"
-      "mpv"
       "mullvadvpn-beta"
       "tg-pro"
       "disk-diet"
