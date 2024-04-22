@@ -14,14 +14,15 @@
     nix-gaming = {
       url = "github:fufexan/nix-gaming";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-parts.follows = "flake-parts";
     };
 
     # Neovim
     nixvim = {
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-parts.follows = "flake-parts";
     };
-
 
     treefmt-nix = {
       url = "github:numtide/treefmt-nix";
@@ -29,14 +30,17 @@
     };
 
     hyprlock.url = "github:hyprwm/hyprlock";
-    anyrun.url = "github:Kirottu/anyrun";
-    anyrun.inputs.nixpkgs.follows = "nixpkgs";
+
+    anyrun = {
+      url = "github:Kirottu/anyrun";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-parts.follows = "flake-parts";
+    };
 
     matugen = {
       url = "github:InioX/matugen/module";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
 
     naersk = {
       url = "github:nmattia/naersk/master";
@@ -53,6 +57,7 @@
       url = "git+https://git.arul.io/arul/fe";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.naersk.follows = "naersk";
+      inputs.utils.follows = "dl_sieve/utils";
     };
   };
 
