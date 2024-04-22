@@ -30,6 +30,7 @@
           ./specialisations.nix
           ./gnome-keyring.nix
           ./transient-services.nix
+          ./spotify.nix
         ];
       };
       common-darwin = {

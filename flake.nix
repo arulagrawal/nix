@@ -24,6 +24,8 @@
       inputs.flake-parts.follows = "flake-parts";
     };
 
+    spicetify-nix.url = "github:the-argus/spicetify-nix";
+
     treefmt-nix = {
       url = "github:numtide/treefmt-nix";
       inputs.nixpkgs.follows = "nixpkgs";
