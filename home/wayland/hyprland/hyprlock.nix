@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, flake, pkgs, ... }:
 let
   variant = "dark";
   c = config.programs.matugen.theme.colors.colors.${variant};
@@ -8,6 +8,12 @@ in
 {
   programs.hyprlock = {
     enable = true;
+    package = flake.inputs.hyprlock.packages.${pkgs.system}.default.overrideAttrs {
+      patchPhase = ''
+        substituteInPlace src/core/hyprlock.cpp \
+        --replace "5000" "16"
+      '';
+    };
 
     general = {
       disable_loading_bar = true;
