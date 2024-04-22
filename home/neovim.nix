@@ -8,7 +8,7 @@
     colorschemes.catppuccin = {
       enable = true;
       settings = {
-        flavour = "mocha";
+        flavour = "auto";
         transparent_background = true;
         integrations = {
           nvimtree = true;
