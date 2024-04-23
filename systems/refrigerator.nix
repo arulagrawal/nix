@@ -19,6 +19,7 @@ in
     "${self}/nixos/gaming.nix"
     "${self}/nixos/xdg.nix"
     "${self}/nixos/nh.nix"
+    "${self}/nixos/udev.nix"
   ];
 
   system.stateVersion = "23.11";
