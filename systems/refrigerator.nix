@@ -13,6 +13,7 @@ in
     "${self}/nixos/gui"
     "${self}/nixos/self/primary-as-admin.nix"
     "${self}/nixos/docker.nix"
+    "${self}/nixos/virtualisation.nix"
     "${self}/nixos/tailscale.nix"
     "${self}/nixos/gnupg.nix"
     "${self}/nixos/gaming.nix"
