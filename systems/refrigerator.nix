@@ -67,6 +67,7 @@ in
   services.xserver.videoDrivers = [ "nvidia" ];
 
   hardware = {
+    keyboard.zsa.enable = true;
     cpu.intel.updateMicrocode = true;
     enableRedistributableFirmware = true;
     opengl = {
