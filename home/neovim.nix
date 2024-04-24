@@ -49,13 +49,13 @@
     };
 
     plugins = {
-
       # UI
       lualine.enable = true;
       bufferline.enable = true;
       treesitter.enable = true;
       which-key = {
         enable = true;
+        showKeys = true;
       };
       noice = {
         # WARNING: This is considered experimental feature, but provides nice UX
@@ -70,15 +70,9 @@
       };
       telescope = {
         enable = true;
-        settings.keymaps = {
-          "<leader>ff" = {
-            desc = "file finder";
-            action = "find_files";
-          };
-          "<leader>fg" = {
-            desc = "find via grep";
-            action = "live_grep";
-          };
+        keymaps = {
+          "<leader>ff" = "find_files";
+          "<leader>fg" = "live_grep";
         };
         extensions = {
           file-browser.enable = true;
