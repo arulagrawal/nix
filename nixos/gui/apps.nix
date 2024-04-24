@@ -5,5 +5,6 @@
     wezterm
     pavucontrol
     mpv
+    ankama-launcher
   ];
 }
