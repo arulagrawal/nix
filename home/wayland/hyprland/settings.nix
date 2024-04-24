@@ -15,7 +15,6 @@ in
       # set cursor for HL itself
       "hyprctl setcursor ${pointer.name} ${toString pointer.size}"
       "firefox"
-      "vesktop"
       "spotify"
       #"systemctl --user start clight"
       "hyprlock"
