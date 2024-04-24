@@ -57,6 +57,7 @@
         enable = true;
         showKeys = true;
       };
+      lastplace.enable = true;
       noice = {
         # WARNING: This is considered experimental feature, but provides nice UX
         enable = true;
