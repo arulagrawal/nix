@@ -12,6 +12,11 @@
     nixos-flake.url = "github:srid/nixos-flake";
     flake-utils.url = "github:numtide/flake-utils";
 
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nix-gaming = {
       url = "github:fufexan/nix-gaming";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -99,6 +104,10 @@
         nixosConfigurations.refrigerator =
           self.nixos-flake.lib.mkLinuxSystem
             ./systems/refrigerator.nix;
+
+        nixosConfigurations.oven =
+          self.nixos-flake.lib.mkLinuxSystem
+            ./systems/oven.nix;
       };
 
       perSystem = { self', pkgs, lib, config, ... }: {
