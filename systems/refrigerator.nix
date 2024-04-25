@@ -20,6 +20,7 @@ in
     "${self}/nixos/xdg.nix"
     "${self}/nixos/nh.nix"
     "${self}/nixos/udev.nix"
+    "${self}/nixos/gnome-services.nix"
   ];
 
   system.stateVersion = "23.11";
