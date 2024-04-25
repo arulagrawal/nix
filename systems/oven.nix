@@ -69,11 +69,7 @@ in
     useDHCP = false;
     dhcpcd.wait = "background";
     dhcpcd.extraConfig = "noarp";
-    interfaces.enp5s0 = {
-      useDHCP = true;
-      wakeOnLan.enable = true;
-    };
-    interfaces.enp6s0 = {
+    interfaces.enp3s0 = {
       useDHCP = true;
       wakeOnLan.enable = true;
     };
