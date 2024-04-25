@@ -29,6 +29,7 @@
         imports = [
           self.homeModules.common-linux
           inputs.hyprlock.homeManagerModules.default
+          inputs.hypridle.homeManagerModules.default
           inputs.matugen.nixosModules.default
           inputs.anyrun.homeManagerModules.default
           self.nixosModules.theme

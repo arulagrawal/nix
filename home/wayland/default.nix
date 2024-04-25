@@ -7,7 +7,6 @@
     ./hyprland
     ./foot.nix
     ./gtk.nix
-    #./hyprlock.nix
     ./wlogout.nix
   ];
 
@@ -23,8 +22,6 @@
     wlr-randr
     hyprpaper
   ];
-
-  #services.easyeffects.enable = true;
 
   # make stuff work on wayland
   home.sessionVariables = {

@@ -36,7 +36,17 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprlock.url = "github:hyprwm/hyprlock";
+    hyprlock = {
+      url = "github:hyprwm/hyprlock";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    hypridle = {
+      url = "github:hyprwm/hypridle";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.hyprlang.follows = "hyprlock/hyprlang";
+      inputs.systems.follows = "hyprlock/systems";
+    };
 
     anyrun = {
       url = "github:Kirottu/anyrun";

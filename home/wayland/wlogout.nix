@@ -54,7 +54,7 @@ in
     layout = [
       {
         "label" = "lock";
-        "action" = "hyprlock";
+        "action" = "loginctl lock-session";
         "text" = "lock";
         "keybind" = "l";
       }

@@ -6,6 +6,7 @@
     ./settings.nix
     ./wallpaper.nix
     ./hyprlock.nix
+    ./hypridle.nix
     ./anyrun
   ];
 
