@@ -11,27 +11,46 @@
         ./self/primary-as-admin.nix
       ];
 
-      my-home = {
+      my-home-desktop = {
         users.users.${config.people.myself} = {
           isNormalUser = true;
         };
         home-manager.users.${config.people.myself} = {
           imports = [
-            self.homeModules.common-linux
+            self.homeModules.common-linux-desktop
           ];
         };
       };
 
+      my-home-server = {
+        users.users.${config.people.myself} = {
+          isNormalUser = true;
+        };
+        home-manager.users.${config.people.myself} = {
+          imports = [
+            self.homeModules.common-linux-server
+          ];
+        };
+      };
 
       theme = import ./theme;
 
       default.imports = [
         self.nixosModules.home-manager
-        self.nixosModules.my-home
         self.nixosModules.common
-        self.nixosModules.theme
         #./self/self-ide.nix
         ./current-location.nix
+      ];
+
+      desktop.imports = [
+        self.nixosModules.default
+        self.nixosModules.theme
+        self.nixosModules.my-home-desktop
+      ];
+
+      server.imports = [
+        self.nixosModules.default
+        self.nixosModules.my-home-server
       ];
     };
   };

@@ -22,6 +22,12 @@
       common-linux = {
         imports = [
           self.homeModules.common
+        ];
+      };
+
+      common-linux-desktop = {
+        imports = [
+          self.homeModules.common-linux
           inputs.hyprlock.homeManagerModules.default
           inputs.matugen.nixosModules.default
           inputs.anyrun.homeManagerModules.default
@@ -33,6 +39,13 @@
           ./spotify.nix
         ];
       };
+
+      common-linux-server = {
+        imports = [
+          self.homeModules.common-linux
+        ];
+      };
+
       common-darwin = {
         imports = [
           self.homeModules.common

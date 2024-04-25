@@ -7,7 +7,7 @@ in
 {
   imports = [
     #inputs.disko.nixosModules.disko
-    self.nixosModules.default
+    self.nixosModules.desktop
     #"${self}/nixos/disko/trivial.nix"
     "${self}/nixos/nix.nix"
     "${self}/nixos/gui"
