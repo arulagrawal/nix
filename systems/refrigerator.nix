@@ -15,6 +15,7 @@ in
     "${self}/nixos/docker.nix"
     "${self}/nixos/virtualisation.nix"
     "${self}/nixos/tailscale.nix"
+    "${self}/nixos/gnupg.nix"
     "${self}/nixos/gaming.nix"
     "${self}/nixos/xdg.nix"
     "${self}/nixos/nh.nix"

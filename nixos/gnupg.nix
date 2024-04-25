@@ -1,9 +1,7 @@
 { pkgs, ... }: {
-  services.pcscd.enable = true;
-  services.dbus.packages = [ pkgs.gcr ];
   programs.gnupg.agent = {
     enable = true;
-    enableSSHSupport = true;
+    enableSSHSupport = false;
     pinentryPackage = pkgs.pinentry-gnome3;
   };
 }

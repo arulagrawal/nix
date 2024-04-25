@@ -32,7 +32,7 @@
       init.defaultBranch = "main";
       core.editor = "nvim";
       push.autoSetupRemote = true;
-      credential.helper = if pkgs.stdenv.isLinux then "store --file ~/.git-credentials" else "osxkeychain";
+      credential.helper = if pkgs.stdenv.isLinux then "libsecret" else "osxkeychain";
     };
   };
 }
