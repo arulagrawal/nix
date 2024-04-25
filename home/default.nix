@@ -34,7 +34,6 @@
           self.nixosModules.theme
           ./wayland
           ./specialisations.nix
-          #./gnome-keyring.nix
           ./transient-services.nix
           ./spotify.nix
         ];
