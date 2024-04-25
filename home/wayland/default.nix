@@ -8,7 +8,7 @@
     ./foot.nix
     ./gtk.nix
     #./hyprlock.nix
-    #./wlogout.nix
+    ./wlogout.nix
   ];
 
   home.packages = with pkgs; [
