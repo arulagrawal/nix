@@ -23,6 +23,27 @@
         "type": "github"
       }
     },
+    "crane": {
+      "inputs": {
+        "nixpkgs": [
+          "nextprev",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1713979152,
+        "narHash": "sha256-apdecPuh8SOQnkEET/kW/UcfjCRb8JbV5BKjoH+DcP4=",
+        "owner": "ipetkov",
+        "repo": "crane",
+        "rev": "a5eca68a2cf11adb32787fc141cddd29ac8eb79c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ipetkov",
+        "repo": "crane",
+        "type": "github"
+      }
+    },
     "devshell": {
       "inputs": {
         "flake-utils": "flake-utils_2",
@@ -410,6 +431,30 @@
         "type": "github"
       }
     },
+    "nextprev": {
+      "inputs": {
+        "crane": "crane",
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1714171305,
+        "narHash": "sha256-P2gta9RT12Ejbmh1ehE7nGj0/uFOusM+TPYFlWwZkHw=",
+        "ref": "refs/heads/main",
+        "rev": "b937c2719702632038b0eaba0285979f2fda3524",
+        "revCount": 4,
+        "type": "git",
+        "url": "https://git.arul.io/arul/nextprev"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://git.arul.io/arul/nextprev"
+      }
+    },
     "nix-darwin": {
       "inputs": {
         "nixpkgs": [
@@ -654,6 +699,7 @@
         "hyprlock": "hyprlock",
         "matugen": "matugen",
         "naersk": "naersk",
+        "nextprev": "nextprev",
         "nix-darwin": "nix-darwin",
         "nix-gaming": "nix-gaming",
         "nixos-flake": "nixos-flake",

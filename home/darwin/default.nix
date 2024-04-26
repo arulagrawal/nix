@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 {
   home.sessionVariables = {
     EDITOR = "nvim";
@@ -21,4 +21,6 @@
     recursive = false;
     source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix/home/darwin/scripts";
   };
+
+  home.packages = with pkgs; [ nextprev rustup ];
 }

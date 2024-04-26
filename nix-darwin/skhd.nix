@@ -65,8 +65,8 @@
       "alt - 8" = "yabai -m space --focus 8";
 
       # focus on next/prev occupied window
-      "alt - q" = "bash /Users/arul/scripts/nextprev prev";
-      "alt - e" = "bash /Users/arul/scripts/nextprev next";
+      "alt - q" = "nextprev prev";
+      "alt - e" = "nextprev next";
 
       # focus on next/prev window
       "alt + ctrl - q" = "yabai -m space --focus prev";

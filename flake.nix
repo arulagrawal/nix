@@ -78,6 +78,12 @@
       inputs.naersk.follows = "naersk";
       inputs.utils.follows = "flake-utils";
     };
+
+    nextprev = {
+      url = "git+https://git.arul.io/arul/nextprev";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
+    };
   };
 
   outputs = inputs@{ self, ... }:
