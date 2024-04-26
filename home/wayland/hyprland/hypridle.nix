@@ -18,12 +18,12 @@ in {
     #beforeSleepCmd = "${pkgs.systemd}/bin/loginctl lock-session";
     lockCmd = "pidof hyprlock || hyprlock";
 
-    #listeners = [
-    #  {
-    #    timeout = 330;
-    #    onTimeout = suspendScript.outPath;
-    #  }
-    #];
+    listeners = [
+      {
+        timeout = 330;
+        onTimeout = suspendScript.outPath;
+      }
+    ];
   };
 }
 

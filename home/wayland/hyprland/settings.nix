@@ -39,8 +39,8 @@ in
         contrast = 1.0;
         noise = 0.02;
 
-        passes = 4;
-        size = 8;
+        passes = 3;
+        size = 10;
       };
 
       drop_shadow = true;
