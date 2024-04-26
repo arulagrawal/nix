@@ -13,7 +13,7 @@
       };
       "oven" = {
         user = "arul";
-        hostname = "100.85.105.81";
+        hostname = "100.80.94.22";
       };
     };
     extraConfig = ''
