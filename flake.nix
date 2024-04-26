@@ -19,8 +19,6 @@
 
     nix-gaming = {
       url = "github:fufexan/nix-gaming";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-parts.follows = "flake-parts";
     };
 
     # Neovim
@@ -43,12 +41,10 @@
 
     hyprlock = {
       url = "github:hyprwm/hyprlock";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     hypridle = {
       url = "github:hyprwm/hypridle";
-      inputs.nixpkgs.follows = "nixpkgs";
       inputs.hyprlang.follows = "hyprlock/hyprlang";
       inputs.systems.follows = "hyprlock/systems";
     };
