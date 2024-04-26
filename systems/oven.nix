@@ -76,8 +76,6 @@ in
     nameservers = [ "1.1.1.1" "1.0.0.1" ];
   };
 
-
-  services.resolved.enable = true;
   services.openssh.enable = true;
 
   security.rtkit.enable = true;
