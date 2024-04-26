@@ -1,9 +1,5 @@
-{
-  pkgs,
-  lib,
-  config,
-  ...
-}: let
+{ pkgs, ... }:
+let
   suspendScript = pkgs.writeShellScript "suspend-script" ''
     ${pkgs.pipewire}/bin/pw-cli i all 2>&1 | ${pkgs.ripgrep}/bin/rg running -q
     # only suspend if audio isn't running
@@ -11,7 +7,8 @@
       ${pkgs.systemd}/bin/systemctl suspend
     fi
   '';
-in {
+in
+{
   # screen idle
   services.hypridle = {
     enable = true;
