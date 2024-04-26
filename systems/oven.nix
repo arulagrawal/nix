@@ -11,6 +11,7 @@ in
     "${self}/nixos/disko/trivial.nix"
     "${self}/nixos/nix.nix"
     "${self}/nixos/self/primary-as-admin.nix"
+    "${self}/nixos/server/harden.nix"
     "${self}/nixos/docker.nix"
     "${self}/nixos/virtualisation.nix"
     "${self}/nixos/tailscale.nix"
