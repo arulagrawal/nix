@@ -74,14 +74,11 @@ in
 
         # screenshot
         # stop animations while screenshotting; makes black border go away
-        ", Print, exec, ${screenshotarea}"
-        "$mod SHIFT, R, exec, ${screenshotarea}"
+        ", Print, exec, screenshot whole"
+        "$mod SHIFT, R, exec, screenshot whole"
 
-        "CTRL, Print, exec, grimblast --notify --cursor copysave output"
-        "$mod SHIFT CTRL, R, exec, grimblast --notify --cursor copysave output"
-
-        "ALT, Print, exec, grimblast --notify --cursor copysave screen"
-        "$mod SHIFT ALT, R, exec, grimblast --notify --cursor copysave screen"
+        "CTRL, Print, exec, screenshot area"
+        "$mod SHIFT CTRL, R, exec, screenshot area"
 
         # special workspace
         "$mod SHIFT, grave, movetoworkspace, special"
