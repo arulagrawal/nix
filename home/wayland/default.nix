@@ -8,6 +8,7 @@
     ./foot.nix
     ./gtk.nix
     ./wlogout.nix
+    ./dunst.nix
   ];
 
   home.packages = with pkgs; [
@@ -21,6 +22,8 @@
     wl-screenrec
     wlr-randr
     hyprpaper
+
+    screenshot
   ];
 
   # make stuff work on wayland

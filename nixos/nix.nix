@@ -1,4 +1,4 @@
-{ flake, pkgs, lib, ... }:
+{ flake, pkgs, lib, self, ... }:
 
 {
   nixpkgs = {
@@ -9,6 +9,14 @@
     };
     overlays = [
       (import ../packages/overlay.nix { inherit flake; inherit (pkgs) system; })
+      (final: prev: {
+        lib =
+          prev.lib
+          // {
+            colors = import "${flake.inputs.self}/lib/colors" prev.lib;
+          };
+      })
+
     ];
   };
 
