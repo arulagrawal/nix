@@ -421,11 +421,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1714171305,
-        "narHash": "sha256-P2gta9RT12Ejbmh1ehE7nGj0/uFOusM+TPYFlWwZkHw=",
+        "lastModified": 1714173807,
+        "narHash": "sha256-UHScRMnra76tUoVxMA3xeX6LtBpU8+nmBcE4Tfhg5H0=",
         "ref": "refs/heads/main",
-        "rev": "b937c2719702632038b0eaba0285979f2fda3524",
-        "revCount": 4,
+        "rev": "f41882391630d77d24952ac81748c63d7873c0ae",
+        "revCount": 5,
         "type": "git",
         "url": "https://git.arul.io/arul/nextprev"
       },
