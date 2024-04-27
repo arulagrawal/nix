@@ -5,6 +5,7 @@ let
   util = if stdenv.isLinux then "grimblast save" else "screencapture";
   whole = if stdenv.isLinux then "output" else "";
   area = if stdenv.isLinux then "area" else "-i";
+  path = if stdenv.isLinux then "$XDG_PICTURES_DIR/" else "~/Pictures/";
 in
 writeShellApplication {
   name = "screenshot";
@@ -13,7 +14,7 @@ writeShellApplication {
     Take a screenshot and upload to arul.io
   '';
   text = ''
-    name="$XDG_PICTURES_DIR/screenshots/$(date +'%F:%R:%S').png"
+    #######name=${path} ++ "/screenshots/$(date +'%F:%R:%S').png"
     case $1 in
         whole)
             ${util} ${whole} "$name";;
