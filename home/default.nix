@@ -38,12 +38,6 @@
           ./transient-services.nix
           ./spotify.nix
         ];
-
-        nixpkgs.overlays = [
-          (final: prev: {
-            lib = prev.lib // { colors = import "${self}/lib/colors" lib; };
-          })
-        ];
       };
 
       common-linux-server = {
