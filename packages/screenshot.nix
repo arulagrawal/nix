@@ -14,7 +14,7 @@ writeShellApplication {
     Take a screenshot and upload to arul.io
   '';
   text = ''
-    #######name=${path} ++ "/screenshots/$(date +'%F:%R:%S').png"
+    name="${path}/screenshots/$(date +'%F:%R:%S').png"
     case $1 in
         whole)
             ${util} ${whole} "$name";;
