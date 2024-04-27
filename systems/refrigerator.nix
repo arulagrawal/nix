@@ -137,4 +137,6 @@ in
     };
     jack.enable = true;
   };
+
+  services.ratbagd.enable = true;
 }

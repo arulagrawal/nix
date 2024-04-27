@@ -13,9 +13,8 @@
       # cmd + shift - return : code
 
       # take a screenshot
-      "cmd + shift - 3" = "/Users/arul/scripts/screenshot whole";
-      "cmd + shift - 4" = "/Users/arul/scripts/screenshot area";
-      "cmd + shift - 5" = "/Users/arul/scripts/screenshot window";
+      "cmd + shift - 3" = "screenshot whole";
+      "cmd + shift - 4" = "screenshot area";
 
       # focus window
       "alt - h" = "yabai -m window --focus west";

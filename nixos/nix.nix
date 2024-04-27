@@ -1,4 +1,4 @@
-{ flake, pkgs, lib, ... }:
+{ flake, pkgs, lib, self, ... }:
 
 {
   nixpkgs = {
