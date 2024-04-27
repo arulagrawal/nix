@@ -1,37 +1,36 @@
 { config
-, pkgs
-, lib
 , ...
 }: {
   # notification daemon
   services.dunst =
-    let
-      xcolors = pkgs.lib.colors.xcolors config.programs.matugen.theme.colors;
-      variant = config.theme.name;
-      c = xcolors.colors.${variant};
-    in
     {
       enable = true;
       inherit (config.gtk) iconTheme;
       settings = {
         global = {
-          alignment = "center";
-          corner_radius = 16;
+          alignment = "left";
+          corner_radius = 3;
           follow = "mouse";
-          font = "Inter 9";
-          format = "<b>%s</b>\\n%b";
+          font = "FiraCode Nerd Font Bold 10";
+          format = "%s %p\\n%b";
+          ignore_newline = "no";
           frame_width = 1;
-          offset = "5x5";
-          horizontal_padding = 8;
+          #geometry = "0x4-0+0";
+          width = ''(50, 250)'';
+          scale = 0;
+          height = 100;
+          horizontal_padding = 10;
           icon_position = "left";
+          origin = "top-right";
+          offset = "5x5";
           indicate_hidden = "yes";
           markup = "yes";
           max_icon_size = 64;
+
           mouse_left_click = "do_action";
           mouse_middle_click = "close_all";
           mouse_right_click = "close_current";
           padding = 8;
-          plain_text = "no";
           separator_color = "auto";
           separator_height = 1;
           show_indicators = false;
@@ -42,19 +41,22 @@
         fullscreen_delay_everything = { fullscreen = "delay"; };
 
         urgency_critical = {
-          background = c.error_container;
-          foreground = c.on_error_container;
-          frame_color = c.error;
+          background = "#171826";
+          foreground = "#2E3440";
+          frame_color = "#171826";
+          timeout = 4;
         };
         urgency_low = {
-          background = c.secondary_container;
-          foreground = c.on_secondary_container;
-          frame_color = c.secondary;
+          background = "#171826";
+          foreground = "#d5dff0";
+          frame_color = "#171826";
+          timeout = 5;
         };
         urgency_normal = {
-          background = c.primary_container;
-          foreground = c.on_primary_container;
-          frame_color = c.primary;
+          background = "#171826";
+          foreground = "#d5dff0";
+          frame_color = "#171826";
+          timeout = 8;
         };
       };
     };

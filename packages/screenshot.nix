@@ -1,4 +1,4 @@
-{ writeShellApplication, stdenv, wl-clipboard, ... }:
+{ writeShellApplication, stdenv, lib, wl-clipboard, grimblast, libnotify, ... }:
 
 let
   copy = if stdenv.isLinux then "wl-copy" else "pbcopy";
@@ -8,7 +8,7 @@ let
 in
 writeShellApplication {
   name = "screenshot";
-  runtimeInputs = [ wl-clipboard ];
+  runtimeInputs = lib.optionalAttrs stdenv.isLinux [ wl-clipboard grimblast libnotify ];
   meta.description = ''
     Take a screenshot and upload to arul.io
   '';
@@ -23,8 +23,12 @@ writeShellApplication {
 
     if [ -f "$name" ]; then
       URL="$(curl --netrc-file ~/.config/.netrc -sF "file=@$name" "https://arul.io" | tee >(${copy}))"
-      msg="display notification \"$URL\" with title \"Screenshot uploaded!\""
-      osascript -e "$msg"
+      ${
+        if stdenv.isLinux then 
+          "notify-send \"screenshot uploaded!\" \"$URL\""
+        else 
+          "msg=\"display notification \"$URL\" with title \"Screenshot uploaded!\"; osascript -e \"\$msg\""
+      }
     fi
   '';
 }
