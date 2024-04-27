@@ -16,7 +16,7 @@
           ignore_newline = "no";
           frame_width = 1;
           #geometry = "0x4-0+0";
-          width = ''(50, 250)'';
+          width = ''(50, 400)'';
           scale = 0;
           height = 100;
           horizontal_padding = 10;

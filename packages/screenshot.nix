@@ -5,13 +5,14 @@ let
   util = if stdenv.isLinux then "grimblast save" else "screencapture";
   whole = if stdenv.isLinux then "output" else "";
   area = if stdenv.isLinux then "area" else "-i";
-  path = if stdenv.isLinux then "$XDG_PICTURES_DIR" else "$HOME/Pictures";
+  path = if stdenv.isLinux then "$HOME/images" else "$HOME/Pictures";
 in
 writeShellApplication {
   name = "screenshot";
   meta.description = ''
     Take a screenshot and upload to arul.io
   '';
+  runtimeInputs = lib.optionals stdenv.isLinux [ pkgs.wl-clipboard pkgs.grimblast pkgs.libnotify ];
   text = ''
     name="${path}/screenshots/$(date +'%F:%R:%S').png"
     case $1 in
@@ -31,6 +32,4 @@ writeShellApplication {
       }
     fi
   '';
-} // lib.optionalAttrs stdenv.isLinux {
-    runtimeInputs = [ pkgs.wl-clipboard pkgs.grimblast pkgs.libnotify ];
 }
