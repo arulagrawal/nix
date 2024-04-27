@@ -139,4 +139,5 @@ in
   };
 
   services.ratbagd.enable = true;
+  services.fstrim.enable = true;
 }
