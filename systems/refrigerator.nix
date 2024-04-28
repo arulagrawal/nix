@@ -125,8 +125,10 @@ in
   };
 
   services.openssh.enable = true;
-
   security.rtkit.enable = true;
+
+  # don't need ALSA
+  sound.enable = false;
   services.pipewire = {
     enable = true;
     audio.enable = true;
@@ -135,7 +137,6 @@ in
       enable = true;
       support32Bit = true;
     };
-    jack.enable = true;
   };
 
   services.ratbagd.enable = true;
