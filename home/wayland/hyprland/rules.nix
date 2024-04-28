@@ -43,8 +43,8 @@
       "pin, title:^(Picture-in-Picture)$"
 
       # fix steam stuff
-      "float, class:^(steam), $title:^(Friends List)$"
-      "float, class:^(steam), $title:^(Steam Settings)$"
+      "float, class:^(steam)$, title:^(Friends List)$"
+      "float, class:^(steam)$, title:^(Steam Settings)$"
 
       # throw sharing indicators away
       "workspace special silent, title:^(Firefox — Sharing Indicator)$"
@@ -52,7 +52,7 @@
 
       # start apps in workspaces
       "workspace 1 silent, class:^(firefox)$"
-      "workspace 4 slient, class:^(steam)$"
+      "workspace 4 silent, class:^(steam)$"
       "workspace 8 silent, title:^(Discord)$"
       "workspace 9 silent, title:^(Spotify( Premium)?)$"
 
