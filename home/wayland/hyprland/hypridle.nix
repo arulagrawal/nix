@@ -17,7 +17,7 @@ in
 
     listeners = [
       {
-        timeout = 330;
+        timeout = 60 * 30;
         onTimeout = suspendScript.outPath;
       }
     ];
