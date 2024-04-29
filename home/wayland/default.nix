@@ -9,6 +9,8 @@
     ./gtk.nix
     ./wlogout.nix
     ./dunst.nix
+
+    ./obs.nix
   ];
 
   home.packages = with pkgs; [
