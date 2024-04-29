@@ -38,6 +38,7 @@
           ./transient-services.nix
           ./spotify.nix
           ./polkit-agent.nix
+          ./vscode.nix
         ];
       };
 
