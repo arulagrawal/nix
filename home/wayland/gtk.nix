@@ -1,7 +1,4 @@
-{ pkgs
-, config
-, ...
-}: {
+{ pkgs, config, ... }: {
   home.pointerCursor = {
     package = pkgs.bibata-cursors;
     name = "Bibata-Modern-Classic";
@@ -21,8 +18,21 @@
     };
 
     theme = {
-      name = "adw-gtk3";
-      package = pkgs.adw-gtk3;
+      # This name is extremely important. it must match the config exactly!
+      # the default colour is blue
+      name = "Catppuccin-Mocha-Compact-Blue-Dark";
+      package = pkgs.catppuccin-gtk.override {
+        size = "compact";
+        tweaks = [ "rimless" ];
+        variant = "mocha";
+      };
     };
   };
+
+  xdg.configFile = {
+    "gtk-4.0/assets".source = "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-4.0/assets";
+    "gtk-4.0/gtk.css".source = "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-4.0/gtk.css";
+    "gtk-4.0/gtk-dark.css".source = "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-4.0/gtk-dark.css";
+  };
+
 }

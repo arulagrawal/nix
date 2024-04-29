@@ -6,5 +6,11 @@
     pavucontrol
     mpv
     ankama-launcher
+
+    (catppuccin-gtk.override {
+      size = "compact";
+      tweaks = [ "rimless" ]; # You can also specify multiple tweaks here
+      variant = "mocha";
+    })
   ];
 }
