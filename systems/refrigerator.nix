@@ -52,6 +52,12 @@ in
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelParams = [
+    "quiet"
+    "splash"
+  ];
+
   fileSystems."/" =
     {
       device = "/dev/disk/by-uuid/7260fc7d-f277-4aaa-b310-02ede2501084";
