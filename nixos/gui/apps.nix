@@ -12,5 +12,7 @@
       tweaks = [ "rimless" ]; # You can also specify multiple tweaks here
       variant = "mocha";
     })
+
+    (prismlauncher.override { withWaylandGLFW = true; })
   ];
 }
