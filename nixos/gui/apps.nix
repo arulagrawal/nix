@@ -6,6 +6,7 @@
     pavucontrol
     mpv
     ankama-launcher
+    thunderbird
 
     (catppuccin-gtk.override {
       size = "compact";
