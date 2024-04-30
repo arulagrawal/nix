@@ -16,6 +16,9 @@
         hostname = "100.80.94.22";
       };
     };
+    extraOptionOverrides = {
+      setEnv = "TERM=xterm-256color";
+    };
     extraConfig = ''
       IgnoreUnknown UseKeychain
       UseKeychain yes
