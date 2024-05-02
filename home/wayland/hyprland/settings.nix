@@ -13,7 +13,6 @@ in
 
     exec-once = [
       # set cursor for HL itself
-      "hyprctl setcursor ${pointer.name} ${toString pointer.size}"
       "firefox"
       "spotify"
       #"systemctl --user start clight"
@@ -124,5 +123,7 @@ in
     env = GBM_BACKEND,nvidia-drm
     env = __GLX_VENDOR_LIBRARY_NAME,nvidia
     env = WLR_NO_HARDWARE_CURSORS,1
+    env = HYPRCURSOR_THEME,${pointer.name}
+    env = HYPRCURSOR_SIZE,${toString pointer.size}
   '';
 }
