@@ -18,7 +18,7 @@
           #geometry = "0x4-0+0";
           width = ''(50, 400)'';
           scale = 0;
-          height = 100;
+          height = ''(100, 200)'';
           horizontal_padding = 10;
           icon_position = "left";
           origin = "top-right";

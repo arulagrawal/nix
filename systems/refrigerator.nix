@@ -21,6 +21,7 @@ in
     "${self}/nixos/nh.nix"
     "${self}/nixos/udev.nix"
     "${self}/nixos/gnome-services.nix"
+    "${self}/nixos/avahi.nix"
     "${self}/nixos/polkit.nix"
   ];
 

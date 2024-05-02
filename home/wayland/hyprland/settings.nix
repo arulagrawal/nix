@@ -13,7 +13,6 @@ in
 
     exec-once = [
       # set cursor for HL itself
-      "hyprctl setcursor ${pointer.name} ${toString pointer.size}"
       "firefox"
       "spotify"
       #"systemctl --user start clight"
@@ -118,5 +117,7 @@ in
 
   wayland.windowManager.hyprland.extraConfig = ''
     env = XDG_SESSION_TYPE,wayland
+    env = HYPRCURSOR_THEME,${pointer.name}
+    env = HYPRCURSOR_SIZE,${toString pointer.size}
   '';
 }
