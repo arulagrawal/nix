@@ -11,13 +11,20 @@ in
     "${self}/nixos/disko/trivial.nix"
     "${self}/nixos/nix.nix"
     "${self}/nixos/self/primary-as-admin.nix"
-    "${self}/nixos/server/harden.nix"
+    "${self}/nixos/server/harden"
     "${self}/nixos/docker.nix"
     "${self}/nixos/virtualisation.nix"
     "${self}/nixos/tailscale.nix"
     "${self}/nixos/xdg.nix"
     "${self}/nixos/nh.nix"
+    "${self}/nixos/gnupg.nix"
+    # services
+
+    "${self}/nixos/home-assistant.nix"
+    "${self}/nixos/server/minecraft.nix"
   ];
+
+  disko.device = "/dev/sda";
 
   system.stateVersion = "23.11";
   nixpkgs.hostPlatform = "x86_64-linux";
@@ -41,7 +48,7 @@ in
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
+  boot.initrd.availableKernelModules = [ "ahci" "xhci_pci" "usbhid" "sd_mod" "rtsx_pci_sdmmc" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
@@ -80,4 +87,8 @@ in
   services.openssh.enable = true;
 
   security.rtkit.enable = true;
+
+  programs.gnupg.agent = {
+    pinentryPackage = lib.mkForce pkgs.pinentry-curses;
+  };
 }
