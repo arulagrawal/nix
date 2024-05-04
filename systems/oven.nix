@@ -37,7 +37,6 @@ in
 
   programs.fish.enable = true;
   programs.command-not-found.enable = false;
-  programs.dconf.enable = true;
 
   environment = {
     shells = with pkgs; [ fish ];
