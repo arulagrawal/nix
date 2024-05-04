@@ -8,12 +8,7 @@ in
 {
   programs.hyprlock = {
     enable = true;
-    package = flake.inputs.hyprlock.packages.${pkgs.system}.default.overrideAttrs {
-      patchPhase = ''
-        substituteInPlace src/core/hyprlock.cpp \
-        --replace "5000" "16"
-      '';
-    };
+    package = flake.inputs.hyprlock.packages.${pkgs.system}.default;
 
     general = {
       disable_loading_bar = true;
