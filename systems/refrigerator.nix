@@ -96,17 +96,9 @@ in
 
   networking = {
     hostName = "refrigerator";
-    useDHCP = false;
+    useDHCP = true;
     dhcpcd.wait = "background";
     dhcpcd.extraConfig = "noarp";
-    interfaces.enp5s0 = {
-      useDHCP = true;
-      wakeOnLan.enable = true;
-    };
-    interfaces.enp6s0 = {
-      useDHCP = true;
-      wakeOnLan.enable = true;
-    };
     nameservers = [ "1.1.1.1" "1.0.0.1" ];
   };
 
