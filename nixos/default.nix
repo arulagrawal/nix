@@ -39,18 +39,19 @@
         self.nixosModules.home-manager
         self.nixosModules.common
         #./self/self-ide.nix
-        ./current-location.nix
       ];
 
       desktop.imports = [
         self.nixosModules.default
         self.nixosModules.theme
         self.nixosModules.my-home-desktop
+        ./current-location.nix
       ];
 
       server.imports = [
         self.nixosModules.default
         self.nixosModules.my-home-server
+        ./server/utc.nix
       ];
     };
   };
