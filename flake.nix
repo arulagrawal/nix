@@ -112,6 +112,10 @@
         nixosConfigurations.oven =
           self.nixos-flake.lib.mkLinuxSystem
             ./systems/oven.nix;
+
+        nixosConfigurations.kettle =
+          self.nixos-flake.lib.mkLinuxSystem
+            ./systems/kettle.nix;
       };
 
       perSystem = { self', pkgs, lib, config, ... }: {
