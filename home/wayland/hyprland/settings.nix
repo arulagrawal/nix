@@ -112,17 +112,11 @@ in
       workspace_swipe_forever = true;
     };
 
-    xwayland.force_zero_scaling = true;
-
     debug.disable_logs = false;
   };
 
   wayland.windowManager.hyprland.extraConfig = ''
-    env = LIBVA_DRIVER_NAME,nvidia
     env = XDG_SESSION_TYPE,wayland
-    env = GBM_BACKEND,nvidia-drm
-    env = __GLX_VENDOR_LIBRARY_NAME,nvidia
-    env = WLR_NO_HARDWARE_CURSORS,1
     env = HYPRCURSOR_THEME,${pointer.name}
     env = HYPRCURSOR_SIZE,${toString pointer.size}
   '';
