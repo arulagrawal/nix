@@ -12,7 +12,6 @@ in
     "${self}/nixos/disko/trivial-with-swap.nix"
     "${self}/nixos/nix.nix"
     "${self}/nixos/self/primary-as-admin.nix"
-    "${self}/nixos/server/harden"
     "${self}/nixos/docker.nix"
     "${self}/nixos/tailscale.nix"
     "${self}/nixos/xdg.nix"
@@ -47,12 +46,10 @@ in
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ ];
   boot.extraModulePackages = [ ];
-  
 
   hardware = {
     enableRedistributableFirmware = true;
   };
-
 
   networking = {
     hostName = "kettle";

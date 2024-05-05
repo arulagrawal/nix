@@ -51,7 +51,7 @@
       server.imports = [
         self.nixosModules.default
         self.nixosModules.my-home-server
-        ./server/utc.nix
+        ./server
       ];
     };
   };
