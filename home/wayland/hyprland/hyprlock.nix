@@ -19,7 +19,7 @@ in
     backgrounds = [
       {
         monitor = "";
-        path = "${config.home.homeDirectory}/images/wallpapers/liz_to_aoi_tori.png";
+        path = "${config.home.homeDirectory}/images/wallpapers/liz_to_aoi_tori.jpg";
       }
     ];
 
@@ -32,6 +32,11 @@ in
           height = 100;
         };
 
+        position = {
+          x = 0;
+          y = -400;
+        };
+
         outline_thickness = 2;
 
         outer_color = "rgb(${c.primary})";
@@ -39,7 +44,7 @@ in
         font_color = "rgb(${c.primary_container})";
 
         fade_on_empty = false;
-        placeholder_text = ''<span font_family="${font_family}" foreground="##${c.primary_container}">Password...</span>'';
+        placeholder_text = ''<span font_family="${font_family}" foreground="##${c.primary_container}">...</span>'';
 
         dots_spacing = 0.3;
         dots_center = true;
@@ -51,12 +56,12 @@ in
         monitor = "";
         text = "$TIME";
         inherit font_family;
-        font_size = 50;
+        font_size = 150;
         color = "rgb(${c.primary})";
 
         position = {
           x = 0;
-          y = 80;
+          y = 500;
         };
 
         valign = "center";
