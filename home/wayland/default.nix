@@ -1,7 +1,4 @@
-{ pkgs,
-flake
-, ...
-}:
+{ pkgs, flake, ... }:
 # Wayland config
 {
   imports = [
@@ -24,7 +21,7 @@ flake
     wl-clipboard
     wl-screenrec
     wlr-randr
-    
+
 
     flake.inputs.hyprpaper.packages.${pkgs.system}.default
     screenshot
