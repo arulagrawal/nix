@@ -28,6 +28,7 @@
       common-linux-desktop = {
         imports = [
           self.homeModules.common-linux
+          inputs.hyprland.homeManagerModules.default
           inputs.hyprlock.homeManagerModules.default
           inputs.hypridle.homeManagerModules.default
           inputs.matugen.nixosModules.default

@@ -1,6 +1,5 @@
-{ inputs, pkgs, ... }: {
+{ flakes, pkgs, ... }: {
   imports = [
-    #    inputs.hyprland.homeManagerModules.default
     ./binds.nix
     ./rules.nix
     ./settings.nix

@@ -55,7 +55,7 @@ in
         # logout menu
         "$mod, Escape, exec, wlogout -p layer-shell"
         # lock screen
-        "$mod CTRL, L, exec, hyprlock"
+        "$mod CTRL, L, exec, loginctl lock-session"
         # select area to perform OCR on
         "$mod, O, exec, run-as-service wl-ocr"
 

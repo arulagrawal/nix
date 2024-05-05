@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, config, ... }:
 let
   suspendScript = pkgs.writeShellScript "suspend-script" ''
     ${pkgs.pipewire}/bin/pw-cli i all 2>&1 | ${pkgs.ripgrep}/bin/rg running -q
@@ -12,8 +12,9 @@ in
   # screen idle
   services.hypridle = {
     enable = true;
+    lockCmd = lib.getExe config.programs.hyprlock.package;
     beforeSleepCmd = "${pkgs.systemd}/bin/loginctl lock-session";
-    lockCmd = "pidof hyprlock || hyprlock";
+    afterSleepCmd = "hyprctl dispatch dpms on";
 
     listeners = [
       {

@@ -22,6 +22,7 @@
 
   # unlock GPG keyring on login
   security.pam.services = {
+    hyprlock = {};
     hyprlock.text = "auth include login";
     greetd.enableGnomeKeyring = true;
   };

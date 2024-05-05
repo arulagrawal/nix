@@ -60,6 +60,7 @@ in
       scrollback = {
         lines = 10000;
         multiplier = 3;
+        indicator-position = "none";
       };
 
       url = {

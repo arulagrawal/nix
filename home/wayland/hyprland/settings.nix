@@ -15,7 +15,9 @@ in
       # set cursor for HL itself
       "firefox"
       "spotify"
+      "vesktop"
       #"systemctl --user start clight"
+      #"loginctl lock-session"
       "hyprlock"
     ];
 
