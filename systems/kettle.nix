@@ -55,12 +55,16 @@ in
     hostName = "kettle";
     useDHCP = false;
     interfaces.ens3 = {
-      useDHCP = true;
+      ipv4.addresses = [{
+        address = "185.162.249.41";
+        prefixLength = 22;
+      }];
       ipv6.addresses = [{
         address = "2a03:4000:1a:1f1::1";
         prefixLength = 64;
       }];
     };
+    defaultGateway = "185.162.248.1";
     nameservers = [ "1.1.1.1" "1.0.0.1" ];
   };
 
