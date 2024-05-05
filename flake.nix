@@ -51,6 +51,8 @@
       url = "github:hyprwm/hypridle";
     };
 
+    hyprpaper.url = "github:hyprwm/hyprpaper";
+
     anyrun = {
       url = "github:Kirottu/anyrun";
       inputs.nixpkgs.follows = "nixpkgs";

@@ -31,6 +31,7 @@
           inputs.hyprland.homeManagerModules.default
           inputs.hyprlock.homeManagerModules.default
           inputs.hypridle.homeManagerModules.default
+          inputs.hyprpaper.homeManagerModules.default
           inputs.matugen.nixosModules.default
           inputs.anyrun.homeManagerModules.default
           self.nixosModules.theme
