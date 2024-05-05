@@ -8,7 +8,7 @@
     mpv
     ankama-launcher
     thunderbird
-    nvtop-amd
+    nvtopPackages.amd
 
     (catppuccin-gtk.override {
       size = "compact";
