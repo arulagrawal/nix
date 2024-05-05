@@ -7,7 +7,6 @@
       # NixOS modules that are known to work on nix-darwin.
       common.imports = [
         ./nix.nix
-        ./caches
         ./self/primary-as-admin.nix
       ];
 
@@ -45,6 +44,7 @@
         self.nixosModules.default
         self.nixosModules.theme
         self.nixosModules.my-home-desktop
+        ./caches
         ./current-location.nix
       ];
 
