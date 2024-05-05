@@ -12,7 +12,7 @@ in
   # screen idle
   services.hypridle = {
     enable = true;
-    #beforeSleepCmd = "${pkgs.systemd}/bin/loginctl lock-session";
+    beforeSleepCmd = "${pkgs.systemd}/bin/loginctl lock-session";
     lockCmd = "pidof hyprlock || hyprlock";
 
     listeners = [
