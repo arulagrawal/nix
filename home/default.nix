@@ -46,6 +46,7 @@
         imports = [
           self.homeModules.common-linux
         ];
+        programs.git.extraConfig.credential.helper = lib.mkForce "store --file ~/.git-credentials";
       };
 
       common-darwin = {
