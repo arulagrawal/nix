@@ -3,6 +3,7 @@
   imports = [
     ./utc.nix
     ./harden
+    ./backup.nix
   ];
 
   fonts.fontconfig.enable = lib.mkDefault false;
