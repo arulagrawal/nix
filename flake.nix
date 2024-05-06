@@ -122,6 +122,12 @@
           targetHost = "oven";
           targetUser = "arul";
         };
+
+        kettle = {
+          targetHost = "kettle";
+          targetUser = "arul";
+          buildOnTarget = true;
+        };
       };
 
       flake = {
