@@ -46,6 +46,7 @@
         self.nixosModules.my-home-desktop
         ./caches
         ./current-location.nix
+        ./bluetooth.nix
       ];
 
       server.imports = [
