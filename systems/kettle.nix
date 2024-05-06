@@ -14,7 +14,6 @@ in
     "${self}/nixos/self/primary-as-admin.nix"
     "${self}/nixos/docker.nix"
     "${self}/nixos/tailscale.nix"
-    "${self}/nixos/xdg.nix"
     "${self}/nixos/nh.nix"
     "${self}/nixos/gnupg.nix"
   ];
