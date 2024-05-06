@@ -49,6 +49,7 @@
           self.homeModules.common-linux
         ];
         programs.git.extraConfig.credential.helper = lib.mkForce "store --file ~/.git-credentials";
+        neovim.config = "minimal";
       };
 
       common-darwin = {
