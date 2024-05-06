@@ -22,6 +22,8 @@
       url = "github:fufexan/nix-gaming";
     };
 
+    colmena-flake.url = "github:juspay/colmena-flake";
+
     # Neovim
     nixvim = {
       url = "github:nix-community/nixvim";
@@ -108,6 +110,7 @@
       imports = [
         inputs.treefmt-nix.flakeModule
         inputs.nixos-flake.flakeModule
+        inputs.colmena-flake.flakeModules.default
         ./users
         ./home
         ./nixos
@@ -153,6 +156,9 @@
         packages.default = self'.packages.activate;
         devShells.default = pkgs.mkShell {
           inputsFrom = [ config.treefmt.build.devShell ];
+          packages = with pkgs; [
+            colmena
+          ];
         };
       };
     };
