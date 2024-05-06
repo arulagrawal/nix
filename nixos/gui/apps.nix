@@ -18,4 +18,6 @@
 
     (prismlauncher.override { withWaylandGLFW = true; })
   ];
+
+  programs.virt-manager.enable = true;
 }
