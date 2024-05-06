@@ -117,6 +117,8 @@
         ./nix-darwin
       ];
 
+      # Colmena deployment configuration
+      # See https://github.com/juspay/colmena-flake
       colmena-flake.deployment = {
         oven = {
           targetHost = "oven";
