@@ -21,7 +21,7 @@ in
     # services
 
     "${self}/nixos/home-assistant.nix"
-    "${self}/nixos/server/minecraft.nix"
+    #"${self}/nixos/server/minecraft.nix"
   ];
 
   disko.device = "/dev/sda";
