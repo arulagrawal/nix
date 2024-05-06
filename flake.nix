@@ -117,6 +117,13 @@
         ./nix-darwin
       ];
 
+      colmena-flake.deployment = {
+        oven = {
+          targetHost = "oven";
+          targetUser = "arul";
+        };
+      };
+
       flake = {
         darwinConfigurations.coffeemaker =
           self.nixos-flake.lib.mkMacosSystem
