@@ -53,6 +53,7 @@
       # start apps in workspaces
       "workspace 1 silent, class:^(firefox)$"
       "workspace 4 silent, class:^(steam)$"
+      "workspace 8 silent, class:^(vesktop)$"
       "workspace 8 silent, title:^(Discord)$"
       "workspace 9 silent, title:^(Spotify( Premium)?)$"
 
