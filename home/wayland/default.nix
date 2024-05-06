@@ -22,7 +22,6 @@
     wl-screenrec
     wlr-randr
 
-
     flake.inputs.hyprpaper.packages.${pkgs.system}.default
     screenshot
   ];

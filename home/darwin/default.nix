@@ -22,5 +22,10 @@
     source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix/home/darwin/scripts";
   };
 
-  home.packages = with pkgs; [ nextprev screenshot rustup ];
+  home.packages = with pkgs; [
+    nextprev
+    screenshot
+    rustup
+    restic
+  ];
 }
