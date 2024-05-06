@@ -22,6 +22,8 @@
       url = "github:fufexan/nix-gaming";
     };
 
+    colmena-flake.url = "github:juspay/colmena-flake";
+
     # Neovim
     nixvim = {
       url = "github:nix-community/nixvim";
@@ -108,11 +110,27 @@
       imports = [
         inputs.treefmt-nix.flakeModule
         inputs.nixos-flake.flakeModule
+        inputs.colmena-flake.flakeModules.default
         ./users
         ./home
         ./nixos
         ./nix-darwin
       ];
+
+      # Colmena deployment configuration
+      # See https://github.com/juspay/colmena-flake
+      colmena-flake.deployment = {
+        oven = {
+          targetHost = "oven";
+          targetUser = "arul";
+        };
+
+        kettle = {
+          targetHost = "kettle";
+          targetUser = "arul";
+          buildOnTarget = true;
+        };
+      };
 
       flake = {
         darwinConfigurations.coffeemaker =
@@ -153,6 +171,9 @@
         packages.default = self'.packages.activate;
         devShells.default = pkgs.mkShell {
           inputsFrom = [ config.treefmt.build.devShell ];
+          packages = with pkgs; [
+            colmena
+          ];
         };
       };
     };
