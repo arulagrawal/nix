@@ -2,5 +2,5 @@
 *.log
 tmp/
 .b2.env
-
+.direnv
 result*
