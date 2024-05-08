@@ -302,11 +302,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1714855318,
-        "narHash": "sha256-1qT/fu8bOjCWtZqhmlgaAjztL0DzdYX4kYFclmVxY1M=",
+        "lastModified": 1715131664,
+        "narHash": "sha256-3SMRivAW99ysNPMHo7C5nG7WcgJoskTAvyRMYQloxC8=",
         "owner": "arulagrawal",
         "repo": "home-manager",
-        "rev": "ed4baa184dcf2a9f008f82354c8278f1ed78dd27",
+        "rev": "5b5cef33eb3d326f3049a453ef713d30d3b21cc7",
         "type": "github"
       },
       "original": {

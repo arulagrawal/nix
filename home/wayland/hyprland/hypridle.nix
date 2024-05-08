@@ -9,6 +9,7 @@ let
   '';
 in
 {
+  disabledModules = [ "services/hypridle.nix" ];
   # screen idle
   services.hypridle = {
     enable = true;
