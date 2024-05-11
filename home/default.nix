@@ -15,7 +15,6 @@
           ./nix.nix
           ./git.nix
           ./gpg.nix
-          ./direnv.nix
         ];
       };
 
@@ -23,6 +22,7 @@
       common-desktop = {
         imports = [
           ./xdg.nix
+          ./direnv.nix
         ];
       };
 
