@@ -31,6 +31,7 @@
       inputs.flake-parts.follows = "flake-parts";
       inputs.home-manager.follows = "home-manager";
       inputs.nix-darwin.follows = "nix-darwin";
+      inputs.treefmt-nix.follows = "treefmt-nix";
     };
 
     spicetify-nix = {
