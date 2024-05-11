@@ -13,7 +13,8 @@ in
   # screen idle
   services.hypridle = {
     enable = true;
-    lockCmd = lib.getExe config.programs.hyprlock.package;
+    #lockCmd = lib.getExe config.programs.hyprlock.package;
+    lockCmd = "pidof ${lib.getExe config.programs.hyprlock.package} || ${lib.getExe config.programs.hyprlock.package}";
     beforeSleepCmd = "${pkgs.systemd}/bin/loginctl lock-session";
     afterSleepCmd = "hyprctl dispatch dpms on";
 

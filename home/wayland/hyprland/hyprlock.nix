@@ -19,7 +19,7 @@ in
     backgrounds = [
       {
         monitor = "";
-        path = "${config.home.homeDirectory}/images/wallpapers/liz_to_aoi_tori.jpg";
+        path = "${config.home.homeDirectory}/images/wallpapers/resize_liz.jpg";
       }
     ];
 
