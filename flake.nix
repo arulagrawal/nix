@@ -9,10 +9,22 @@
     nix-darwin.url = "github:arulagrawal/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
 
+
     flake-parts.url = "github:hercules-ci/flake-parts";
     nixos-flake.url = "github:srid/nixos-flake";
-    flake-utils.url = "github:numtide/flake-utils";
+    flake-utils = {
+      url = "github:numtide/flake-utils";
+      inputs.systems.follows = "systems";
+    };
 
+    systems.url = "github:nix-systems/default-linux";
+
+    agenix = {
+      url = "github:ryantm/agenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+      inputs.systems.follows = "systems";
+    };
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -100,6 +112,12 @@
 
     nextprev = {
       url = "git+https://git.arul.io/arul/nextprev";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
+    };
+
+    notif = {
+      url = "git+https://git.arul.io/arul/notif";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
     };

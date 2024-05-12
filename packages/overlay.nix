@@ -9,6 +9,8 @@ self: super: {
   fe = inputs.fe.defaultPackage.${system};
   dl_sieve = inputs.dl_sieve.defaultPackage.${system};
   nextprev = inputs.nextprev.packages.${system}.default;
+  notif = inputs.notif.packages.${system}.default;
+  agenix = inputs.agenix.packages.${system}.default;
 
   tailscale =
     let

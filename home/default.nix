@@ -44,10 +44,12 @@
           inputs.hyprpaper.homeManagerModules.default
           inputs.matugen.nixosModules.default
           inputs.anyrun.homeManagerModules.default
+          inputs.agenix.homeManagerModules.default
           self.nixosModules.theme
           ./wayland
           ./specialisations.nix
           ./transient-services.nix
+          ./services/notif.nix
           ./spotify.nix
           ./polkit-agent.nix
           ./vscode.nix
