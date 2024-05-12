@@ -24,6 +24,10 @@ in
   ];
 
   disko.device = "/dev/sda";
+  restic = {
+    time = "08:00";
+    exclude = [ "/home/*/windows-10" ];
+  };
 
   system.stateVersion = "23.11";
   nixpkgs.hostPlatform = "x86_64-linux";
