@@ -24,6 +24,7 @@
           ./xdg.nix
           ./direnv.nix
         ];
+        neovim.config = "full";
       };
 
       # common to all linux
