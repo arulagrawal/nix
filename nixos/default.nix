@@ -1,4 +1,4 @@
-{ self, config, ... }:
+{ self, config, inputs, ... }:
 
 {
   # Configuration common to all Linux systems
@@ -52,6 +52,7 @@
       server.imports = [
         self.nixosModules.default
         self.nixosModules.my-home-server
+        inputs.agenix.nixosModules.default
         ./server
       ];
     };

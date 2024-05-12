@@ -1,4 +1,4 @@
-{ self, config, ... }:
+{ self, config, flake, ... }:
 {
   # Configuration common to all macOS systems
   flake = {
@@ -15,6 +15,7 @@
         self.darwinModules_.home-manager
         self.darwinModules.my-home
         self.nixosModules.common
+        flake.inputs.agenix.nixosModules.default
         ./skhd.nix
         ./yabai.nix
         ./homebrew.nix

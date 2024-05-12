@@ -21,6 +21,7 @@
     nil
     nixpkgs-fmt
     just
+    agenix
 
     # Dev
     gh
