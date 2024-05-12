@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   imports = [
     # Isolated features
-    #./hidpi.nix
+    ./ddcutil.nix
     ./hyprland.nix
     ./thunar.nix
     ./apps.nix

@@ -7,6 +7,7 @@
     ./gtk.nix
     ./wlogout.nix
     ./dunst.nix
+    ./wlsunset.nix
 
     ./obs.nix
   ];
