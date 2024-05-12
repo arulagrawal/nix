@@ -11,6 +11,8 @@ in
       "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
     ];
 
+    monitor = "DP-1,2560x1440@240,0x0,1,bitdepth,10,vrr,1";
+
     exec-once = [
       # set cursor for HL itself
       "firefox"
