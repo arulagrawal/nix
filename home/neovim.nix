@@ -140,12 +140,12 @@
                   fetchingTimeout = 200;
                   maxViewEntries = 30;
                 };
-                snippet = { 
+                snippet = {
                   expand = ''
-                function(args)
-                  require('luasnip').lsp_expand(args.body)
-                end
-              '';
+                    function(args)
+                      require('luasnip').lsp_expand(args.body)
+                    end
+                  '';
                 };
                 completion = {
                   completeopt = "menu,menuone,noselect";
