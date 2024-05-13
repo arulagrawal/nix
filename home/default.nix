@@ -40,9 +40,9 @@
           self.homeModules.common-linux
           self.homeModules.common-desktop
           inputs.hyprland.homeManagerModules.default
-          inputs.hyprlock.homeManagerModules.default
-          inputs.hypridle.homeManagerModules.default
-          inputs.hyprpaper.homeManagerModules.default
+          # inputs.hyprlock.homeManagerModules.default
+          # inputs.hypridle.homeManagerModules.default
+          # inputs.hyprpaper.homeManagerModules.default
           inputs.anyrun.homeManagerModules.default
           inputs.agenix.homeManagerModules.default
           self.nixosModules.theme
