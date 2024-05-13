@@ -1,8 +1,5 @@
 { config, flake, pkgs, ... }:
 let
-  variant = "dark";
-  c = config.programs.matugen.theme.colors.colors.${variant};
-
   font_family = "FiraCode Nerd Font";
 in
 {
@@ -39,12 +36,12 @@ in
 
         outline_thickness = 2;
 
-        outer_color = "rgb(${c.primary})";
-        inner_color = "rgb(${c.on_primary_container})";
-        font_color = "rgb(${c.primary_container})";
+        outer_color = "rgb(adc6ff)";
+        inner_color = "rgb(d8e2ff)";
+        font_color = "rgb(004494)";
 
         fade_on_empty = false;
-        placeholder_text = ''<span font_family="${font_family}" foreground="##${c.primary_container}">...</span>'';
+        placeholder_text = ''<span font_family="${font_family}" foreground="##004494">...</span>'';
 
         dots_spacing = 0.3;
         dots_center = true;
@@ -57,7 +54,7 @@ in
         text = "$TIME";
         inherit font_family;
         font_size = 150;
-        color = "rgb(${c.primary})";
+        color = "rgb(adc6ff)";
 
         position = {
           x = 0;

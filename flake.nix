@@ -86,11 +86,6 @@
       inputs.flake-parts.follows = "flake-parts";
     };
 
-    matugen = {
-      url = "github:InioX/matugen/module";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     naersk = {
       url = "github:nmattia/naersk/master";
       inputs.nixpkgs.follows = "nixpkgs";

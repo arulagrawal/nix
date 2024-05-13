@@ -1,7 +1,5 @@
 { config, ... }:
 let
-  variant = config.theme.name;
-  c = config.programs.matugen.theme.colors.colors_android.${variant};
   pointer = config.home.pointerCursor;
 in
 {
@@ -70,8 +68,8 @@ in
         gradients = false;
       };
 
-      "col.border_active" = "rgba(${c.color_accent_primary}88);";
-      "col.border_inactive" = "rgba(${c.color_accent_primary_variant}88)";
+      "col.border_active" = "rgba(d8e2ff88);";
+      "col.border_inactive" = "rgba(80aaff88)";
     };
 
     input = {
