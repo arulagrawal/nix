@@ -17,7 +17,7 @@
       inputs.systems.follows = "systems";
     };
 
-    systems.url = "github:nix-systems/default-linux";
+    systems.url = "github:nix-systems/default";
 
     agenix = {
       url = "github:ryantm/agenix";
