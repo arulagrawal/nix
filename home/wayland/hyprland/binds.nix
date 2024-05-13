@@ -88,6 +88,12 @@ in
         "$mod, Q, workspace, m-1"
         "$mod, E, workspace, m+1"
 
+        "$mod SHIFT, Q, movetoworkspacesilent, r-1"
+        "$mod SHIFT, E, movetoworkspacesilent, r+1"
+
+
+        "$mod, X, workspace, previous"
+
         # cycle monitors
         "$mod SHIFT, bracketleft, focusmonitor, l"
         "$mod SHIFT, bracketright, focusmonitor, r"
