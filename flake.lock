@@ -816,11 +816,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1715481188,
-        "narHash": "sha256-pd2x8zF6LwKCiGOJZBjJ7gEMbRMmkmkRCc4Sl0KeHBE=",
+        "lastModified": 1715584587,
+        "narHash": "sha256-CRg4eBlFF6YjR/Hw1IL3VaTf2aPG6BHEII6mBf3A3zc=",
         "ref": "refs/heads/master",
-        "rev": "ab3b41b6361ec33f6e3eb2ee5a5f153f1e3a2307",
-        "revCount": 42,
+        "rev": "ddfc4cf8e9f56f4521108511c8bc6256e332c339",
+        "revCount": 44,
         "type": "git",
         "url": "https://git.arul.io/arul/notif"
       },
