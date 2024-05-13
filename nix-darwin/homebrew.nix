@@ -7,7 +7,6 @@
       upgrade = true;
     };
     brews = [ "aircrack-ng" "bitwarden-cli" ];
-    taps = [ "homebrew/cask-versions" ];
     casks = [
       "orion"
       "google-chrome"
@@ -21,7 +20,7 @@
       "discord"
       "spotify"
       "plex"
-      "homebrew/cask-versions/iterm2-beta"
+      "iterm2@beta"
       "veracrypt"
       "macfuse"
       "postman"
