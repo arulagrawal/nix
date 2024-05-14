@@ -28,6 +28,8 @@
     screenshot
   ];
 
+  services.cliphist.enable = true;
+
   # make stuff work on wayland
   home.sessionVariables = {
     QT_QPA_PLATFORM = "wayland";

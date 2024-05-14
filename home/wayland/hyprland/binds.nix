@@ -101,6 +101,9 @@ in
         # send focused workspace to left/right monitors
         "$mod SHIFT ALT, bracketleft, movecurrentworkspacetomonitor, l"
         "$mod SHIFT ALT, bracketright, movecurrentworkspacetomonitor, r"
+
+        # clipboard history
+        "$mod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
       ]
       ++ workspaces;
 

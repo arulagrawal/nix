@@ -54,7 +54,7 @@ in
         box-drawings-uses-font-glyphs = "yes";
         pad = "7x10 center";
         notify = "notify-send -a \${app-id} -i \${app-id} \${title} \${body}";
-        selection-target = "clipboard";
+        selection-target = "none";
       };
 
       scrollback = {
