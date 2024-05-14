@@ -106,7 +106,7 @@ in
 
     bindr = [
       # launcher
-      "$mod, SPACE, exec, pkill .anyrun-wrapped || anyrun"
+      "$mod, SPACE, exec, rofi -show combi -show-icons"
     ];
 
     bindl = [

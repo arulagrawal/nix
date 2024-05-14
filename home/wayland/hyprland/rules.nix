@@ -17,6 +17,8 @@
           "system-menu"
 
           "anyrun"
+          "rofi"
+          "Rofi"
           "logout_dialog"
         ];
 

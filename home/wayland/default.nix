@@ -8,6 +8,7 @@
     ./wlogout.nix
     ./dunst.nix
     ./wlsunset.nix
+    ./rofi.nix
 
     ./obs.nix
   ];

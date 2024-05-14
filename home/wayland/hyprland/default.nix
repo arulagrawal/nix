@@ -6,7 +6,7 @@
     ./wallpaper.nix
     ./hyprlock.nix
     ./hypridle.nix
-    ./anyrun
+    #./anyrun
   ];
 
   home.packages = [
