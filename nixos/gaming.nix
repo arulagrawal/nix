@@ -28,7 +28,8 @@ in
     };
   };
 
-  environment.systemPackages = [
-    inputs.nix-gaming.packages.${pkgs.system}.wine-ge
+  environment.systemPackages = with pkgs; [
+    inputs.nix-gaming.packages.${system}.wine-ge
+    heroic # launcher for epic, gog and amazon games
   ];
 }

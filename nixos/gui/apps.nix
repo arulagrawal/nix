@@ -9,6 +9,7 @@
     ankama-launcher
     thunderbird
     nvtopPackages.amd
+    gpu-screen-recorder-gtk
 
     (catppuccin-gtk.override {
       size = "compact";

@@ -53,10 +53,11 @@ in
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages;
   boot.kernelParams = [
     "quiet"
     "splash"
+    "iommu=pt"
   ];
 
   fileSystems."/" =
@@ -73,7 +74,7 @@ in
 
   swapDevices = [ ];
 
-  services.xserver.videoDrivers = [ "amdgpu" ];
+  services.xserver.videoDrivers = [ "modesetting" ];
 
   hardware = {
     keyboard.zsa.enable = true;
@@ -85,7 +86,18 @@ in
       driSupport32Bit = true;
       extraPackages = with pkgs; [
         rocmPackages.clr.icd
+        rocmPackages.clr
         rocm-opencl-runtime
+        rocm-opencl-icd
+
+        libva
+        vaapiVdpau
+        libvdpau-va-gl
+      ];
+
+      extraPackages32 = with pkgs.pkgsi686Linux; [
+        vaapiVdpau
+        libvdpau-va-gl
       ];
     };
   };
