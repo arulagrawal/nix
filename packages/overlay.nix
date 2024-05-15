@@ -3,11 +3,12 @@ let
   inherit (flake) inputs;
 in
 self: super: {
-  pa = self.callPackage ./pa.nix { };
-  screenshot = self.callPackage ./screenshot.nix { };
+  pa = self.callPackage ./scripts/pa.nix { };
+  screenshot = self.callPackage ./scripts/screenshot.nix { };
   ankama-launcher = self.callPackage ./ankama-launcher.nix { };
   fe = inputs.fe.defaultPackage.${system};
   dl_sieve = inputs.dl_sieve.defaultPackage.${system};
+  rofi-sound = inputs.rofi-sound.packages.${system}.default;
   nextprev = inputs.nextprev.packages.${system}.default;
   notif = inputs.notif.packages.${system}.default;
   agenix = inputs.agenix.packages.${system}.default;

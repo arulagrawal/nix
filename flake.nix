@@ -105,9 +105,22 @@
       inputs.utils.follows = "flake-utils";
     };
 
+    crane = {
+      url = "github:ipetkov/crane";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nextprev = {
       url = "git+https://git.arul.io/arul/nextprev";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.crane.follows = "crane";
+      inputs.flake-utils.follows = "flake-utils";
+    };
+
+    rofi-sound = {
+      url = "git+https://git.arul.io/arul/rofi-sound";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.crane.follows = "crane";
       inputs.flake-utils.follows = "flake-utils";
     };
 

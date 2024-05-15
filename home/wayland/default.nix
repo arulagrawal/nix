@@ -26,6 +26,9 @@
 
     flake.inputs.hyprpaper.packages.${pkgs.system}.default
     screenshot
+
+    # for controlling sound
+    playerctl
   ];
 
   services.cliphist.enable = true;

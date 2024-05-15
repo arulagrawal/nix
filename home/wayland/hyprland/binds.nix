@@ -127,10 +127,23 @@ in
       # volume
       ", XF86AudioRaiseVolume, exec, wpctl set-volume -l '1.0' @DEFAULT_AUDIO_SINK@ 6%+"
       ", XF86AudioLowerVolume, exec, wpctl set-volume -l '1.0' @DEFAULT_AUDIO_SINK@ 6%-"
-
-      # backlight
-      ", XF86MonBrightnessUp, exec, brillo -q -u 300000 -A 5"
-      ", XF86MonBrightnessDown, exec, brillo -q -u 300000 -U 5"
     ];
+
   };
+
+  wayland.windowManager.hyprland.extraConfig = ''
+    bind = $mod, S, submap, rofi-sound
+
+    submap = rofi-sound
+    bind=, A, exec, rofi-sound application
+    bind=, A, submap, reset
+    bind=, D, exec, rofi-sound default
+    bind=, D, submap, reset
+    bind=, F, exec, rofi-sound default-force
+    bind=, F, submap, reset
+    bind=,escape,submap,reset 
+    submap = reset
+  '';
+
+
 }

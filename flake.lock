@@ -68,16 +68,15 @@
     "crane": {
       "inputs": {
         "nixpkgs": [
-          "nextprev",
           "nixpkgs"
         ]
       },
       "locked": {
-        "lastModified": 1713979152,
-        "narHash": "sha256-apdecPuh8SOQnkEET/kW/UcfjCRb8JbV5BKjoH+DcP4=",
+        "lastModified": 1715274763,
+        "narHash": "sha256-3Iv1PGHJn9sV3HO4FlOVaaztOxa9uGLfOmUWrH7v7+A=",
         "owner": "ipetkov",
         "repo": "crane",
-        "rev": "a5eca68a2cf11adb32787fc141cddd29ac8eb79c",
+        "rev": "27025ab71bdca30e7ed0a16c88fd74c5970fc7f5",
         "type": "github"
       },
       "original": {
@@ -622,7 +621,9 @@
     },
     "nextprev": {
       "inputs": {
-        "crane": "crane",
+        "crane": [
+          "crane"
+        ],
         "flake-utils": [
           "flake-utils"
         ],
@@ -857,11 +858,38 @@
         "type": "github"
       }
     },
+    "rofi-sound": {
+      "inputs": {
+        "crane": [
+          "crane"
+        ],
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1715794003,
+        "narHash": "sha256-U0YbQ2kJCRPwSipwoBBD95TUPHuc6/wWBRwHcxVxWYs=",
+        "ref": "refs/heads/main",
+        "rev": "1c534fb8d857a8bde64ee701463b6cea908c1828",
+        "revCount": 1,
+        "type": "git",
+        "url": "https://git.arul.io/arul/rofi-sound"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://git.arul.io/arul/rofi-sound"
+      }
+    },
     "root": {
       "inputs": {
         "agenix": "agenix",
         "anyrun": "anyrun",
         "colmena-flake": "colmena-flake",
+        "crane": "crane",
         "disko": "disko",
         "dl_sieve": "dl_sieve",
         "fe": "fe",
@@ -880,6 +908,7 @@
         "nixpkgs": "nixpkgs_3",
         "nixvim": "nixvim",
         "notif": "notif",
+        "rofi-sound": "rofi-sound",
         "spicetify-nix": "spicetify-nix",
         "systems": "systems_4",
         "treefmt-nix": "treefmt-nix"
