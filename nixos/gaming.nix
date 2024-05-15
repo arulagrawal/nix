@@ -31,5 +31,6 @@ in
   environment.systemPackages = with pkgs; [
     inputs.nix-gaming.packages.${system}.wine-ge
     heroic # launcher for epic, gog and amazon games
+    mangohud
   ];
 }
