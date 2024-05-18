@@ -39,10 +39,10 @@ in
       };
 
       "window" = {
-        location = mkLiteral "center";
+        location = mkLiteral "north";
         width = mkLiteral "500px";
         # x-offset = mkLiteral "4px";
-        #y-offset = mkLiteral "-400px";
+        y-offset = mkLiteral "500px";
 
         background-color = mkLiteral "@bg1";
         border = mkLiteral "1px";
@@ -77,9 +77,9 @@ in
         padding = mkLiteral "4px 0px";
         lines = mkLiteral "12";
         columns = mkLiteral "1";
-        scrollbar = mkLiteral "true";
+        scrollbar = mkLiteral "false";
         fixed-height = mkLiteral "false";
-        dynamic = mkLiteral "false";
+        dynamic = mkLiteral "true";
       };
 
       "element" = {

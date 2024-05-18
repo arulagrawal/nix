@@ -15,18 +15,18 @@
       fira-code-nerdfont
     ];
 
-    fontconfig.subpixel = {
-      rgba = "rgb";
-      lcdfilter = "default";
-    };
-
-    fontconfig.hinting.style = "slight";
-
-    fontconfig.defaultFonts = {
-      serif = [ "Noto Serif" "Noto Color Emoji" ];
-      sansSerif = [ "Noto Sans" "Noto Color Emoji" ];
-      monospace = [ "FiraCode Nerd Font Mono" "Noto Color Emoji" ];
-      emoji = [ "Noto Color Emoji" ];
+    fontconfig = {
+      subpixel = {
+        rgba = "rgb";
+        lcdfilter = "default";
+      };
+      hinting.style = "slight";
+      defaultFonts = {
+        serif = [ "Noto Serif" "Noto Color Emoji" ];
+        sansSerif = [ "Noto Sans" "Noto Color Emoji" ];
+        monospace = [ "FiraCode Nerd Font Mono" "Noto Color Emoji" ];
+        emoji = [ "Noto Color Emoji" ];
+      };
     };
   };
 }

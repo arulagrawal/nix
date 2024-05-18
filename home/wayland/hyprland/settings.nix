@@ -59,6 +59,8 @@ in
         "fade, 1, 4, default"
         "windows, 1, 3, default, popin 80%"
         "workspaces, 1, 2, default, slide"
+        #"layers, 1, 0.1, default"
+        "layers, 0"
       ];
     };
 

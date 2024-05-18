@@ -114,9 +114,9 @@ in
 
     bindl = [
       # media controls
-      ", XF86AudioPlay, exec, playerctl play-pause"
-      ", XF86AudioPrev, exec, playerctl previous"
-      ", XF86AudioNext, exec, playerctl next"
+      ", XF86AudioPlay, exec, playerctl --player spotify,playerctld,%any play-pause"
+      ", XF86AudioPrev, exec, playerctl --player spotify,playerctld,%any previous"
+      ", XF86AudioNext, exec, playerctl --player spotify,playerctld,%any next"
 
       # volume
       ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"

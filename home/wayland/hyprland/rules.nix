@@ -18,7 +18,6 @@
 
           "anyrun"
           "rofi"
-          "Rofi"
           "logout_dialog"
         ];
 
