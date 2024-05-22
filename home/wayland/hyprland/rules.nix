@@ -38,6 +38,8 @@
       # allow tearing in games
       "immediate, class:^(osu\!|cs2)$"
       "immediate, class:^(plex)$"
+      "immediate, class:^(steam_app_813780)$"
+      "immediate, class:^(gamescope)$"
 
       # make Firefox PiP window floating and sticky
       "float, title:^(Picture-in-Picture)$"
@@ -46,6 +48,7 @@
       # fix steam stuff
       "float, class:^(steam)$, title:^(Friends List)$"
       "float, class:^(steam)$, title:^(Steam Settings)$"
+      "float, class:^(steam)$, title:^(?![Ss]team).*$"
 
       # throw sharing indicators away
       "workspace special silent, title:^(Firefox — Sharing Indicator)$"

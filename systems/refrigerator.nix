@@ -8,6 +8,7 @@ in
   imports = [
     #inputs.disko.nixosModules.disko
     self.nixosModules.desktop
+    inputs.chaotic.nixosModules.default
     #"${self}/nixos/disko/trivial.nix"
     "${self}/nixos/nix.nix"
     "${self}/nixos/gui"
@@ -53,7 +54,9 @@ in
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
+  #boot.kernelPackages = pkgs.linuxPackages_cachyos;
   boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
+  #chaotic.scx.enable = true; # by default uses scx_rustland scheduler
   boot.kernelParams = [
     "quiet"
     "splash"
@@ -76,6 +79,24 @@ in
 
   services.xserver.videoDrivers = [ "modesetting" ];
 
+  # chaotic.mesa-git = {
+  #   enable = true;
+  #   extraPackages = with pkgs; [
+  #     mesa_git.opencl
+  #
+  #
+  #     libva
+  #     vaapiVdpau
+  #     libvdpau-va-gl
+  #   ];
+  #   extraPackages32 = with pkgs.pkgsi686Linux; [
+  #     pkgs.mesa32_git.opencl
+  #
+  #     libva
+  #     vaapiVdpau
+  #     libvdpau-va-gl
+  #   ];
+  # };
   hardware = {
     keyboard.zsa.enable = true;
     cpu.intel.updateMicrocode = true;
@@ -85,10 +106,12 @@ in
       driSupport = true;
       driSupport32Bit = true;
       extraPackages = with pkgs; [
+        amdvlk
+
         rocmPackages.clr.icd
         rocmPackages.clr
-        rocm-opencl-runtime
-        rocm-opencl-icd
+        rocmPackages.rocminfo
+        rocmPackages.rocm-runtime
 
         libva
         vaapiVdpau
@@ -96,6 +119,9 @@ in
       ];
 
       extraPackages32 = with pkgs.pkgsi686Linux; [
+        amdvlk
+
+        libva
         vaapiVdpau
         libvdpau-va-gl
       ];
@@ -105,6 +131,14 @@ in
   systemd.tmpfiles.rules = [
     "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"
   ];
+
+  environment.variables = {
+    # VAAPI and VDPAU config for accelerated video.
+    # See https://wiki.archlinux.org/index.php/Hardware_video_acceleration
+    "VDPAU_DRIVER" = "radeonsi";
+    "LIBVA_DRIVER_NAME" = "radeonsi";
+  };
+
 
   networking = {
     hostName = "refrigerator";

@@ -6,7 +6,7 @@
         home.stateVersion = "23.11";
         imports = [
           inputs.nixvim.homeManagerModules.nixvim
-          #inputs.nix-index-database.hmModules.nix-index
+          inputs.nix-index-database.hmModules.nix-index
           ./fish.nix
           ./ssh.nix
           ./starship.nix

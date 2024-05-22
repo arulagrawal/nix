@@ -25,6 +25,7 @@
       inputs.home-manager.follows = "home-manager";
       inputs.systems.follows = "systems";
     };
+
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -33,8 +34,12 @@
     nix-gaming = {
       url = "github:fufexan/nix-gaming";
     };
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
     colmena-flake.url = "github:juspay/colmena-flake";
+
+    nix-index-database.url = "github:nix-community/nix-index-database";
+    nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
 
     # Neovim
     nixvim = {
@@ -185,7 +190,7 @@
           "home-manager"
           "nix-darwin"
           "nixos-flake"
-          #"nix-index-database"
+          "nix-index-database"
           "nixvim"
         ];
 

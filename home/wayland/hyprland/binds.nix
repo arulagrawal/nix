@@ -103,7 +103,7 @@ in
         "$mod SHIFT ALT, bracketright, movecurrentworkspacetomonitor, r"
 
         # clipboard history
-        "$mod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
+        "$mod, V, exec, cliphist list | rofi -dmenu -p clipboard | cliphist decode | wl-copy"
       ]
       ++ workspaces;
 

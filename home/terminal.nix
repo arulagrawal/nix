@@ -34,6 +34,11 @@
   ];
 
   programs = {
+    nix-index = {
+      enable = true;
+      enableFishIntegration = true;
+    };
+    nix-index-database.comma.enable = true;
     go.enable = true;
     jq.enable = true;
     htop.enable = true;

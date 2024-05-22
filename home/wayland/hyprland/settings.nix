@@ -121,6 +121,7 @@ in
 
   wayland.windowManager.hyprland.extraConfig = ''
     env = XDG_SESSION_TYPE,wayland
+    env = WLR_DRM_NO_ATOMIC,1
     env = HYPRCURSOR_THEME,${pointer.name}
     env = HYPRCURSOR_SIZE,${toString pointer.size}
   '';
