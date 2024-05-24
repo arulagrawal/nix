@@ -113,6 +113,10 @@
           };
 
           comment.enable = true;
+          nvim-autopairs = {
+            enable = true;
+            settings.check_ts = true;
+          };
           # Dev
           lsp-format.enable = true;
           lsp = {
@@ -209,7 +213,7 @@
             };
           };
           luasnip = {
-            enable = true;
+            enable = false;
             extraConfig = {
               enable_autosnippets = true;
               store_selection_keys = "<Tab>";
