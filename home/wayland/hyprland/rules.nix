@@ -48,7 +48,7 @@
       # fix steam stuff
       "float, class:^(steam)$, title:^(Friends List)$"
       "float, class:^(steam)$, title:^(Steam Settings)$"
-      "float, class:^(steam)$, title:^(?![Ss]team).*$"
+      # "float, class:^(steam)$, title:^(?![Ss]team).*$"
 
       # throw sharing indicators away
       "workspace special silent, title:^(Firefox — Sharing Indicator)$"
@@ -68,12 +68,12 @@
 
       "dimaround, class:^(gcr-prompter)$"
       "dimaround, class:^(xdg-desktop-portal-gtk)$"
-      "dimaround, class:^(polkit-gnome-authentication-agent-1)$"
+      #"dimaround, class:^(polkit-gnome-authentication-agent-1)$"
 
       # fix xwayland apps
-      "rounding 0, xwayland:1"
-      "center, class:^(.*jetbrains.*)$, title:^(Confirm Exit|Open Project|win424|win201|splash)$"
-      "size 640 400, class:^(.*jetbrains.*)$, title:^(splash)$"
+      # "rounding 0, xwayland:1"
+      # "center, class:^(.*jetbrains.*)$, title:^(Confirm Exit|Open Project|win424|win201|splash)$"
+      # "size 640 400, class:^(.*jetbrains.*)$, title:^(splash)$"
     ];
   };
 }

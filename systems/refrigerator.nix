@@ -8,7 +8,7 @@ in
   imports = [
     #inputs.disko.nixosModules.disko
     self.nixosModules.desktop
-    inputs.chaotic.nixosModules.default
+    inputs.solaar.nixosModules.default
     #"${self}/nixos/disko/trivial.nix"
     "${self}/nixos/nix.nix"
     "${self}/nixos/gui"
@@ -169,6 +169,7 @@ in
     };
   };
 
-  services.ratbagd.enable = true;
+  # for logitech mouse
+  programs.solaar.enable = true;
   services.fstrim.enable = true;
 }

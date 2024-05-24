@@ -43,7 +43,7 @@
           # inputs.hyprlock.homeManagerModules.default
           # inputs.hypridle.homeManagerModules.default
           # inputs.hyprpaper.homeManagerModules.default
-          inputs.anyrun.homeManagerModules.default
+          #inputs.anyrun.homeManagerModules.default
           inputs.agenix.homeManagerModules.default
           self.nixosModules.theme
           ./wayland

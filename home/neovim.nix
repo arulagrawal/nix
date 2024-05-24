@@ -26,6 +26,8 @@
           tabstop = 2;
           number = true;
           clipboard = "unnamedplus";
+          ignorecase = true;
+          smartcase = true;
         };
 
         # Keymaps

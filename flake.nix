@@ -31,10 +31,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    solaar = {
+      url = "https://flakehub.com/f/Svenum/Solaar-Flake/1.1.13.tar.gz";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nix-gaming = {
       url = "github:fufexan/nix-gaming";
     };
-    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+    # chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
     colmena-flake.url = "github:juspay/colmena-flake";
 
@@ -85,11 +90,11 @@
       inputs.systems.follows = "hyprland/systems";
     };
 
-    anyrun = {
-      url = "github:Kirottu/anyrun";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-parts.follows = "flake-parts";
-    };
+    # anyrun = {
+    #   url = "github:Kirottu/anyrun";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    #   inputs.flake-parts.follows = "flake-parts";
+    # };
 
     naersk = {
       url = "github:nmattia/naersk/master";
