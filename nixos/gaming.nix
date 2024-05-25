@@ -26,11 +26,19 @@ in
         xorg.libXScrnSaver
       ];
     };
+    parsec-bin = pkgs.parsec-bin.overrideAttrs
+      {
+        src = pkgs.fetchurl {
+          url = "https://builds.parsecgaming.com/package/parsec-linux.deb";
+          sha256 = "1qf1g1vjy3alda2p64hygng3g63vbr377zgj36572vif0fwimyy1";
+        };
+      };
   };
 
   environment.systemPackages = with pkgs; [
     inputs.nix-gaming.packages.${system}.wine-ge
     heroic # launcher for epic, gog and amazon games
     mangohud
+    parsec-bin
   ];
 }
