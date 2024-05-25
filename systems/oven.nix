@@ -12,7 +12,7 @@ in
     "${self}/nixos/nix.nix"
     "${self}/nixos/self/primary-as-admin.nix"
     "${self}/nixos/server"
-    "${self}/nixos/docker.nix"
+    "${self}/nixos/podman.nix"
     "${self}/nixos/virtualisation.nix"
     "${self}/nixos/tailscale.nix"
     "${self}/nixos/nh.nix"
