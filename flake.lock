@@ -128,22 +128,22 @@
     },
     "dl_sieve": {
       "inputs": {
-        "naersk": [
-          "naersk"
+        "crane": [
+          "crane"
+        ],
+        "flake-utils": [
+          "flake-utils"
         ],
         "nixpkgs": [
           "nixpkgs"
-        ],
-        "utils": [
-          "flake-utils"
         ]
       },
       "locked": {
-        "lastModified": 1697627276,
-        "narHash": "sha256-m7Dy3eH2p5zsuBQHqc71s+hAkHfvJ1UnJXLVqOVAo7I=",
+        "lastModified": 1717881750,
+        "narHash": "sha256-fF3yIkCgKrJz1vho7fPRrL6hohK6h3aPuLBpOteMzkc=",
         "ref": "refs/heads/main",
-        "rev": "b44be7828c70f2e391584728f7d30692571f628a",
-        "revCount": 16,
+        "rev": "ebc21e1448a14a77020937bd9e605985ed36bb2b",
+        "revCount": 17,
         "type": "git",
         "url": "https://git.arul.io/arul/dl_sieve"
       },
@@ -600,27 +600,6 @@
         "type": "github"
       }
     },
-    "naersk": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1717067539,
-        "narHash": "sha256-oIs5EF+6VpHJRvvpVWuqCYJMMVW/6h59aYUv9lABLtY=",
-        "owner": "nmattia",
-        "repo": "naersk",
-        "rev": "fa19d8c135e776dc97f4dcca08656a0eeb28d5c0",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nmattia",
-        "ref": "master",
-        "repo": "naersk",
-        "type": "github"
-      }
-    },
     "nextprev": {
       "inputs": {
         "crane": [
@@ -893,7 +872,6 @@
         "hyprland": "hyprland",
         "hyprlock": "hyprlock",
         "hyprpaper": "hyprpaper",
-        "naersk": "naersk",
         "nextprev": "nextprev",
         "nix-darwin": "nix-darwin",
         "nix-gaming": "nix-gaming",

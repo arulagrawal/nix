@@ -7,7 +7,7 @@ self: super: {
   screenshot = self.callPackage ./scripts/screenshot.nix { };
   ankama-launcher = self.callPackage ./ankama-launcher.nix { };
   fe = inputs.fe.packages.${system}.default;
-  dl_sieve = inputs.dl_sieve.defaultPackage.${system};
+  dl_sieve = inputs.dl_sieve.packages.${system}.default;
   rofi-sound = inputs.rofi-sound.packages.${system}.default;
   nextprev = inputs.nextprev.packages.${system}.default;
   notif = inputs.notif.packages.${system}.default;

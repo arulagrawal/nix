@@ -96,21 +96,16 @@
     #   inputs.flake-parts.follows = "flake-parts";
     # };
 
-    naersk = {
-      url = "github:nmattia/naersk/master";
+    crane = {
+      url = "github:ipetkov/crane";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     dl_sieve = {
       url = "git+https://git.arul.io/arul/dl_sieve";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.naersk.follows = "naersk";
-      inputs.utils.follows = "flake-utils";
-    };
-
-    crane = {
-      url = "github:ipetkov/crane";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.crane.follows = "crane";
+      inputs.flake-utils.follows = "flake-utils";
     };
 
     fe = {
