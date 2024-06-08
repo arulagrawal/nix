@@ -26,7 +26,7 @@ in
     "${self}/nixos/polkit.nix"
   ];
 
-  system.stateVersion = "23.11";
+  system.stateVersion = "24.11";
   nixpkgs.hostPlatform = "x86_64-linux";
 
   users.users.${flake.config.people.myself} = {
@@ -55,7 +55,8 @@ in
   boot.extraModulePackages = [ ];
 
   #boot.kernelPackages = pkgs.linuxPackages_cachyos;
-  boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
+  # boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
+  boot.kernelPackages = pkgs.linuxPackages_zen;
   #chaotic.scx.enable = true; # by default uses scx_rustland scheduler
   boot.kernelParams = [
     "quiet"

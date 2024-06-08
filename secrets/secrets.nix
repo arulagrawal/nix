@@ -12,4 +12,5 @@ in
 {
   "notif.age".publicKeys = users ++ [ refrigerator ];
   "restic.age".publicKeys = users ++ systems;
+  "cloudflared.age".publicKeys = users ++ [ oven ];
 }

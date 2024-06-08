@@ -3,7 +3,7 @@
   flake = {
     homeModules = {
       common = {
-        home.stateVersion = "23.11";
+        home.stateVersion = "24.11";
         imports = [
           inputs.nixvim.homeManagerModules.nixvim
           inputs.nix-index-database.hmModules.nix-index

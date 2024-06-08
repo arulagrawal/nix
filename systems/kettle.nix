@@ -21,7 +21,7 @@ in
   disko.device = "/dev/vda";
   restic.time = "07:00";
 
-  system.stateVersion = "23.11";
+  system.stateVersion = "24.11";
   nixpkgs.hostPlatform = "x86_64-linux";
 
   users.users.${flake.config.people.myself} = {

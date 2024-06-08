@@ -21,6 +21,7 @@ in
 
     "${self}/nixos/home-assistant.nix"
     #"${self}/nixos/server/minecraft.nix"
+    "${self}/nixos/server/cloudflared.nix"
   ];
 
   disko.device = "/dev/sda";
@@ -29,7 +30,7 @@ in
     exclude = [ "/home/*/windows-10" ];
   };
 
-  system.stateVersion = "23.11";
+  system.stateVersion = "24.11";
   nixpkgs.hostPlatform = "x86_64-linux";
 
   users.users.${flake.config.people.myself} = {
