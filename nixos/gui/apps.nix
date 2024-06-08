@@ -5,7 +5,6 @@
     vesktop
     wezterm
     pavucontrol
-    mpv
     ankama-launcher
     thunderbird
     nvtopPackages.amd
