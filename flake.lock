@@ -154,22 +154,22 @@
     },
     "fe": {
       "inputs": {
-        "naersk": [
-          "naersk"
+        "crane": [
+          "crane"
+        ],
+        "flake-utils": [
+          "flake-utils"
         ],
         "nixpkgs": [
           "nixpkgs"
-        ],
-        "utils": [
-          "flake-utils"
         ]
       },
       "locked": {
-        "lastModified": 1698310324,
-        "narHash": "sha256-IwzXkN3lpMzE3JQ1pIIBOXYxKgHLjHche6fpDGCA/EM=",
+        "lastModified": 1717861322,
+        "narHash": "sha256-H3tKjUqxdcojRVOegmFDjzh4fhsryC/NZSXCZjhVe4A=",
         "ref": "refs/heads/main",
-        "rev": "fcc086096d29e67ef2f45c73320413a63ce1bb72",
-        "revCount": 12,
+        "rev": "df32dc116dee8d86db1e90d880b54219dd48fc3f",
+        "revCount": 14,
         "type": "git",
         "url": "https://git.arul.io/arul/fe"
       },

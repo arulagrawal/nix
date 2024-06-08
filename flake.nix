@@ -108,16 +108,16 @@
       inputs.utils.follows = "flake-utils";
     };
 
-    fe = {
-      url = "git+https://git.arul.io/arul/fe";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.naersk.follows = "naersk";
-      inputs.utils.follows = "flake-utils";
-    };
-
     crane = {
       url = "github:ipetkov/crane";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    fe = {
+      url = "git+https://git.arul.io/arul/fe";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.crane.follows = "crane";
+      inputs.flake-utils.follows = "flake-utils";
     };
 
     nextprev = {
