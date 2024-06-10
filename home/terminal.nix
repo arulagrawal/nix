@@ -5,7 +5,8 @@
   home.packages = with pkgs; [
     # Unixy tools
     ripgrep
-    ncdu
+    # ncdu
+    gdu
     glow
     shellcheck
     bat

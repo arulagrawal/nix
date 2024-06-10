@@ -75,6 +75,8 @@
           self.homeModules.common-desktop
           ./darwin
         ];
+        # idk enabling this breaks macos config and autocomplete still works
+        programs.nixvim.plugins.luasnip.enable = lib.mkForce false;
       };
     };
   };
