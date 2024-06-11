@@ -35,6 +35,11 @@ in
       };
   };
 
+  programs.gamemode.enable = true;
+  users.users.${flake.config.people.myself} = {
+    extraGroups = [ "gamemode" ];
+  };
+
   environment.systemPackages = with pkgs; [
     inputs.nix-gaming.packages.${system}.wine-ge
     heroic # launcher for epic, gog and amazon games
