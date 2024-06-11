@@ -1,4 +1,7 @@
 {
-  # Garbage collect automatically every week
-  nix.gc.automatic = true;
+  # Garbage collect automatically every month
+  nix.gc = {
+    automatic = true;
+    frequency = "monthly";
+  };
 }
