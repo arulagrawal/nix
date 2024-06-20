@@ -139,7 +139,7 @@
             };
             servers = {
               marksman.enable = true;
-              nil_ls.enable = true;
+              nil-ls.enable = true;
               gopls.enable = true;
               pyright.enable = true;
               rust-analyzer = {

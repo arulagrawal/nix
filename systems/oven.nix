@@ -30,7 +30,7 @@ in
     exclude = [ "/home/*/windows-10" ];
   };
 
-  system.stateVersion = "24.11";
+  system.stateVersion = "24.05";
   nixpkgs.hostPlatform = "x86_64-linux";
 
   users.users.${flake.config.people.myself} = {

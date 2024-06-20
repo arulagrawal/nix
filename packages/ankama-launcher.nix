@@ -3,7 +3,7 @@ let
   name = "ankama-launcher";
   src = pkgs.fetchurl {
     url = "https://launcher.cdn.ankama.com/installers/production/Ankama%20Launcher-Setup-x86_64.AppImage";
-    sha256 = "sha256-XdjEQ/AQsiAz9mCo++agOHeXKdS07WXt+nvcMfATeCM="; # Change for the sha256 you get after running nix-prefetch-url https://download.ankama.com/launcher/full/linux/x64
+    sha256 = "sha256-NXHNgdyoJsLX+GaHM64CrPn4AN4I6YYwxzXGHE2MuS4="; # Change for the sha256 you get after running nix-prefetch-url https://download.ankama.com/launcher/full/linux/x64
     name = "ankama-launcher.AppImage";
   };
 

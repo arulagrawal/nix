@@ -26,7 +26,7 @@ in
     "${self}/nixos/polkit.nix"
   ];
 
-  system.stateVersion = "24.11";
+  system.stateVersion = "24.05";
   nixpkgs.hostPlatform = "x86_64-linux";
 
   users.users.${flake.config.people.myself} = {
@@ -38,6 +38,7 @@ in
   programs.fish.enable = true;
   programs.command-not-found.enable = false;
   programs.dconf.enable = true;
+  nix.package = pkgs.nixVersions.latest;
 
   environment = {
     shells = with pkgs; [ fish ];
@@ -55,8 +56,15 @@ in
   boot.extraModulePackages = [ ];
 
   #boot.kernelPackages = pkgs.linuxPackages_cachyos;
-  # boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
-  boot.kernelPackages = pkgs.linuxPackages_zen;
+  boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
+  specialisation = {
+    "zen_kernel" = {
+      inheritParentConfig = true;
+      configuration = {
+        boot.kernelPackages = lib.mkForce pkgs.linuxPackages_zen;
+      };
+    };
+  };
   #chaotic.scx.enable = true; # by default uses scx_rustland scheduler
   boot.kernelParams = [
     "quiet"
