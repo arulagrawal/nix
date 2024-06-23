@@ -38,7 +38,7 @@
       # allow tearing in games
       "immediate, class:^(osu\!|cs2)$"
       "immediate, class:^(plex)$"
-      "immediate, class:^(steam_app_813780)$"
+      "immediate, class:^(steam_app_\d*)$"
       "immediate, class:^(gamescope)$"
 
       # make Firefox PiP window floating and sticky
@@ -68,12 +68,12 @@
 
       "dimaround, class:^(gcr-prompter)$"
       "dimaround, class:^(xdg-desktop-portal-gtk)$"
-      #"dimaround, class:^(polkit-gnome-authentication-agent-1)$"
+      "dimaround, class:^(polkit-gnome-authentication-agent-1)$"
 
       # fix xwayland apps
-      # "rounding 0, xwayland:1"
-      # "center, class:^(.*jetbrains.*)$, title:^(Confirm Exit|Open Project|win424|win201|splash)$"
-      # "size 640 400, class:^(.*jetbrains.*)$, title:^(splash)$"
+      "rounding 0, xwayland:1"
+      "center, class:^(.*jetbrains.*)$, title:^(Confirm Exit|Open Project|win424|win201|splash)$"
+      "size 640 400, class:^(.*jetbrains.*)$, title:^(splash)$"
     ];
   };
 }
