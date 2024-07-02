@@ -69,6 +69,10 @@ in
   boot.kernelParams = [
     "quiet"
     "splash"
+    "amd_iommu=on"
+    "amdgpu.noretry=0"
+    "amdgpu.lockup_timeout=1000"
+    "amdgpu.gpu_recovery=1"
     "iommu=pt"
   ];
 
@@ -110,10 +114,9 @@ in
     keyboard.zsa.enable = true;
     cpu.intel.updateMicrocode = true;
     enableRedistributableFirmware = true;
-    opengl = {
+    graphics = {
       enable = true;
-      driSupport = true;
-      driSupport32Bit = true;
+      enable32Bit = true;
       extraPackages = with pkgs; [
         amdvlk
 
@@ -146,7 +149,11 @@ in
     # See https://wiki.archlinux.org/index.php/Hardware_video_acceleration
     "VDPAU_DRIVER" = "radeonsi";
     "LIBVA_DRIVER_NAME" = "radeonsi";
+    AMD_VULKAN_ICD = "RADV";
+    VK_ICD_FILENAMES = "/run/opengl-driver/share/vulkan/icd.d/radeon_icd.x86_64.json";
   };
+
+
 
 
   networking = {

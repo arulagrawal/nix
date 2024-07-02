@@ -81,6 +81,7 @@
           # UI
           lualine.enable = true;
           bufferline.enable = true;
+          indent-o-matic.enable = true;
           treesitter = {
             enable = true;
             indent = true;
