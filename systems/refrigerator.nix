@@ -64,17 +64,23 @@ in
         boot.kernelPackages = lib.mkForce pkgs.linuxPackages_zen;
       };
     };
+    "latest_stock_kernel" = {
+      inheritParentConfig = true;
+      configuration = {
+        boot.kernelPackages = lib.mkForce pkgs.linuxPackages_latest;
+      };
+    };
   };
   #chaotic.scx.enable = true; # by default uses scx_rustland scheduler
-  boot.kernelParams = [
-    "quiet"
-    "splash"
-    "amd_iommu=on"
-    "amdgpu.noretry=0"
-    "amdgpu.lockup_timeout=1000"
-    "amdgpu.gpu_recovery=1"
-    "iommu=pt"
-  ];
+  # boot.kernelParams = [
+  #   "quiet"
+  #   "splash"
+  #   "amd_iommu=on"
+  #   "amdgpu.noretry=0"
+  #   "amdgpu.lockup_timeout=1000"
+  #   "amdgpu.gpu_recovery=1"
+  #   "iommu=pt"
+  # ];
 
   fileSystems."/" =
     {
@@ -90,26 +96,8 @@ in
 
   swapDevices = [ ];
 
-  services.xserver.videoDrivers = [ "modesetting" ];
+  services.xserver.videoDrivers = [ "amdgpu" ];
 
-  # chaotic.mesa-git = {
-  #   enable = true;
-  #   extraPackages = with pkgs; [
-  #     mesa_git.opencl
-  #
-  #
-  #     libva
-  #     vaapiVdpau
-  #     libvdpau-va-gl
-  #   ];
-  #   extraPackages32 = with pkgs.pkgsi686Linux; [
-  #     pkgs.mesa32_git.opencl
-  #
-  #     libva
-  #     vaapiVdpau
-  #     libvdpau-va-gl
-  #   ];
-  # };
   hardware = {
     keyboard.zsa.enable = true;
     cpu.intel.updateMicrocode = true;
@@ -117,26 +105,14 @@ in
     graphics = {
       enable = true;
       enable32Bit = true;
-      extraPackages = with pkgs; [
-        amdvlk
-
-        rocmPackages.clr.icd
-        rocmPackages.clr
-        rocmPackages.rocminfo
-        rocmPackages.rocm-runtime
-
-        libva
-        vaapiVdpau
-        libvdpau-va-gl
-      ];
-
-      extraPackages32 = with pkgs.pkgsi686Linux; [
-        amdvlk
-
-        libva
-        vaapiVdpau
-        libvdpau-va-gl
-      ];
+    };
+    amdgpu = {
+      initrd.enable = true;
+      opencl.enable = true;
+      amdvlk = {
+        enable = true;
+        support32Bit.enable = true;
+      };
     };
   };
 
