@@ -72,15 +72,22 @@ in
     };
   };
   #chaotic.scx.enable = true; # by default uses scx_rustland scheduler
-  # boot.kernelParams = [
-  #   "quiet"
-  #   "splash"
-  #   "amd_iommu=on"
-  #   "amdgpu.noretry=0"
-  #   "amdgpu.lockup_timeout=1000"
-  #   "amdgpu.gpu_recovery=1"
-  #   "iommu=pt"
-  # ];
+  boot.kernelParams = [
+    #   "quiet"
+    #   "splash"
+    "amd_iommu=off"
+    #   "amdgpu.noretry=0"
+    #   "amdgpu.lockup_timeout=1000"
+    #   "amdgpu.gpu_recovery=1"
+    #   "iommu=pt"
+  ];
+
+  #try kde
+  services.xserver.enable = true;
+  services.xserver.displayManager.sddm.enable = true;
+  services.xserver.desktopManager.plasma6.enable = true;
+  services.xserver.displayManager.defaultSession = "plasma"; #use plasmax11 for x11
+  services.xserver.displayManager.sddm.wayland.enable = true;
 
   fileSystems."/" =
     {
