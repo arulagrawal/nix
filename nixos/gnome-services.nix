@@ -1,6 +1,6 @@
 { pkgs, ... }: {
 
-  programs.seahorse.enable = true;
+  # programs.seahorse.enable = true;
 
   services = {
     # needed for GNOME services outside of GNOME Desktop

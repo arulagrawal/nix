@@ -14,6 +14,7 @@
         users.users.${config.people.myself} = {
           isNormalUser = true;
         };
+        home-manager.backupFileExtension = "backup";
         home-manager.users.${config.people.myself} = {
           imports = [
             self.homeModules.common-linux-desktop

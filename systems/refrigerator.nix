@@ -154,8 +154,8 @@ in
   services.openssh.enable = true;
   security.rtkit.enable = true;
 
-  # don't need ALSA
-  sound.enable = false;
+  # needed to save volume?
+  sound.enable = true;
   hardware.pulseaudio.enable = false;
   services.pipewire = {
     enable = true;
