@@ -23,6 +23,7 @@ in
     "${self}/nixos/udev.nix"
     "${self}/nixos/gnome-services.nix"
     "${self}/nixos/avahi.nix"
+    "${self}/nixos/printing.nix"
     "${self}/nixos/polkit.nix"
   ];
 
@@ -83,11 +84,16 @@ in
   ];
 
   #try kde
-  services.xserver.enable = true;
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma6.enable = true;
-  services.xserver.displayManager.defaultSession = "plasma"; #use plasmax11 for x11
-  services.xserver.displayManager.sddm.wayland.enable = true;
+  services = {
+    desktopManager.plasma6.enable = true;
+    displayManager = {
+      sddm = {
+        enable = true;
+        wayland.enable = true;
+      };
+      defaultSession = "plasma";
+    };
+  };
 
   fileSystems."/" =
     {
@@ -155,7 +161,7 @@ in
   security.rtkit.enable = true;
 
   # needed to save volume?
-  sound.enable = true;
+  #sound.enable = true;
   hardware.pulseaudio.enable = false;
   services.pipewire = {
     enable = true;

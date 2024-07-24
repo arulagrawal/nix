@@ -14,12 +14,13 @@
 
     iconTheme = {
       name = "Adwaita";
-      package = pkgs.gnome.adwaita-icon-theme;
+      package = pkgs.adwaita-icon-theme;
     };
 
     theme = {
       # This name is extremely important. it must match the config exactly!
       # the default colour is blue
+      # try catppuccin-mocha-blue-compact+rimless
       name = "Catppuccin-Mocha-Compact-Blue-Dark";
       package = pkgs.catppuccin-gtk.override {
         size = "compact";

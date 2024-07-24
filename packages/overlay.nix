@@ -4,6 +4,7 @@ let
 in
 self: super: {
   pa = self.callPackage ./scripts/pa.nix { };
+  brightness = self.callPackage ./scripts/brightness.nix { };
   screenshot = self.callPackage ./scripts/screenshot.nix { };
   ankama-launcher = self.callPackage ./ankama-launcher.nix { };
   fe = inputs.fe.packages.${system}.default;

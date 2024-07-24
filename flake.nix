@@ -57,9 +57,8 @@
     };
 
     spicetify-nix = {
-      url = "github:MichaelPachec0/spicetify-nix";
+      url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-utils.follows = "flake-utils";
     };
 
     treefmt-nix = {

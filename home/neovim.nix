@@ -84,7 +84,7 @@
           indent-o-matic.enable = true;
           treesitter = {
             enable = true;
-            indent = true;
+            settings.indent.enable = true;
           };
           which-key = {
             enable = true;
@@ -245,7 +245,9 @@
           none-ls = {
             enable = true;
             enableLspFormat = true;
-            updateInInsert = false;
+            settings = {
+              update_in_insert = false;
+            };
             sources = {
               code_actions = {
                 gitsigns.enable = true;
@@ -259,7 +261,7 @@
                 nixpkgs_fmt.enable = true;
                 black = {
                   enable = true;
-                  withArgs = ''
+                  settings = ''
                     {
                       extra_args = { "--fast" },
                     }
@@ -268,7 +270,7 @@
                 prettier = {
                   enable = true;
                   disableTsServerFormatter = true;
-                  withArgs = ''
+                  settings = ''
                     {
                       extra_args = { "--no-semi", "--single-quote" },
                     }

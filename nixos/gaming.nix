@@ -30,7 +30,7 @@ in
       {
         src = pkgs.fetchurl {
           url = "https://builds.parsecgaming.com/package/parsec-linux.deb";
-          sha256 = "1qf1g1vjy3alda2p64hygng3g63vbr377zgj36572vif0fwimyy1";
+          sha256 = "9F56u+jYj2CClhbnGlLi65FxS1Vq00coxwu7mjVTY1w=";
         };
       };
   };
