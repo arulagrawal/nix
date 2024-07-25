@@ -77,6 +77,7 @@ in
     #   "quiet"
     #   "splash"
     "amd_iommu=off"
+    "nvme_core.default_ps_max_latency_us=0"
     #   "amdgpu.noretry=0"
     #   "amdgpu.lockup_timeout=1000"
     #   "amdgpu.gpu_recovery=1"
