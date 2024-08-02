@@ -48,7 +48,10 @@ in
 
 
   # boot stuff
-  boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot = {
+    enable = true;
+    configurationLimit = 6;
+  };
   boot.loader.efi.canTouchEfiVariables = true;
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
@@ -56,16 +59,15 @@ in
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
-  #boot.kernelPackages = pkgs.linuxPackages_cachyos;
-  boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
+  boot.kernelPackages = pkgs.linuxPackages_zen;
   specialisation = {
-    "zen_kernel" = {
+    "xanmod" = {
       inheritParentConfig = true;
       configuration = {
-        boot.kernelPackages = lib.mkForce pkgs.linuxPackages_zen;
+        boot.kernelPackages = lib.mkForce pkgs.linuxPackages_xanmod_latest;
       };
     };
-    "latest_stock_kernel" = {
+    "stock" = {
       inheritParentConfig = true;
       configuration = {
         boot.kernelPackages = lib.mkForce pkgs.linuxPackages_latest;
@@ -95,6 +97,7 @@ in
       defaultSession = "plasma";
     };
   };
+  programs.kdeconnect.enable = true;
 
   fileSystems."/" =
     {
@@ -175,7 +178,12 @@ in
     };
   };
 
+  # udev rule to restore volume settings
+  # might need to manually set with alsamixer
+  # and then save with sudo alsactl store --ignore
+  services.udev.packages = [ pkgs.alsa-utils ];
+
   # for logitech mouse
-  programs.solaar.enable = true;
+  services.solaar.enable = true;
   services.fstrim.enable = true;
 }
