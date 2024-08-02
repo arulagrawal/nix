@@ -7,7 +7,6 @@
   ];
 
   fonts.fontconfig.enable = lib.mkDefault false;
-  sound.enable = false;
 
   boot.kernel.sysctl = {
     "net.core.default_qdisc" = "fq";
