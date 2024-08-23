@@ -1,8 +1,8 @@
 {
-  time.timeZone = "Asia/Dubai";
+  time.timeZone = "Europe/Amsterdam";
 
   location = {
-    latitude = 25.204849;
-    longitude = 55.270782;
+    latitude = 52.0116;
+    longitude = 4.3571;
   };
 }
