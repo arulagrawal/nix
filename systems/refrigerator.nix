@@ -13,9 +13,11 @@ in
     "${self}/nixos/nix.nix"
     "${self}/nixos/gui"
     "${self}/nixos/self/primary-as-admin.nix"
+    "${self}/nixos/wifi.nix"
     "${self}/nixos/docker.nix"
     "${self}/nixos/virtualisation.nix"
     "${self}/nixos/tailscale.nix"
+    "${self}/nixos/nordvpn.nix"
     "${self}/nixos/gnupg.nix"
     "${self}/nixos/gaming.nix"
     "${self}/nixos/xdg.nix"
@@ -98,6 +100,8 @@ in
     };
   };
   programs.kdeconnect.enable = true;
+
+  myypo.services.custom.nordvpn.enable = true;
 
   fileSystems."/" =
     {

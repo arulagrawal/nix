@@ -106,8 +106,10 @@ in
       # enable variable refresh rate (effective depending on hardware)
       vrr = 1;
 
-      # we do, in fact, want direct scanout
-      no_direct_scanout = false;
+    };
+
+    render = {
+      direct_scanout = true;
     };
 
     # touchpad gestures
