@@ -53,8 +53,11 @@ in
         font = "FiraCode Nerd Font Mono:size=15";
         box-drawings-uses-font-glyphs = "yes";
         pad = "7x10 center";
-        notify = "notify-send -a \${app-id} -i \${app-id} \${title} \${body}";
         selection-target = "none";
+      };
+
+      desktop-notifications = {
+        command = "notify-send -a \${app-id} -i \${app-id} \${title} \${body}";
       };
 
       scrollback = {
