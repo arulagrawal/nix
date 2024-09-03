@@ -24,6 +24,7 @@
         imports = [
           ./xdg.nix
           ./direnv.nix
+          ./coq.nix
         ];
         neovim.config = "full";
       };
