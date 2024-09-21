@@ -141,18 +141,6 @@ in
     "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"
   ];
 
-  environment.variables = {
-    # VAAPI and VDPAU config for accelerated video.
-    # See https://wiki.archlinux.org/index.php/Hardware_video_acceleration
-    "VDPAU_DRIVER" = "radeonsi";
-    "LIBVA_DRIVER_NAME" = "radeonsi";
-    AMD_VULKAN_ICD = "RADV";
-    VK_ICD_FILENAMES = "/run/opengl-driver/share/vulkan/icd.d/radeon_icd.x86_64.json";
-  };
-
-
-
-
   networking = {
     hostName = "refrigerator";
     useDHCP = true;
