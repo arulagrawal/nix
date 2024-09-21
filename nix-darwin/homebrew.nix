@@ -44,6 +44,7 @@
       "orbstack"
       "multimc"
       "cloudflare-warp"
+      "nordvpn"
       "whisky"
     ];
     masApps = {
