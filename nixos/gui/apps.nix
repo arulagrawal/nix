@@ -2,6 +2,7 @@
   # Apps I use on desktops and laptops
   environment.systemPackages = with pkgs; [
     firefox
+    google-chrome
     vesktop
     wezterm
     pavucontrol
@@ -16,7 +17,7 @@
       variant = "mocha";
     })
 
-    (prismlauncher.override { withWaylandGLFW = true; })
+    prismlauncher
   ];
 
   programs.virt-manager.enable = true;
