@@ -21,7 +21,7 @@
       # This name is extremely important. it must match the config exactly!
       # the default colour is blue
       # try catppuccin-mocha-blue-compact+rimless
-      name = "Catppuccin-Mocha-Compact-Blue-Dark";
+      name = "catppuccin-mocha-blue-compact+rimless";
       package = pkgs.catppuccin-gtk.override {
         size = "compact";
         tweaks = [ "rimless" ];
