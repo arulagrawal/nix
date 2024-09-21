@@ -84,7 +84,10 @@
           indent-o-matic.enable = true;
           treesitter = {
             enable = true;
-            settings.indent.enable = true;
+            settings = {
+              indent.enable = true;
+              highlight.enable = true;
+            };
           };
           which-key = {
             enable = true;
