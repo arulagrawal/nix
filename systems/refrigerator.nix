@@ -175,7 +175,11 @@ in
   # and then save with sudo alsactl store --ignore
   services.udev.packages = [ pkgs.alsa-utils ];
 
-  # for logitech mouse
-  services.solaar.enable = true;
+  # for razer
+  hardware.openrazer = {
+    enable = true;
+    users = [ flake.config.people.myself ];
+  };
+
   services.fstrim.enable = true;
 }
