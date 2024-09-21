@@ -31,11 +31,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    solaar = {
-      url = "https://flakehub.com/f/Svenum/Solaar-Flake/0.1.1.tar.gz";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     nix-gaming = {
       url = "github:fufexan/nix-gaming";
     };

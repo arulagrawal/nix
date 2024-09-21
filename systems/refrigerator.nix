@@ -8,7 +8,6 @@ in
   imports = [
     #inputs.disko.nixosModules.disko
     self.nixosModules.desktop
-    inputs.solaar.nixosModules.default
     #"${self}/nixos/disko/trivial.nix"
     "${self}/nixos/nix.nix"
     "${self}/nixos/gui"
