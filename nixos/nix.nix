@@ -8,7 +8,9 @@
       allowUnfree = true;
     };
     overlays = [
-      (import ../packages/overlay.nix { inherit flake; inherit (pkgs) system; })
+      (import ../packages/overlay.nix {
+        inherit flake; inherit (pkgs) system;
+      })
     ];
   };
 
