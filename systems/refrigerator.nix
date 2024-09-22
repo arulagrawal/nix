@@ -120,7 +120,10 @@ in
 
   hardware = {
     keyboard.zsa.enable = true;
-    cpu.intel.updateMicrocode = true;
+    cpu = {
+      intel.updateMicrocode = true;
+      x86.msr.enable = true;
+    };
     enableRedistributableFirmware = true;
     graphics = {
       enable = true;
