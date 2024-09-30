@@ -36,7 +36,6 @@
       theme = import ./theme;
 
       default.imports = [
-        self.nixosModules.home-manager
         self.nixosModules.common
         #./self/self-ide.nix
       ];

@@ -158,21 +158,28 @@
       };
 
       flake = {
+        nixosConfigurations =
+          {
+            refrigerator =
+              self.nixos-flake.lib.mkLinuxSystem
+                { home-manager = true; }
+                ./systems/refrigerator.nix;
+
+
+            oven = self.nixos-flake.lib.mkLinuxSystem
+              { home-manager = true; }
+              ./systems/oven.nix;
+
+            kettle =
+              self.nixos-flake.lib.mkLinuxSystem
+                { home-manager = true; }
+                ./systems/kettle.nix;
+          };
+
         darwinConfigurations.coffeemaker =
           self.nixos-flake.lib.mkMacosSystem
+            { home-manager = true; }
             ./systems/coffeemaker.nix;
-
-        nixosConfigurations.refrigerator =
-          self.nixos-flake.lib.mkLinuxSystem
-            ./systems/refrigerator.nix;
-
-        nixosConfigurations.oven =
-          self.nixos-flake.lib.mkLinuxSystem
-            ./systems/oven.nix;
-
-        nixosConfigurations.kettle =
-          self.nixos-flake.lib.mkLinuxSystem
-            ./systems/kettle.nix;
       };
 
       perSystem = { self', pkgs, lib, config, ... }: {
