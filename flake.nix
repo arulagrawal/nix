@@ -43,6 +43,8 @@
 
     # zen-browser
     zen-browser.url = "github:youwen5/zen-browser-flake";
+    zen-browser.inputs.nixpkgs.follows = "nixpkgs";
+
     # Neovim
     nixvim = {
       url = "github:nix-community/nixvim";
