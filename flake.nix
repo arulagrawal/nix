@@ -9,9 +9,9 @@
     nix-darwin.url = "github:arulagrawal/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
 
+    nixos-unified.url = "github:srid/nixos-unified";
 
     flake-parts.url = "github:hercules-ci/flake-parts";
-    nixos-flake.url = "github:srid/nixos-flake";
     flake-utils = {
       url = "github:numtide/flake-utils";
       inputs.systems.follows = "systems";
@@ -38,9 +38,11 @@
 
     colmena-flake.url = "github:juspay/colmena-flake";
 
-    nix-index-database.url = "github:nix-community/nix-index-database";
+    nix-index-database.url = "github:nix-community/nix-index-database/40d882b55e89add1ded379cc99edaab24983d6d9";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
 
+    # zen-browser
+    zen-browser.url = "github:youwen5/zen-browser-flake";
     # Neovim
     nixvim = {
       url = "github:nix-community/nixvim";
@@ -134,7 +136,7 @@
       systems = [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
       imports = [
         inputs.treefmt-nix.flakeModule
-        inputs.nixos-flake.flakeModule
+        inputs.nixos-unified.flakeModule
         inputs.colmena-flake.flakeModules.default
         ./users
         ./home
@@ -161,23 +163,23 @@
         nixosConfigurations =
           {
             refrigerator =
-              self.nixos-flake.lib.mkLinuxSystem
+              self.nixos-unified.lib.mkLinuxSystem
                 { home-manager = true; }
                 ./systems/refrigerator.nix;
 
 
-            oven = self.nixos-flake.lib.mkLinuxSystem
+            oven = self.nixos-unified.lib.mkLinuxSystem
               { home-manager = true; }
               ./systems/oven.nix;
 
             kettle =
-              self.nixos-flake.lib.mkLinuxSystem
+              self.nixos-unified.lib.mkLinuxSystem
                 { home-manager = true; }
                 ./systems/kettle.nix;
           };
 
         darwinConfigurations.coffeemaker =
-          self.nixos-flake.lib.mkMacosSystem
+          self.nixos-unified.lib.mkMacosSystem
             { home-manager = true; }
             ./systems/coffeemaker.nix;
       };
@@ -185,12 +187,11 @@
       perSystem = { self', pkgs, lib, config, ... }: {
         # Flake inputs we want to update periodically
         # Run: `nix run .#update`.
-        nixos-flake.primary-inputs = [
+        nixos-unified.primary-inputs = [
           "nixpkgs"
           "home-manager"
           "nix-darwin"
-          "nixos-flake"
-          "nix-index-database"
+          "nixos-unified"
           "nixvim"
         ];
 

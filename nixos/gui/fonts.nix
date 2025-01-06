@@ -11,8 +11,10 @@
       roboto
       noto-fonts
       noto-fonts-emoji
-      noto-fonts-cjk
-      fira-code-nerdfont
+      noto-fonts-cjk-sans
+      nerd-fonts.fira-code
+
+      dejavu_fonts
     ];
 
     fontconfig = {

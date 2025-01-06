@@ -41,7 +41,7 @@ in
   };
 
   environment.systemPackages = with pkgs; [
-    inputs.nix-gaming.packages.${system}.wine-ge
+    inputs.nix-gaming.packages.${system}.wine-tkg
     heroic # launcher for epic, gog and amazon games
     mangohud
     parsec-bin

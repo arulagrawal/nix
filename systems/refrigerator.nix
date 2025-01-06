@@ -16,7 +16,7 @@ in
     "${self}/nixos/docker.nix"
     "${self}/nixos/virtualisation.nix"
     "${self}/nixos/tailscale.nix"
-    "${self}/nixos/nordvpn.nix"
+    # "${self}/nixos/nordvpn.nix"
     "${self}/nixos/gnupg.nix"
     "${self}/nixos/gaming.nix"
     "${self}/nixos/xdg.nix"
@@ -100,7 +100,7 @@ in
   };
   programs.kdeconnect.enable = true;
 
-  myypo.services.custom.nordvpn.enable = true;
+  # myypo.services.custom.nordvpn.enable = true;
 
   fileSystems."/" =
     {
@@ -160,7 +160,7 @@ in
 
   # needed to save volume?
   #sound.enable = true;
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   services.pipewire = {
     enable = true;
     audio.enable = true;
@@ -175,7 +175,7 @@ in
   # udev rule to restore volume settings
   # might need to manually set with alsamixer
   # and then save with sudo alsactl store --ignore
-  services.udev.packages = [ pkgs.alsa-utils ];
+  # services.udev.packages = [ pkgs.alsa-utils ];
 
   # for razer
   hardware.openrazer = {

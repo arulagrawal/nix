@@ -3,6 +3,7 @@
   environment.systemPackages = with pkgs; [
     firefox
     google-chrome
+    zen-browser
     vesktop
     wezterm
     pavucontrol

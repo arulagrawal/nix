@@ -24,6 +24,6 @@
   security.pam.services = {
     hyprlock.enableGnomeKeyring = true;
     #hyprlock.text = "auth include login";
-    greetd.enableGnomeKeyring = true;
+    #greetd.enableGnomeKeyring = true;
   };
 }
