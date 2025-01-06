@@ -8,6 +8,7 @@
     };
     brews = [ "aircrack-ng" "bitwarden-cli" ];
     casks = [
+      "nikitabobko/tap/aerospace"
       "orion"
       "google-chrome"
       "arc"
