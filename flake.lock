@@ -975,15 +975,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1729607046,
-        "narHash": "sha256-NJEIVWA7pP2bkiVBe2i28gyxpPk4gGDEfnIwzwGpFtw=",
-        "owner": "arulagrawal",
+        "lastModified": 1736085891,
+        "narHash": "sha256-bTl9fcUo767VaSx4Q5kFhwiDpFQhBKna7lNbGsqCQiA=",
+        "owner": "LnL7",
         "repo": "nix-darwin",
-        "rev": "14c484a4a0e74487f1b8d6cfb48aa6f34b0773fc",
+        "rev": "ba9b3173b0f642ada42b78fb9dfc37ca82266f6c",
         "type": "github"
       },
       "original": {
-        "owner": "arulagrawal",
+        "owner": "LnL7",
         "repo": "nix-darwin",
         "type": "github"
       }

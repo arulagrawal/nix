@@ -6,7 +6,7 @@
     home-manager.url = "github:arulagrawal/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    nix-darwin.url = "github:arulagrawal/nix-darwin";
+    nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
 
     nixos-unified.url = "github:srid/nixos-unified";
