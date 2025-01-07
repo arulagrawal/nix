@@ -8,13 +8,15 @@
       allowUnfree = true;
     };
     overlays = [
-      (import ../packages/overlay.nix { inherit flake; inherit (pkgs) system; })
+      (import ../packages/overlay.nix {
+        inherit flake; inherit (pkgs) system;
+      })
     ];
   };
 
   nix = {
     nixPath = [ "nixpkgs=${flake.inputs.nixpkgs}" ]; # Enables use of `nix-shell -p ...` etc
-    registry.nixpkgs.flake = flake.inputs.nixpkgs; # Make `nix shell` etc use pinned nixpkgs
+    # registry.nixpkgs.flake = flake.inputs.nixpkgs; # Make `nix shell` etc use pinned nixpkgs
     settings = {
       max-jobs = "auto";
       experimental-features = "nix-command flakes";

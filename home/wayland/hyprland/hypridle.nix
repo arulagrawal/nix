@@ -15,7 +15,7 @@ in
     settings = {
       #lockCmd = lib.getExe config.programs.hyprlock.package;
       general = {
-        lock_cmd = "pidof ${lib.getExe config.programs.hyprlock.package} || ${lib.getExe config.programs.hyprlock.package}";
+        # lock_cmd = "pidof ${lib.getExe config.programs.hyprlock.package} || ${lib.getExe config.programs.hyprlock.package}";
         before_sleep_cmd = "${pkgs.systemd}/bin/loginctl lock-session";
         after_sleep_cmd = "hyprctl dispatch dpms on";
       };

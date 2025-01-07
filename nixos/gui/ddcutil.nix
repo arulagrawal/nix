@@ -2,5 +2,5 @@
 {
   # for display control (brightness etc.)
   hardware.i2c.enable = true;
-  environment.systemPackages = [ pkgs.ddcutil ];
+  environment.systemPackages = [ pkgs.ddcutil pkgs.brightness ];
 }

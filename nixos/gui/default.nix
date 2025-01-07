@@ -7,6 +7,7 @@
     ./apps.nix
     ./fonts.nix
     ./greetd.nix
+    ./waydroid.nix
   ];
 
   services = {

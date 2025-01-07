@@ -8,14 +8,15 @@ in
   imports = [
     #inputs.disko.nixosModules.disko
     self.nixosModules.desktop
-    inputs.solaar.nixosModules.default
     #"${self}/nixos/disko/trivial.nix"
     "${self}/nixos/nix.nix"
     "${self}/nixos/gui"
     "${self}/nixos/self/primary-as-admin.nix"
+    "${self}/nixos/wifi.nix"
     "${self}/nixos/docker.nix"
     "${self}/nixos/virtualisation.nix"
     "${self}/nixos/tailscale.nix"
+    # "${self}/nixos/nordvpn.nix"
     "${self}/nixos/gnupg.nix"
     "${self}/nixos/gaming.nix"
     "${self}/nixos/xdg.nix"
@@ -23,6 +24,7 @@ in
     "${self}/nixos/udev.nix"
     "${self}/nixos/gnome-services.nix"
     "${self}/nixos/avahi.nix"
+    "${self}/nixos/printing.nix"
     "${self}/nixos/polkit.nix"
   ];
 
@@ -47,7 +49,10 @@ in
 
 
   # boot stuff
-  boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot = {
+    enable = true;
+    configurationLimit = 6;
+  };
   boot.loader.efi.canTouchEfiVariables = true;
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
@@ -55,16 +60,15 @@ in
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
-  #boot.kernelPackages = pkgs.linuxPackages_cachyos;
-  boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
+  boot.kernelPackages = pkgs.linuxPackages_zen;
   specialisation = {
-    "zen_kernel" = {
+    "xanmod" = {
       inheritParentConfig = true;
       configuration = {
-        boot.kernelPackages = lib.mkForce pkgs.linuxPackages_zen;
+        boot.kernelPackages = lib.mkForce pkgs.linuxPackages_xanmod_latest;
       };
     };
-    "latest_stock_kernel" = {
+    "stock" = {
       inheritParentConfig = true;
       configuration = {
         boot.kernelPackages = lib.mkForce pkgs.linuxPackages_latest;
@@ -72,15 +76,31 @@ in
     };
   };
   #chaotic.scx.enable = true; # by default uses scx_rustland scheduler
-  # boot.kernelParams = [
-  #   "quiet"
-  #   "splash"
-  #   "amd_iommu=on"
-  #   "amdgpu.noretry=0"
-  #   "amdgpu.lockup_timeout=1000"
-  #   "amdgpu.gpu_recovery=1"
-  #   "iommu=pt"
-  # ];
+  boot.kernelParams = [
+    #   "quiet"
+    #   "splash"
+    "amd_iommu=off"
+    "nvme_core.default_ps_max_latency_us=0"
+    #   "amdgpu.noretry=0"
+    #   "amdgpu.lockup_timeout=1000"
+    #   "amdgpu.gpu_recovery=1"
+    #   "iommu=pt"
+  ];
+
+  #try kde
+  services = {
+    desktopManager.plasma6.enable = true;
+    displayManager = {
+      sddm = {
+        enable = true;
+        wayland.enable = true;
+      };
+      defaultSession = "plasma";
+    };
+  };
+  programs.kdeconnect.enable = true;
+
+  # myypo.services.custom.nordvpn.enable = true;
 
   fileSystems."/" =
     {
@@ -100,7 +120,10 @@ in
 
   hardware = {
     keyboard.zsa.enable = true;
-    cpu.intel.updateMicrocode = true;
+    cpu = {
+      intel.updateMicrocode = true;
+      x86.msr.enable = true;
+    };
     enableRedistributableFirmware = true;
     graphics = {
       enable = true;
@@ -120,18 +143,6 @@ in
     "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"
   ];
 
-  environment.variables = {
-    # VAAPI and VDPAU config for accelerated video.
-    # See https://wiki.archlinux.org/index.php/Hardware_video_acceleration
-    "VDPAU_DRIVER" = "radeonsi";
-    "LIBVA_DRIVER_NAME" = "radeonsi";
-    AMD_VULKAN_ICD = "RADV";
-    VK_ICD_FILENAMES = "/run/opengl-driver/share/vulkan/icd.d/radeon_icd.x86_64.json";
-  };
-
-
-
-
   networking = {
     hostName = "refrigerator";
     useDHCP = true;
@@ -147,9 +158,9 @@ in
   services.openssh.enable = true;
   security.rtkit.enable = true;
 
-  # don't need ALSA
-  sound.enable = false;
-  hardware.pulseaudio.enable = false;
+  # needed to save volume?
+  #sound.enable = true;
+  services.pulseaudio.enable = false;
   services.pipewire = {
     enable = true;
     audio.enable = true;
@@ -161,7 +172,16 @@ in
     };
   };
 
-  # for logitech mouse
-  programs.solaar.enable = true;
+  # udev rule to restore volume settings
+  # might need to manually set with alsamixer
+  # and then save with sudo alsactl store --ignore
+  # services.udev.packages = [ pkgs.alsa-utils ];
+
+  # for razer
+  hardware.openrazer = {
+    enable = true;
+    users = [ flake.config.people.myself ];
+  };
+
   services.fstrim.enable = true;
 }

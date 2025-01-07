@@ -11,6 +11,10 @@
     shellAliases = {
       mkdir = "mkdir -pv";
       get = "curl --continue-at - --location --progress-bar --remote-name --remote-time";
+      up = "docker compose up -d";
+      down = "docker compose down --remove-orphans";
+      recreate = "docker compose pull && docker compose down --remove-orphans && docker compose up -d";
+      pull = "docker compose pull";
     };
     shellAbbrs = {
       cx = "chmod +x";

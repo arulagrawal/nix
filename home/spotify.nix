@@ -1,11 +1,11 @@
 { pkgs, lib, flake, ... }:
 let
-  spicePkgs = flake.inputs.spicetify-nix.packages.${pkgs.system}.default;
+  spicePkgs = flake.inputs.spicetify-nix.legacyPackages.${pkgs.system};
 
 in
 {
   # import the flake's module for your system
-  imports = [ flake.inputs.spicetify-nix.homeManagerModule ];
+  imports = [ flake.inputs.spicetify-nix.homeManagerModules.default ];
 
   # home.packages = with pkgs; [ spotify ];
 
@@ -13,7 +13,7 @@ in
   programs.spicetify =
     {
       enable = true;
-      theme = spicePkgs.themes.Catppuccin;
+      theme = spicePkgs.themes.catppuccin;
       colorScheme = "mocha";
 
       enabledExtensions = with spicePkgs.extensions; [

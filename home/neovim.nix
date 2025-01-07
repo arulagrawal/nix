@@ -52,17 +52,17 @@
               treesitter = true;
             };
           };
-          package = pkgs.vimUtils.buildVimPlugin {
-            pname = "catppuccin-nvim";
-            version = "1.7.0";
-            src = pkgs.fetchFromGitHub {
-              owner = "catppuccin";
-              repo = "nvim";
-              rev = "refs/tags/v1.7.0";
-              sha256 = "sha256-yTVou/WArEWygBBs2NFPI9Dm9iSGfwVftKFbOAGl8tk=";
-            };
-            meta.homepage = "https://github.com/catppuccin/nvim/";
-          };
+          # package = pkgs.vimUtils.buildVimPlugin {
+          #   pname = "catppuccin-nvim";
+          #   version = "1.9.0";
+          #   src = pkgs.fetchFromGitHub {
+          #     owner = "catppuccin";
+          #     repo = "nvim";
+          #     rev = "refs/tags/v1.9.0";
+          #     sha256 = "sha256-QGqwQ4OjIopBrk8sWYwA9+PMoUfcYANybgiLY6QLrvg=";
+          #   };
+          #   meta.homepage = "https://github.com/catppuccin/nvim/";
+          # };
         };
 
         keymaps = [
@@ -84,17 +84,20 @@
           indent-o-matic.enable = true;
           treesitter = {
             enable = true;
-            indent = true;
+            settings = {
+              indent.enable = true;
+              highlight.enable = true;
+            };
           };
           which-key = {
             enable = true;
-            showKeys = true;
+            settings.show_keys = true;
           };
           lastplace.enable = true;
           noice = {
             # WARNING: This is considered experimental feature, but provides nice UX
             enable = true;
-            presets = {
+            settings.presets = {
               bottom_search = true;
               command_palette = true;
               long_message_to_split = true;
@@ -140,10 +143,10 @@
             };
             servers = {
               marksman.enable = true;
-              nil-ls.enable = true;
+              nil_ls.enable = true;
               gopls.enable = true;
               pyright.enable = true;
-              rust-analyzer = {
+              rust_analyzer = {
                 enable = true;
                 installCargo = false;
                 installRustc = false;
@@ -215,37 +218,41 @@
           };
           luasnip = {
             enable = true;
-            extraConfig = {
+            settings = {
               enable_autosnippets = true;
               store_selection_keys = "<Tab>";
             };
           };
           conform-nvim = {
             enable = true;
-            formatOnSave = {
-              lspFallback = true;
-              timeoutMs = 500;
-            };
-            notifyOnError = true;
-            formattersByFt = {
-              liquidsoap = [ "liquidsoap-prettier" ];
-              html = [ [ "prettierd" "prettier" ] ];
-              css = [ [ "prettierd" "prettier" ] ];
-              javascript = [ [ "prettierd" "prettier" ] ];
-              javascriptreact = [ [ "prettierd" "prettier" ] ];
-              typescript = [ [ "prettierd" "prettier" ] ];
-              typescriptreact = [ [ "prettierd" "prettier" ] ];
-              python = [ "black" ];
-              lua = [ "stylua" ];
-              nix = [ "nixpkgs-fmt" ];
-              markdown = [ [ "prettierd" "prettier" ] ];
-              yaml = [ "yamllint" "yamlfmt" ];
+            settings = {
+              format_on_save = {
+                lspFallback = true;
+                timeoutMs = 500;
+              };
+              notify_on_error = true;
+              formatters_by_ft = {
+                # liquidsoap = [ "liquidsoap-prettier" ];
+                # html = [ [ "prettierd" "prettier" ] ];
+                # css = [ [ "prettierd" "prettier" ] ];
+                # javascript = [ [ "prettierd" "prettier" ] ];
+                # javascriptreact = [ [ "prettierd" "prettier" ] ];
+                # typescript = [ [ "prettierd" "prettier" ] ];
+                # typescriptreact = [ [ "prettierd" "prettier" ] ];
+                python = [ "black" ];
+                lua = [ "stylua" ];
+                nix = [ "nixpkgs-fmt" ];
+                # markdown = [ [ "prettierd" "prettier" ] ];
+                yaml = [ "yamllint" "yamlfmt" ];
+              };
             };
           };
           none-ls = {
             enable = true;
             enableLspFormat = true;
-            updateInInsert = false;
+            settings = {
+              update_in_insert = false;
+            };
             sources = {
               code_actions = {
                 gitsigns.enable = true;
@@ -259,26 +266,27 @@
                 nixpkgs_fmt.enable = true;
                 black = {
                   enable = true;
-                  withArgs = ''
+                  settings = ''
                     {
                       extra_args = { "--fast" },
                     }
                   '';
                 };
-                prettier = {
-                  enable = true;
-                  disableTsServerFormatter = true;
-                  withArgs = ''
-                    {
-                      extra_args = { "--no-semi", "--single-quote" },
-                    }
-                  '';
-                };
+                # prettier = {
+                #   enable = true;
+                #   disableTsServerFormatter = true;
+                #   settings = ''
+                #     {
+                #       extra_args = { "--no-semi", "--single-quote" },
+                #     }
+                #   '';
+                # };
                 stylua.enable = true;
                 yamlfmt.enable = true;
               };
             };
           };
+          web-devicons.enable = true;
         };
       })
     ];

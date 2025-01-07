@@ -1,17 +1,18 @@
 { pkgs, ... }:
 let
-  name = "ankama-launcher";
+  pname = "ankama-launcher";
   src = pkgs.fetchurl {
     url = "https://launcher.cdn.ankama.com/installers/production/Ankama%20Launcher-Setup-x86_64.AppImage";
     # nix store prefetch-file "https://launcher.cdn.ankama.com/installers/production/Ankama%20Launcher-Setup-x86_64.AppImage" --name ankama-launcher.AppImage
-    hash = "sha256-fknSpH5Pw+mBT0H5qkGcCHlmN/L1hinHiNtitFkGqCk=";
+    hash = "sha256-6HJqmADjrQqr2Vm/mXnRN/BMPv6qcP7kU7xyTzLJQRA=";
     name = "ankama-launcher.AppImage";
   };
+  version = "1.0.0";
 
-  appimageContents = pkgs.appimageTools.extractType2 { inherit name src; };
+  appimageContents = pkgs.appimageTools.extractType2 { inherit pname src version; };
 in
 pkgs.appimageTools.wrapType2 {
-  inherit name src;
+  inherit pname src version;
 
   extraInstallCommands = ''
     install -m 444 -D ${appimageContents}/zaap.desktop $out/share/applications/ankama-launcher.desktop

@@ -12,12 +12,11 @@
       };
 
       default.imports = [
-        self.darwinModules_.home-manager
         self.darwinModules.my-home
         self.nixosModules.common
         inputs.agenix.darwinModules.default
-        ./skhd.nix
-        ./yabai.nix
+        # ./skhd.nix
+        # ./yabai.nix
         ./homebrew.nix
       ];
     };
