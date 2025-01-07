@@ -1,5 +1,9 @@
-{ flake, pkgs, lib, config, ... }:
-
+{ flake
+, pkgs
+, lib
+, config
+, ...
+}:
 let
   inherit (flake) inputs;
   inherit (inputs) self;
@@ -46,7 +50,6 @@ in
     shells = with pkgs; [ fish ];
     pathsToLink = [ "/share/fish" ];
   };
-
 
   # boot stuff
   boot.loader.systemd-boot = {
@@ -102,17 +105,15 @@ in
 
   # myypo.services.custom.nordvpn.enable = true;
 
-  fileSystems."/" =
-    {
-      device = "/dev/disk/by-uuid/7260fc7d-f277-4aaa-b310-02ede2501084";
-      fsType = "ext4";
-    };
+  fileSystems."/" = {
+    device = "/dev/disk/by-uuid/7260fc7d-f277-4aaa-b310-02ede2501084";
+    fsType = "ext4";
+  };
 
-  fileSystems."/boot" =
-    {
-      device = "/dev/disk/by-uuid/37BC-234A";
-      fsType = "vfat";
-    };
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-uuid/37BC-234A";
+    fsType = "vfat";
+  };
 
   swapDevices = [ ];
 
