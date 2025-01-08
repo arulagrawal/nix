@@ -5,7 +5,7 @@
       common = {
         home.stateVersion = "24.05";
         imports = [
-          inputs.nixvim.homeManagerModules.nixvim
+          inputs.nvf.homeManagerModules.default
           inputs.nix-index-database.hmModules.nix-index
           ./fish.nix
           ./ssh.nix
@@ -26,7 +26,7 @@
           ./direnv.nix
           ./coq.nix
         ];
-        neovim.config = "full";
+        neovim.full = true;
       };
 
       # common to all linux
@@ -66,7 +66,7 @@
           extraConfig.credential.helper = lib.mkForce "store --file ~/.git-credentials";
         };
         git.config = "minimal";
-        neovim.config = "minimal";
+        neovim.full = false;
       };
 
       # common to all macos
@@ -77,7 +77,7 @@
           ./darwin
         ];
         # idk enabling this breaks macos config and autocomplete still works
-        programs.nixvim.plugins.luasnip.enable = lib.mkForce false;
+        # programs.nixvim.plugins.luasnip.enable = lib.mkForce false;
       };
     };
   };

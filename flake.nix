@@ -46,13 +46,19 @@
     zen-browser.inputs.nixpkgs.follows = "nixpkgs";
 
     # Neovim
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      #inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-parts.follows = "flake-parts";
-      inputs.home-manager.follows = "home-manager";
-      inputs.nix-darwin.follows = "nix-darwin";
-      inputs.treefmt-nix.follows = "treefmt-nix";
+    # nixvim = {
+    #   url = "github:nix-community/nixvim";
+    #   #inputs.nixpkgs.follows = "nixpkgs";
+    #   inputs.flake-parts.follows = "flake-parts";
+    #   inputs.home-manager.follows = "home-manager";
+    #   inputs.nix-darwin.follows = "nix-darwin";
+    #   inputs.treefmt-nix.follows = "treefmt-nix";
+    # };
+
+    # Neovim
+    nvf = {
+      url = "github:notashelf/nvf";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     spicetify-nix = {
