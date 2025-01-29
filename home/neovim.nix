@@ -14,6 +14,7 @@
   config = {
     programs.nvf = {
       enable = true;
+      enableManpages = true;
       settings.vim = {
         viAlias = true;
         vimAlias = true;
@@ -21,6 +22,27 @@
           enable = false;
           level = 16;
           logFile = "/tmp/nvim.log";
+        };
+
+        useSystemClipboard = true;
+        options = {
+          tabstop = 2;
+          shiftwidth = 2;
+        };
+
+        luaConfigRC = {
+          "opts" = lib.strings.concatLines [
+            "vim.opt.smartindent = true"
+            "vim.opt.ignorecase = true"
+            "vim.opt.smartcase = true"
+          ];
+        };
+
+        extraPlugins = with pkgs.vimPlugins; {
+          remember = {
+            package = remember-nvim;
+            setup = "require('remember')";
+          };
         };
 
         spellcheck = {
@@ -128,7 +150,7 @@
           enable = true;
           name = "catppuccin";
           style = "mocha";
-          transparent = false;
+          transparent = true;
         };
 
         autopairs.nvim-autopairs.enable = true;
