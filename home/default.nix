@@ -1,9 +1,13 @@
-{ self, inputs, lib, ... }:
 {
+  self,
+  inputs,
+  lib,
+  ...
+}: {
   flake = {
     homeModules = {
       common = {
-        home.stateVersion = "24.05";
+        home.stateVersion = "25.05";
         imports = [
           inputs.nvf.homeManagerModules.default
           inputs.nix-index-database.hmModules.nix-index

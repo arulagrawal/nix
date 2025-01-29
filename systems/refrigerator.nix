@@ -1,14 +1,13 @@
-{ flake
-, pkgs
-, lib
-, config
-, ...
-}:
-let
+{
+  flake,
+  pkgs,
+  lib,
+  config,
+  ...
+}: let
   inherit (flake) inputs;
   inherit (inputs) self;
-in
-{
+in {
   imports = [
     #inputs.disko.nixosModules.disko
     self.nixosModules.desktop
@@ -24,6 +23,7 @@ in
     "${self}/nixos/gnupg.nix"
     "${self}/nixos/gaming.nix"
     "${self}/nixos/xdg.nix"
+    "${self}/nixos/man.nix"
     "${self}/nixos/nh.nix"
     "${self}/nixos/udev.nix"
     "${self}/nixos/gnome-services.nix"
@@ -32,7 +32,7 @@ in
     "${self}/nixos/polkit.nix"
   ];
 
-  system.stateVersion = "24.05";
+  system.stateVersion = "25.05";
   nixpkgs.hostPlatform = "x86_64-linux";
 
   users.users.${flake.config.people.myself} = {
@@ -47,8 +47,8 @@ in
   nix.package = pkgs.nixVersions.latest;
 
   environment = {
-    shells = with pkgs; [ fish ];
-    pathsToLink = [ "/share/fish" ];
+    shells = with pkgs; [fish];
+    pathsToLink = ["/share/fish"];
   };
 
   # boot stuff
@@ -58,10 +58,10 @@ in
   };
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
-  boot.initrd.kernelModules = [ "amdgpu" ];
-  boot.kernelModules = [ "kvm-intel" ];
-  boot.extraModulePackages = [ ];
+  boot.initrd.availableKernelModules = ["xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod"];
+  boot.initrd.kernelModules = ["amdgpu"];
+  boot.kernelModules = ["kvm-intel"];
+  boot.extraModulePackages = [];
 
   boot.kernelPackages = pkgs.linuxPackages_zen;
   specialisation = {
@@ -71,12 +71,12 @@ in
         boot.kernelPackages = lib.mkForce pkgs.linuxPackages_xanmod_latest;
       };
     };
-    "stock" = {
-      inheritParentConfig = true;
-      configuration = {
-        boot.kernelPackages = lib.mkForce pkgs.linuxPackages_latest;
-      };
-    };
+    # "stock" = {
+    #   inheritParentConfig = true;
+    #   configuration = {
+    #     boot.kernelPackages = lib.mkForce pkgs.linuxPackages_latest;
+    #   };
+    # };
   };
   #chaotic.scx.enable = true; # by default uses scx_rustland scheduler
   boot.kernelParams = [
@@ -115,9 +115,9 @@ in
     fsType = "vfat";
   };
 
-  swapDevices = [ ];
+  swapDevices = [];
 
-  services.xserver.videoDrivers = [ "amdgpu" ];
+  services.xserver.videoDrivers = ["amdgpu"];
 
   hardware = {
     keyboard.zsa.enable = true;
@@ -132,7 +132,7 @@ in
     };
     amdgpu = {
       initrd.enable = true;
-      opencl.enable = true;
+      # opencl.enable = true;
       amdvlk = {
         enable = true;
         support32Bit.enable = true;
@@ -140,21 +140,30 @@ in
     };
   };
 
-  systemd.tmpfiles.rules = [
-    "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"
-  ];
+  # systemd.tmpfiles.rules = [
+  #   "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"
+  # ];
 
   networking = {
     hostName = "refrigerator";
-    useDHCP = true;
+    useDHCP = false;
     interfaces = {
       enp7s0.wakeOnLan.enable = true;
       enp8s0.wakeOnLan.enable = true;
+      enp7s0.useDHCP = true;
+      enp8s0.useDHCP = true;
+      br0.useDHCP = true;
+    };
+    bridges = {
+      "br0" = {
+        interfaces = ["enp8s0"];
+      };
     };
     dhcpcd.wait = "background";
     dhcpcd.extraConfig = "noarp";
-    nameservers = [ "1.1.1.1" "1.0.0.1" ];
+    nameservers = ["1.1.1.1" "1.0.0.1"];
   };
+  services.cloudflare-warp.enable = true;
 
   services.openssh.enable = true;
   security.rtkit.enable = true;
@@ -181,7 +190,7 @@ in
   # for razer
   hardware.openrazer = {
     enable = true;
-    users = [ flake.config.people.myself ];
+    users = [flake.config.people.myself];
   };
 
   services.fstrim.enable = true;

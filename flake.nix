@@ -139,9 +139,9 @@
     };
   };
 
-  outputs = inputs@{ self, ... }:
-    inputs.flake-parts.lib.mkFlake { inherit inputs; } {
-      systems = [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
+  outputs = inputs @ {self, ...}:
+    inputs.flake-parts.lib.mkFlake {inherit inputs;} {
+      systems = ["x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin"];
       imports = [
         inputs.treefmt-nix.flakeModule
         inputs.nixos-unified.flakeModule
@@ -168,31 +168,36 @@
       };
 
       flake = {
-        nixosConfigurations =
-          {
-            refrigerator =
-              self.nixos-unified.lib.mkLinuxSystem
-                { home-manager = true; }
-                ./systems/refrigerator.nix;
+        nixosConfigurations = {
+          refrigerator =
+            self.nixos-unified.lib.mkLinuxSystem
+            {home-manager = true;}
+            ./systems/refrigerator.nix;
 
+          oven =
+            self.nixos-unified.lib.mkLinuxSystem
+            {home-manager = true;}
+            ./systems/oven.nix;
 
-            oven = self.nixos-unified.lib.mkLinuxSystem
-              { home-manager = true; }
-              ./systems/oven.nix;
-
-            kettle =
-              self.nixos-unified.lib.mkLinuxSystem
-                { home-manager = true; }
-                ./systems/kettle.nix;
-          };
+          kettle =
+            self.nixos-unified.lib.mkLinuxSystem
+            {home-manager = true;}
+            ./systems/kettle.nix;
+        };
 
         darwinConfigurations.coffeemaker =
           self.nixos-unified.lib.mkMacosSystem
-            { home-manager = true; }
-            ./systems/coffeemaker.nix;
+          {home-manager = true;}
+          ./systems/coffeemaker.nix;
       };
 
-      perSystem = { self', pkgs, lib, config, ... }: {
+      perSystem = {
+        self',
+        pkgs,
+        lib,
+        config,
+        ...
+      }: {
         # Flake inputs we want to update periodically
         # Run: `nix run .#update`.
         nixos-unified.primary-inputs = [
@@ -211,7 +216,7 @@
 
         packages.default = self'.packages.activate;
         devShells.default = pkgs.mkShell {
-          inputsFrom = [ config.treefmt.build.devShell ];
+          inputsFrom = [config.treefmt.build.devShell];
           packages = with pkgs; [
             colmena
           ];

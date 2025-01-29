@@ -1,8 +1,6 @@
-{ config, ... }:
-let
+{config, ...}: let
   pointer = config.home.pointerCursor;
-in
-{
+in {
   wayland.windowManager.hyprland.settings = {
     "$mod" = "SUPER";
     env = [
@@ -72,7 +70,7 @@ in
         gradients = false;
       };
 
-      "col.border_active" = "rgba(d8e2ff88);";
+      "col.border_active" = "rgba(d8e2ff88)";
       "col.border_inactive" = "rgba(80aaff88)";
     };
 
@@ -107,7 +105,6 @@ in
 
       # enable variable refresh rate (effective depending on hardware)
       vrr = 1;
-
     };
 
     render = {
