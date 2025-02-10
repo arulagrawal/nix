@@ -71,12 +71,12 @@ in {
         boot.kernelPackages = lib.mkForce pkgs.linuxPackages_xanmod_latest;
       };
     };
-    # "stock" = {
-    #   inheritParentConfig = true;
-    #   configuration = {
-    #     boot.kernelPackages = lib.mkForce pkgs.linuxPackages_latest;
-    #   };
-    # };
+    "stock" = {
+      inheritParentConfig = true;
+      configuration = {
+        boot.kernelPackages = lib.mkForce pkgs.linuxPackages_latest;
+      };
+    };
   };
   #chaotic.scx.enable = true; # by default uses scx_rustland scheduler
   boot.kernelParams = [
@@ -152,12 +152,6 @@ in {
       enp8s0.wakeOnLan.enable = true;
       enp7s0.useDHCP = true;
       enp8s0.useDHCP = true;
-      br0.useDHCP = true;
-    };
-    bridges = {
-      "br0" = {
-        interfaces = ["enp8s0"];
-      };
     };
     dhcpcd.wait = "background";
     dhcpcd.extraConfig = "noarp";

@@ -92,7 +92,7 @@
           go.enable = config.neovim.full;
           lua.enable = config.neovim.full;
           # zig.enable = config.neovim.full;
-          python.enable = config.neovim.full;
+          python.enable = false; #config.neovim.full;
           # typst.enable = config.neovim.full;
           rust = {
             enable = config.neovim.full;
