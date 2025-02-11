@@ -165,7 +165,10 @@
         };
 
         tabline = {
-          nvimBufferline.enable = true;
+          nvimBufferline = {
+            enable = true;
+            setupOpts.options.numbers = "ordinal";
+          };
         };
 
         treesitter.context.enable = false;
