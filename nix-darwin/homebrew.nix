@@ -6,7 +6,7 @@
       cleanup = "zap";
       upgrade = true;
     };
-    brews = [ "aircrack-ng" "bitwarden-cli" ];
+    brews = ["aircrack-ng" "bitwarden-cli"];
     casks = [
       "nikitabobko/tap/aerospace"
       "orion"
@@ -64,7 +64,7 @@
       "Vimari" = 1480933944;
       */
       "WireGuard" = 1451685025;
-      "Tailscale" = 1475387142;
+      # "Tailscale" = 1475387142;
       "Flow" = 1423210932;
     };
   };
