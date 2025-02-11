@@ -149,8 +149,8 @@
         theme = {
           enable = true;
           name = "catppuccin";
-          style = "mocha";
           transparent = true;
+          style = "auto";
         };
 
         autopairs.nvim-autopairs.enable = true;
