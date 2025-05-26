@@ -11,7 +11,7 @@
         imports = [
           inputs.nvf.homeManagerModules.default
           inputs.nix-index-database.hmModules.nix-index
-          ./fish.nix
+          ./fish
           ./ssh.nix
           ./starship.nix
           ./terminal.nix

@@ -6,7 +6,8 @@
       cleanup = "zap";
       upgrade = true;
     };
-    brews = ["aircrack-ng" "bitwarden-cli" "nikitabobko/tap"];
+    brews = ["aircrack-ng" "bitwarden-cli"];
+    taps = ["nikitabobko/tap"];
     casks = [
       "nikitabobko/tap/aerospace"
       "orion"

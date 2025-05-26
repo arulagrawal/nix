@@ -5,6 +5,8 @@
   home.packages = with pkgs; [
     # Unixy tools
     ripgrep
+    fd
+    
     # ncdu
     gdu
     glow
