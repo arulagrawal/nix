@@ -57,7 +57,7 @@
 
     # Neovim
     nvf = {
-      url = "github:notashelf/nvf";
+      url = "github:arulagrawal/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
