@@ -2,12 +2,10 @@
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
-      	    set fish_greeting
-      	    set fish_pager_color_description magenta --italics
-      	  '';
-    shellBinds = {
-      "." = "rationalise-dot";
-    };
+      set fish_greeting
+      set fish_pager_color_description magenta --italics
+      bind . 'rationalise-dot'
+    '';
     shellAliases = {
       mkdir = "mkdir -pv";
       get = "curl --continue-at - --location --progress-bar --remote-name --remote-time";
@@ -15,6 +13,7 @@
       down = "docker compose down --remove-orphans";
       recreate = "docker compose pull && docker compose down --remove-orphans && docker compose up -d";
       pull = "docker compose pull";
+      logs = "docker compose logs -f";
     };
     shellAbbrs = {
       cx = "chmod +x";
@@ -37,5 +36,4 @@
     };
     functions = import ./functions.nix;
   };
-
 }

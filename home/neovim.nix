@@ -50,20 +50,19 @@
         };
 
         lsp = {
-          formatOnSave = true;
+          formatOnSave = false;
           lspkind.enable = false;
           lightbulb.enable = false;
-          lspsaga.enable = config.neovim.full;
-          trouble.enable = true;
+          lspsaga.enable = false;
+          trouble.enable = false;
           lspSignature.enable = true;
-          otter-nvim.enable = config.neovim.full;
-          lsplines.enable = false;
-          nvim-docs-view.enable = config.neovim.full;
+          otter-nvim.enable = false;
+          nvim-docs-view.enable = false;
         };
 
         debugger = {
           nvim-dap = {
-            enable = true;
+            enable = false;
             ui.enable = true;
           };
         };
@@ -92,7 +91,7 @@
           go.enable = config.neovim.full;
           lua.enable = config.neovim.full;
           # zig.enable = config.neovim.full;
-          python.enable = false; #config.neovim.full;
+          python.enable = config.neovim.full;
           # typst.enable = config.neovim.full;
           rust = {
             enable = config.neovim.full;

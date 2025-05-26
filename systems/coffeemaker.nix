@@ -1,10 +1,11 @@
-{ pkgs, flake, ... }:
-
-let
+{
+  pkgs,
+  flake,
+  ...
+}: let
   inherit (flake) inputs;
   inherit (inputs) self;
-in
-{
+in {
   imports = [
     self.darwinModules.default
     "${self}/nixos/man.nix"
@@ -13,18 +14,18 @@ in
   nixpkgs.hostPlatform = "aarch64-darwin";
 
   environment = {
-    shells = with pkgs; [ fish ];
-    pathsToLink = [ "/share/fish" ];
+    shells = with pkgs; [fish];
+    pathsToLink = ["/share/fish"];
   };
 
   networking = {
-    dns = [ "1.1.1.1" "1.0.0.1" ];
-    knownNetworkServices = [ "Wi-Fi" ];
+    dns = ["1.1.1.1" "1.0.0.1"];
+    knownNetworkServices = ["Wi-Fi"];
   };
 
-  environment.systemPackages = with pkgs; [ nixVersions.stable ];
+  environment.systemPackages = with pkgs; [nixVersions.stable];
 
-  security.pam.enableSudoTouchIdAuth = true;
+  security.pam.services.sudo_local.touchIdAuth = true;
 
   # For home-manager to work.
   users.users.${flake.config.people.myself} = {
@@ -32,12 +33,10 @@ in
     home = "/Users/${flake.config.people.myself}";
   };
 
-  # Auto upgrade nix package and the daemon service.
-  services.nix-daemon.enable = true;
-
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
   system = {
+    primaryUser = flake.config.people.myself;
     defaults = {
       dock = {
         autohide = true;

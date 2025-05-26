@@ -51,5 +51,20 @@
   '';
   run = "nix run nixpkgs#$argv[1] -- $argv[2..-1]";
   clean = "nix-collect-garbage -d && sudo -i nix-collect-garbage -d";
-}
+  mvdl = ''
+    set newest_file (eza ~/Downloads -snew | tail -n1)
 
+    if test -n "$newest_file"
+        set full_path ~/Downloads/"$newest_file"
+
+        if test -e "$full_path"
+            mv "$full_path" .
+            echo "Moved '$newest_file' to current directory"
+        else
+            echo "Error: File '$newest_file' not found in Downloads directory"
+        end
+    else
+        echo "No files found in Downloads directory"
+    end
+  '';
+}

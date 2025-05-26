@@ -1,7 +1,6 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   home.packages = with pkgs; [
     coq
-    coqPackages.coq-lsp
+    # coqPackages.coq-lsp
   ];
 }
