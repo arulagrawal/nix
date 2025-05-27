@@ -1,5 +1,8 @@
-{ flake, pkgs, ... }:
-
+{
+  flake,
+  pkgs,
+  ...
+}:
 # Platform-independent terminal setup
 {
   home.packages = with pkgs; [
@@ -27,8 +30,12 @@
     agenix
 
     # Dev
+    gcc
+    gnumake
     gh
 
+    #rust
+    rustup
 
     # my scripts/programs
     pa

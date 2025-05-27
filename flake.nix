@@ -9,6 +9,11 @@
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
 
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote/v0.4.2";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nixos-unified.url = "github:srid/nixos-unified";
 
     flake-parts.url = "github:hercules-ci/flake-parts";

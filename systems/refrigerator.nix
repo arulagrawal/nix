@@ -17,6 +17,7 @@ in {
     "${self}/nixos/self/primary-as-admin.nix"
     "${self}/nixos/wifi.nix"
     "${self}/nixos/docker.nix"
+    "${self}/nixos/dialout.nix"
     "${self}/nixos/virtualisation.nix"
     "${self}/nixos/tailscale.nix"
     # "${self}/nixos/nordvpn.nix"
@@ -30,6 +31,7 @@ in {
     "${self}/nixos/avahi.nix"
     "${self}/nixos/printing.nix"
     "${self}/nixos/polkit.nix"
+    "${self}/nixos/lanzaboote.nix"
   ];
 
   system.stateVersion = "25.05";
@@ -147,11 +149,12 @@ in {
   networking = {
     hostName = "refrigerator";
     useDHCP = false;
+    usePredictableInterfaceNames = true;
     interfaces = {
-      enp7s0.wakeOnLan.enable = true;
       enp8s0.wakeOnLan.enable = true;
-      enp7s0.useDHCP = true;
+      enp9s0.wakeOnLan.enable = true;
       enp8s0.useDHCP = true;
+      enp9s0.useDHCP = true;
     };
     dhcpcd.wait = "background";
     dhcpcd.extraConfig = "noarp";

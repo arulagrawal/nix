@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   age.secrets.notif = {
     file = ../../secrets/notif.age;
   };
@@ -9,7 +9,7 @@
       Wants = "network-online.target";
       After = "network-online.target";
     };
-    Install.WantedBy = [ "graphical-session.target" ];
+    Install.WantedBy = ["default.target"];
     Service = {
       ExecStart = "${pkgs.notif}/bin/notif";
       EnvironmentFile = "/run/user/1000/agenix/notif";
