@@ -24,7 +24,11 @@
           logFile = "/tmp/nvim.log";
         };
 
-        useSystemClipboard = true;
+        clipboard = {
+          enable = true;
+          registers = "unnamesplus";
+        };
+
         options = {
           tabstop = 2;
           shiftwidth = 2;

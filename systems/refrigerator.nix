@@ -182,7 +182,7 @@ in {
   # udev rule to restore volume settings
   # might need to manually set with alsamixer
   # and then save with sudo alsactl store --ignore
-  services.udev.packages = [pkgs.alsa-utils];
+  # services.udev.packages = [pkgs.alsa-utils];
 
   # for razer
   hardware.openrazer = {

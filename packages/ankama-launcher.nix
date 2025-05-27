@@ -3,7 +3,7 @@
   src = pkgs.fetchurl {
     url = "https://launcher.cdn.ankama.com/installers/production/Ankama%20Launcher-Setup-x86_64.AppImage";
     # nix store prefetch-file "https://launcher.cdn.ankama.com/installers/production/Ankama%20Launcher-Setup-x86_64.AppImage" --name ankama-launcher.AppImage
-    hash = "sha256-KoaAQh3V7mdSR0WAjHP7JK1vlcsp2Bo9+J9qsX1GIkA=";
+    hash = "sha256-d9FEXVuN7wiilskKhPbp/ssn16l8F1a/C6VBNVv3x20=";
     name = "ankama-launcher.AppImage";
   };
   version = "1.0.0";
