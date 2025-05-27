@@ -26,7 +26,7 @@
 
         clipboard = {
           enable = true;
-          registers = "unnamesplus";
+          registers = "unnamedplus";
         };
 
         options = {
