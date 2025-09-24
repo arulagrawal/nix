@@ -153,7 +153,7 @@
           enable = true;
           name = "catppuccin";
           transparent = true;
-          style = "mocha";
+          style = "auto";
         };
 
         autopairs.nvim-autopairs.enable = true;

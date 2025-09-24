@@ -1,8 +1,7 @@
-{ writeShellApplication, stdenv, wl-clipboard, ... }:
+{ writeShellApplication, stdenv, ... }:
 
 writeShellApplication {
   name = "pa";
-  runtimeInputs = [ wl-clipboard ];
   meta.description = ''
     Upload file to arul.io
   '';

@@ -6,8 +6,15 @@
       cleanup = "zap";
       upgrade = true;
     };
-    brews = ["aircrack-ng" "bitwarden-cli"];
-    taps = ["nikitabobko/tap"];
+    brews = [
+      "aircrack-ng"
+      "smudge/smudge/nightlight"
+      "bitwarden-cli"
+    ];
+    taps = [
+      "nikitabobko/tap"
+      "smudge/smudge"
+    ];
     casks = [
       "nikitabobko/tap/aerospace"
       "orion"
@@ -34,10 +41,11 @@
       "transmission"
       "iina"
       "mkvtoolnix"
-      "mullvadvpn-beta"
+      "mullvad-vpn@beta"
       "tg-pro"
       "disk-diet"
       "hiddenbar"
+      "sage"
       "contexts"
       "lunar"
       "parsec"
@@ -48,6 +56,8 @@
       "cloudflare-warp"
       "nordvpn"
       "whisky"
+      "wireshark"
+      "intellij-idea-ce"
     ];
     masApps = {
       /*

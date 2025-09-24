@@ -64,10 +64,6 @@ in {
         KeyRepeat = 1;
         NSWindowResizeTime = 0.1;
       };
-      alf = {
-        globalstate = 1;
-        stealthenabled = 1;
-      };
     };
     keyboard = {
       enableKeyMapping = true;
@@ -76,5 +72,11 @@ in {
     # Used for backwards compatibility, please read the changelog before changing.
     # $ darwin-rebuild changelog
     stateVersion = 4;
+  };
+  networking = {
+    applicationFirewall = {
+      enable = true;
+      enableStealthMode = true;
+    };
   };
 }
